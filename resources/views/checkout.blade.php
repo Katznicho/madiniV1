@@ -159,6 +159,10 @@
 					</div>
 
 					<!-- Order Details -->
+                  <form method="POST" action="{{ route('placeOrder') }}">
+
+                    @csrf
+
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
 							<h3 class="title">Your Order</h3>
@@ -226,8 +230,11 @@
 								I've read and accept the <a href="#">terms & conditions</a>
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Place order</a>
+						{{-- <a href="#" class="primary-btn order-submit">Place order</a> --}}
+                        <!-- "Place order" button -->
+                    <button type="submit" class="primary-btn order-submit">Place order</button>
 					</div>
+                    </form>
 					<!-- /Order Details -->
 				</div>
 				<!-- /row -->
