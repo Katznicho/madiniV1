@@ -13,6 +13,19 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
+            $table->string('amount');
+            $table->string('phone_number');
+            $table->string("payment_mode");
+            $table->string("payment_method")->nullable();
+            $table->text('description')->nullable;
+            $table->string('reference');
+            $table->string('status');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('cooperative_id')->references('id')->on('cooperatives')->onDelete('cascade');
+            $table->string("order_tracking_id")->nullable();
+            $table->string("OrderNotificationType")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

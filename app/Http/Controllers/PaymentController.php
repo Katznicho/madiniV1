@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Models\Sponsor;
-use App\Models\Transaction;
+use App\Models\Payment;
 use App\Models\User;
 use App\Payments\Pesapal;
 use App\Traits\MessageTrait;
@@ -82,42 +82,42 @@ class PaymentController extends Controller
             $orderTrackingId = $request->input('OrderTrackingId');
             $reference = $request->input('OrderMerchantReference');
 
-            Transaction::where("reference", $reference)->update([
+            Payment::where("reference", $reference)->update([
                 "order_tracking_id" => $orderTrackingId,
 
             ]);
-            //get the actual transaction
-            $transaction = Transaction::where("reference", $reference)->first();
-            $customer = Sponsor::find($transaction->sponsor_id);
-            $data = Pesapal::transactionStatus($orderTrackingId, $orderTrackingId);
+            //get the actual Payment
+            $Payment = Payment::where("reference", $reference)->first();
+            $customer = Sponsor::find($Payment->sponsor_id);
+            $data = Pesapal::PaymentStatus($orderTrackingId, $orderTrackingId);
             $payment_method = $data->message->payment_method;
 
             $name =  $customer->first_name . " " . $customer->last_name;
 
             if ($data->message->payment_status_description == config("status.payment_status.completed")) {
-                $message = "Hello {$name} your payment of {$transaction->amount} has been successfully completed.Thank you";
+                $message = "Hello {$name} your payment of {$Payment->amount} has been successfully completed.Thank you";
                 $this->sendMessage($customer->phone_number, $message);
-                //check if the transaction is already completed
-                if ($transaction->status == config("status.payment_status.completed")) {
+                //check if the Payment is already completed
+                if ($Payment->status == config("status.payment_status.completed")) {
                     Notification::make()
                         ->success()
-                        ->title('Transaction completed successfully')
-                        ->body('The transaction has been completed successfully');
-                    return redirect()->route("filament.admin.resources.transactions.index");
+                        ->title('Payment completed successfully')
+                        ->body('The Payment has been completed successfully');
+                    return redirect()->route("filament.admin.resources.Payments.index");
                 } else {
 
-                    $transaction->update([
+                    $Payment->update([
                         "status" => config("status.payment_status.completed"),
                         "payment_method" => $payment_method
                     ]);
                     //update customer balance
-                    $customer->account_balance += $transaction->amount;
+                    $customer->account_balance += $Payment->amount;
                     $customer->save();
                     Notification::make()
                         ->success()
-                        ->title('Transaction completed successfully')
-                        ->body('The transaction has been completed successfully');
-                    return redirect()->route("filament.admin.resources.transactions.index");
+                        ->title('Payment completed successfully')
+                        ->body('The Payment has been completed successfully');
+                    return redirect()->route("filament.admin.resources.Payments.index");
                 }
 
 
@@ -125,14 +125,14 @@ class PaymentController extends Controller
 
             } else {
 
-                $transaction->update([
+                $Payment->update([
                     "status" => config("status.payment_status.failed"),
                     "payment_method" => $payment_method
                 ]);
                 Notification::make()
                     ->danger()
-                    ->title('Transaction failed')
-                    ->body('The transaction has been failed');
+                    ->title('Payment failed')
+                    ->body('The Payment has been failed');
 
                 return redirect()->route("home");
             }
@@ -142,8 +142,8 @@ class PaymentController extends Controller
             // return view("payments.finish");
             Notification::make()
                 ->danger()
-                ->title('Transaction failed')
-                ->body('The transaction has been failed');
+                ->title('Payment failed')
+                ->body('The Payment has been failed');
 
             return redirect()->route("home");
         }
@@ -181,13 +181,13 @@ class PaymentController extends Controller
     {
         try {
             $payment_reference =  $request->input("payment_reference");
-            Transaction::where("reference", $payment_reference)->update([
+            Payment::where("reference", $payment_reference)->update([
                 "status" => config("status.payment_status.canceled")
             ]);
             Notification::make()
                 ->danger()
                 ->title('You payment was canceled')
-                ->body('The transaction has been canceled');
+                ->body('The Payment has been canceled');
             return view("home");
         } catch (\Throwable $th) {
             Log::error($th->getMessage());
@@ -206,20 +206,20 @@ class PaymentController extends Controller
             $orderMerchantReference = $request->input('OrderMerchantReference');
 
             $orderNotificationType = $request->input('OrderNotificationType');
-            Transaction::where("reference", $orderMerchantReference)->update([
+            Payment::where("reference", $orderMerchantReference)->update([
                 "order_tracking_id" => $orderTrackingId,
                 "orderNotificationType" => $orderNotificationType
             ]);
 
-            $transaction = Transaction::where("reference", $orderMerchantReference)->first();
-            if (!$transaction) {
+            $Payment = Payment::where("reference", $orderMerchantReference)->first();
+            if (!$Payment) {
                 return response()->json([
                     "status" => 500,
-                    "message" => "Transaction not found"
+                    "message" => "Payment not found"
                 ]);
             }
-            $customer = Sponsor::find($transaction->sponsor_id);
-            $data = Pesapal::transactionStatus($orderTrackingId, $orderMerchantReference);
+            $customer = Sponsor::find($Payment->sponsor_id);
+            $data = Pesapal::PaymentStatus($orderTrackingId, $orderMerchantReference);
             // return $data;
             $payment_method = $data->message->payment_method;
             $name =  $customer->first_name . " " . $customer->last_name;
@@ -229,34 +229,34 @@ class PaymentController extends Controller
             Log::info("==========================================call back executed============================================================================================================");
 
             if ($data->message->payment_status_description == config("status.payment_status.completed")) {
-                $message = "Hello {$name} your payment of {$transaction->amount} has been successfully completed.Thank you";
+                $message = "Hello {$name} your payment of {$Payment->amount} has been successfully completed.Thank you";
                 $this->sendMessage($customer->phone_number, $message);
 
-                //check if the transaction is already completed
-                if ($transaction->status == config("status.payment_status.completed")) {
+                //check if the Payment is already completed
+                if ($Payment->status == config("status.payment_status.completed")) {
                     return response()->json([
                         "status" => 200,
-                        "message" => "Transaction already completed"
+                        "message" => "Payment already completed"
                     ]);
                 } else {
 
-                    $transaction->update([
+                    $Payment->update([
                         "status" => "completed",
                         "payment_method" => $payment_method
                     ]);
                     //update customer balance
-                    $customer->account_balance += $transaction->amount;
+                    $customer->account_balance += $Payment->amount;
                     $customer->save();
                     return response()->json([
                         "status" => 200,
-                        "message" => "Transaction completed"
+                        "message" => "Payment completed"
                     ]);
                 }
             } else {
 
                 return response()->json([
                     "status" => 500,
-                    "message" => "Transaction failed"
+                    "message" => "Payment failed"
                 ]);
             }
         } catch (\Throwable $th) {
@@ -305,7 +305,7 @@ class PaymentController extends Controller
         }
     }
 
-    public function checkTransactionStatus(Request $request)
+    public function checkPaymentStatus(Request $request)
     {
 
         try {
@@ -316,7 +316,7 @@ class PaymentController extends Controller
             ]);
             $orderTrackingId = $request->input('orderTrackingId');
             $merchantReference = $request->input('merchantReference');
-            $data = Pesapal::transactionStatus($orderTrackingId, $merchantReference);
+            $data = Pesapal::PaymentStatus($orderTrackingId, $merchantReference);
 
             return response()->json(['success' => true, 'message' => 'Success', 'response' => $data->message->payment_status_description]);
         } catch (\Throwable $th) {
