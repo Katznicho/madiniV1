@@ -10,15 +10,14 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'phone_number',
-        'email',
-        'address',
+        'user_id',
+        'cooperative_id',
+        'total_cost',
+        'purchase_cost',
+        'delivery_cost',
+        'quantity',
         'status',
-        'order_id',
-        'pin',
-        'pin_recovery',
-        
+        'delivery_address_id',
     ];
 
     //a order belongs to a user

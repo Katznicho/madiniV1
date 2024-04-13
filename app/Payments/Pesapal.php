@@ -83,7 +83,7 @@ class Pesapal
 
             $body = json_encode(array(
                 "url" => $ipnUrl,
-                "ipn_notification_type" => 'POST',
+                "ipn_notification_type" => 'GET',
             ));
 
             $data = Curl::Post($url, $headers, $body);
@@ -155,7 +155,8 @@ class Pesapal
                 'redirect_mode' => 'TOP_WINDOW',
                 'callback_url' => $callback,
                 'call_back_url' => $cancel_url,
-                'notification_id' => "88df68a5-aa0f-41b4-badf-dd7e551505d9",
+                'notification_id' => "f616846a-fcf1-4e04-9ebf-dd5e15734d23",
+           
                 'billing_address' => array(
                     'phone_number' => $phone,
                     'first_name' => $first_name,

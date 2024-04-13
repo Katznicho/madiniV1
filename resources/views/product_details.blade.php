@@ -116,8 +116,11 @@
                                     <span class="qty-down">-</span>
                                 </div>
                             </div> -->
-                            <a class="add-to-cart-btn"><i class="fa fa-shopping-cart" href="{{route("productCheckout")}}"></i> Buy Now</a>
-                            <button class="add-to-cart-btn"  ><i class="fa fa-shopping-cart" ></i> add to cart</button>
+                            
+                            <button class="add-to-cart-btn" ><i class="fa fa-shopping-cart" ></i> add to cart</button>
+                            {{-- add space between buttons --}}
+                            <div style="margin-right: 10px;"></div>
+                            <a class="add-to-cart-btn" href="{{ route('productCheckout') }}"><i class="fa fa-shopping-cart" ></i> Buy Now</a>
                         </div>
 
 
@@ -622,22 +625,7 @@
 </body>
 
 <style>
-.add-to-cart-btn {
-    display: flex;
-    /* Allow elements to sit side-by-side */
-    align-items: center;
-    /* Vertically center content */
-    padding: 5px 10px;
-    /* Add some padding */
-    border: 2px solid #ddd;
-    /* Add a border on right and bottom */
 
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-    width: 50%;
-}
 
 .buttons {
     /* either they are positioned horizontally on same line */
@@ -680,6 +668,11 @@
 .add-to-cart-btn {
     display: flex;
     /* Allow elements to sit side-by-side */
+    align-items: left !important;
+
+    text-align: left !important;
+    /* Vertically center content */
+
 
     padding: 5px 10px;
     /* Add some padding */
@@ -690,7 +683,8 @@
     /* Add rounded corners */
     cursor: pointer;
     /* Indicate clickable button */
-    width: 50%;
+    width: 20rem !important;
+    height: 5rem !important;
 }
 
 .product {

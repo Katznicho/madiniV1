@@ -4,13 +4,24 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlaceOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Route::get('welcome', function () {
+//     return view('welcome');
+// })->name('welcome');
+
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
+
 
 Route::resource("products", ProductController::class);
+// Route::get("products/{id}", [ProductController::class, "show"])->name("products.show");
+Route::get("products", [ProductController::class, "index"])->name("product_details");
 Route::get("productCheckout", [ProductController::class , "productCheckout"])->name("productCheckout");
 Route::post('placeOrder', [PlaceOrderController::class, 'placeOrder'])->name('placeOrder');
 
