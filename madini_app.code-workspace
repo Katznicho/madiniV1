@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../blank.php"
+		},
+		{
+			"path": "../donations"
+		},
+		{
+			"path": "../madini"
+		}
+	],
+	"settings": {}
+}
