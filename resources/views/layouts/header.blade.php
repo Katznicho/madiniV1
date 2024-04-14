@@ -223,6 +223,7 @@
     height: auto;
     /* Maintain aspect ratio */
     margin-left: 10%;
+    cursor: pointer;
 }
 
 
