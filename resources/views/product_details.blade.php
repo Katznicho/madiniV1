@@ -64,14 +64,14 @@
                         <!-- </div> -->
 
                     </div>
-                    <div class="add-to-cart-btn">
-                        <span>Add</span>
+                    {{-- <div class="add-to-cart-btn">
+                        <span>Add</span> --}}
                         <!-- <i class="fa fa-shopping-cart"></i> -->
-                        <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
+                        {{-- <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
 
 
-                    </div>
-                    <h3 class="product-price">UGX 120,000</h3>
+                    </div> --}}
+                    <h3 class="product-price" style="text-align: center;">UGX 120,000</h3>
                 </div>
                 <!-- /Product main img -->
 
