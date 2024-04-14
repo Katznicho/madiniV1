@@ -1,31 +1,82 @@
-<header class="header" style="display: flex;">
+<header class="header mobile head" style="display: flex;">
+    <div class="header-search mobile-search">
+        <form class="mobile-search">
+            <input class="m-search" type="text" placeholder="Search here" role="search">
+            <button type="submit" class="m-search-btn">
+                <i class="fa fa-search m-search-icon"></i>
+            </button>
+        </form>
+
+
+
+    </div>
+
+    {{-- <nav id="navigation" class = "mobile-nav"> --}}
+    {{-- <div id="responsive-nav" class="mobile-nav"> --}}
+    <div class="mobile-nav">
+        <ul class="main-nav nav  navbar-nav items" style="text-align: center">
+            <li class="active mitems">
+                <img src="./img/sand_icon.jpg" alt="" style="width: 3.7rem;" class="micon">
+                <a href="#" style="margin-top: 0px;">Construction</a>
+            </li>
+            <li>
+                <img src="./img/industry_icon.jpg" alt="" style="width: 4.5rem;" class="micon">
+                <a href="#" style="font-weight: lighter;">Industry</a>
+            </li>
+            <li>
+                <img src="./img/precious_icon.jpg" alt="" style="width: 2.8rem;" class="micon">
+                <a href="#" style="font-weight: lighter;">Precious</a>
+            </li>
+        </ul>
+    </div>
+    
+
+   
+
+
+    {{-- <div class="user-info mobile-user" id="mobile-user">
+        <img src="./img/user_icon.jpg" alt="" style="width: 4rem;" class="micon">
+        <span>Bert</span>
+    </div> --}}
+</header>
+
+
+
+
+
+<header class="header " style="display: flex;">
 
 
     <img src="./img/logo.jpg" alt="Logo" class="logo">
-    <div class="info-container header-links pull-right" style="">
+    <div class="info-container header-links " style="">
         <!-- <i class="fa fa-map-marker"></i> -->
         <img src="./img/delivery_icon.jpg" alt="" style="width: 2rem;" class="micon">
         <!-- <p>Delivery</p> -->
-        <div class="header-links pull-middle">
+        <div class="header-links pull-left">
 
             <p style="font-weight: 200;">Delivery</p>
 
             <span style="font-weight: bold;">Muyenga</span>
         </div>
-        <hr>
+        <hr class="pull-middle">
         <!-- <i class="fa fa-money"></i> -->
         <img src="./img/ASM_icon.jpg" alt="" style="width: 3rem;" class="micon">
-        <div>
+        <div class="pull-right">
             <p style="font-weight: 200;">ASM Impact</p>
             <span style="font-weight: bold;">1.2 million ASM</span>
         </div>
     </div>
-    <div class="user-info">
+    <div class="user-info web">
         <!-- <i class="fa fa-user"></i> -->
-        <img src="./img/user_icon.jpg" alt="" style="width: 4rem;" class="micon">
-        <span>Bert</span>
+        <img src="./img/user_icon.jpg" alt="" style="width: 4rem;" class="micon" id="micon">
+        <span id="name">Bert</span>
     </div>
 </header>
+
+
+
+
+
 
 
 <!-- NAVIGATION -->
@@ -134,185 +185,315 @@
 <!-- /NAVIGATION -->
 
 <style>
-#responsive-nav {
-    padding: 10px;
-    display: flex;
-    /* Allow elements to sit side-by-side */
-    align-items: center;
-    /* Vertically center content */
-    justify-content: space-between;
-    /* Distribute elements evenly */
-}
+    .mhr {
+        display: none;
+    }
 
-#navigation{
-    
-}
+    .mobile {
+        display: none;
 
-.container {
-    /*margin-bottom: -16.5px;*/
-}
+    }
 
-.header-search {
-    position: relative;
-    /* Needed for button positioning */
-}
+    .mobile-nav {
+        display: none;
+    }
 
-.m-search {
-    width: 60rem !important;
-    height: 5rem !important;
-    display: block;
-    /* Makes the input take full width */
-    /* width: 100%; */
-    /* Fills remaining space in parent */
-    /* padding: 10px 10px; */
-    /* Adjust padding as needed */
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    margin-left: 8%;
-    /* Add curved corners */
-    /* height: 2rem; */
-    /* Set input height */
-}
+    .mobile-user {
+        display: none !important;
+    }
 
-.m-search-btn {
-    position: absolute;
-    /* Positions button inside input */
-    top: 0;
-    right: 3px;
-    /* Adjust right padding for icon placement */
-    bottom: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+    .mobile-search {
+        display: none;
+    }
 
-}
 
-.m-search-icon {
-    /* fill: #ccc; */
-    /* Change color as needed */
-    width: 0 !important;
-    position: relative;
-    height: 14px;
-    margin-right: 0 !important;
-    color: black;
-}
 
-.header {
-    display: flex;
-    /* Arrange elements horizontally */
-    justify-content: space-between;
-    /* Distribute space evenly */
-    align-items: center;
-    /* Align vertically */
-    padding: 20px 50px;
-    background-color: white;
-    
-}
 
-/* hr {
-	  margin: 0 10px;
+    #responsive-nav {
+        padding: 10px;
+        display: flex;
+        /* Allow elements to sit side-by-side */
+        align-items: center;
+        /* Vertically center content */
+        justify-content: space-between;
+        /* Distribute elements evenly */
+    }
+
+    #navigation {}
+
+    .container {
+        /*margin-bottom: -16.5px;*/
+    }
+
+    .header-search {
+        position: relative;
+        /* Needed for button positioning */
+    }
+
+    .m-search {
+        width: 60rem !important;
+        height: 5rem !important;
+        display: block;
+        /* Makes the input take full width */
+        /* width: 100%; */
+        /* Fills remaining space in parent */
+        /* padding: 10px 10px; */
+        /* Adjust padding as needed */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        margin-left: 8%;
+        /* Add curved corners */
+        /* height: 2rem; */
+        /* Set input height */
+    }
+
+    .m-search-btn {
+        position: absolute;
+        /* Positions button inside input */
+        top: 0;
+        right: 3px;
+        /* Adjust right padding for icon placement */
+        bottom: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+    }
+
+    .m-search-icon {
+        /* fill: #ccc; */
+        /* Change color as needed */
+        width: 0 !important;
+        position: relative;
+        height: 14px;
+        margin-right: 0 !important;
+        color: black;
+    }
+
+    .header {
+        display: flex;
+        /* Arrange elements horizontally */
+        justify-content: space-between;
+        /* Distribute space evenly */
+        align-items: center;
+        /* Align vertically */
+        padding: 20px 50px;
+        background-color: white;
+
+    }
+
+    /* hr {
+ margin: 0 10px;
   height: 20px;
   border: 1px solid #ddd;
 
 } */
 
-.logo {
-    width: 20rem;
-    /* Adjust width as needed */
-    height: auto;
-    /* Maintain aspect ratio */
-    margin-left: 10%;
-    cursor: pointer;
-}
-
-
-@media screen and (max-width: 767px) {
-
-    .header {
-        padding: 10px 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-    }
-
-    .responsive-nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: left;
-        padding: 0px 0px;
-        margin: 0px 0px;
-    }
-
     .logo {
-        width: 5rem;
+        width: 20rem;
+        /* Adjust width as needed */
         height: auto;
-        margin-right: 5rem;
-        margin-left: 0px !important;
-        padding-left: 0px !important;
+        /* Maintain aspect ratio */
+        margin-left: 10%;
+        cursor: pointer;
     }
-}
 
-.info-container,
-.user-info {
-    display: flex;
-    align-items: center;
-    margin-right: 12rem;
-}
 
-/* for smaller screens remove margin right on user info */
-@media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
+
+      .section {
+        border: 0 !important;
+      }
+
+      .mitems {
+        justify-content: justify !important;
+       
+      }
+
+
+       .items>li>a {
+     padding: 2px 40px; 
+  
+  
+    color: grey;
+  }
+
+     
+      
+      
+
+ 
+
+     
+
+        #micon {
+            display: none;
+        }
+
+     
+
+        .m-search-icon {
+            display: flex;
+            padding-right: 3rem;
+            position: relative;
+
+
+        }
+
+        #name {
+            display: none !important;
+        }
+
+        .user-info {
+            display: none;
+        }
+
+        .items {
+            display: flex !important;
+            justify-content: space-between !important;
+        
+        }
+
+        .mobile-nav {
+           display: inline-block;
+           justify-content: space-between;
+
+        
+            align-items: justify !important;
+            padding-top: 10px !important;
+          
+            padding-bottom: 0px !important;
+
+            margin: 10px;
+           
+        }
+
+        .web {
+            display: none;
+        }
+
+
+
+
+        .mobile {
+            display: flex;
+             border-bottom: 1px solid #ddd;
+
+        }
+
+      
+
+        .mobile-user {
+            display: flex !important;
+        }
+
+        .mobile-search {
+            display: flex;
+            width: 100% !important;
+            justify-content: center;
+            margin: 0 auto !important;
+        }
+
+
+
+
+
+        .logo {
+            display: none;
+        }
+
+        .m-search {
+            margin-left: 0;
+        }
+
+        .header {
+            padding: 10px 10px;
+            margin: 0px 0px;
+            padding-bottom: 0px !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: left;
+        }
+
+        .responsive-nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: left;
+            padding: 0px 0px;
+            margin: 0px 0px;
+        }
+
+
+    }
 
     .info-container,
     .user-info {
-        margin-right: 0;
+        display: flex;
+        align-items: center;
+        margin-right: 12rem;
     }
-}
 
-.info-container hr {
-    border: 1px solid #ddd;
-    margin: 0 10px;
-    height: 20px;
-}
+    /* for smaller screens remove margin right on user info */
+    @media screen and (max-width: 768px) {
 
-.fa {
-    font-size: 20px;
-    margin-right: 5px;
-}
+        .info-container,
+        .user-info {
+            margin-right: 0;
+            
+        }
 
-.add-to-cart-btn {
-    display: flex;
-    /* Allow elements to sit side-by-side */
-    align-items: center;
-    /* Vertically center content */
-    padding: 5px 10px;
-    height: 5rem;
-    width: 8rem;
-    /* Add some padding */
-    border: 2px solid #ddd;
-    /* Add a border on right and bottom */
+       
+    }
 
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-    /* width: 50%; */
-}
+  
+
+    .info-container hr {
+        border: 1px solid #ddd;
+        margin: 0 10px;
+        height: 50px;
+    }
+
+    .fa {
+        font-size: 20px;
+        margin-right: 5px;
+    }
+
+    .add-to-cart-btn {
+        display: flex;
+        /* Allow elements to sit side-by-side */
+        align-items: center;
+        /* Vertically center content */
+        padding: 5px 10px;
+        height: 5rem;
+        width: 8rem;
+        /* Add some padding */
+        border: 2px solid #ddd;
+        /* Add a border on right and bottom */
+
+        border-radius: 3px;
+        /* Add rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+        /* width: 50%; */
+    }
 </style>
+
+
 
 <!-- Path: index.php -->
 <script>
-// Add this script to the bottom of the body tag
-// This script will toggle the class 'active' on the header element
-// when the user clicks on the user-info element
-document.querySelector('.user-info').addEventListener('click', function() {
-    document.querySelector('.header').classList.toggle('active');
-});
+    // Add this script to the bottom of the body tag
+    // This script will toggle the class 'active' on the header element
+    // when the user clicks on the user-info element
+    document.querySelector('.user-info').addEventListener('click', function() {
+        document.querySelector('.header').classList.toggle('active');
+    });
 
-//logo routes to home page
-document.querySelector('.logo').addEventListener('click', function() {
-    window.location.href = 'index.php';
-});
+    //logo routes to home page
+    document.querySelector('.logo').addEventListener('click', function() {
+        window.location.href = 'index.php';
+    });
 </script>

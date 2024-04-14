@@ -655,6 +655,7 @@ textarea.input {
 
 .main-nav>li>a {
   padding: 0px 15px;
+  color: black;
 }
 
 .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {
@@ -673,6 +674,7 @@ textarea.input {
 }
 
 .main-nav>li>a:hover:after, .main-nav>li>a:focus:after, .main-nav>li.active>a:after {
+  color: black;
   width: 100%;
 }
 
@@ -723,8 +725,10 @@ textarea.input {
     margin-left: 0px;
   }
   .main-nav>li>a {
-    padding: 15px;
-    color: #FFF;
+    /* padding: 2px 40px; */
+    padding: 2px;
+  
+    color: grey;
   }
 }
 

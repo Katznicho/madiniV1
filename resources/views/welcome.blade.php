@@ -47,7 +47,7 @@
                     <div class="section-title">
                         <!-- <h3 class="title">New Products</h3> -->
                         <div class="">
-                            <ul class="main-nav nav navbar-nav">
+                            <ul class="main-nav nav navbar-nav cats">
                                 <!-- <ul> -->
                                 <li class="active"><a data-toggle="tab" href="#tab1">Sand</a></li>
                                 <li><a data-toggle="tab" href="#tab1">Aggregates</a></li>
@@ -283,6 +283,44 @@
 </body>
 
 <style>
+           /* Define styles for small screens */
+        @media only screen and (max-width: 768px) {
+            .cats li {
+                display: inline-block; /* Display li items horizontally */
+                margin-right: 10px; /* Add some spacing between items */
+                color: black;
+            
+            }
+
+            .product {
+                width: 70%; /* Set product width to fill 70% of the screen */
+                margin: 0 auto; /* Center products horizontally */
+                margin-bottom: 20px; /* Add some bottom margin */
+            }
+
+            .products-slick {
+                display: flex; /* Use flexbox for product layout */
+                flex-wrap: wrap; /* Allow products to wrap to the next row */
+                justify-content: space-between; /* Distribute products evenly */
+            }
+
+            .product-body {
+                width: 100%; /* Make product body take full width */
+            }
+
+            .product-name {
+                font-size: 1.8rem; /* Decrease font size for product name */
+            }
+
+            .product-price {
+                font-size: 1.2rem; /* Decrease font size for product price */
+                margin-top: 10px; /* Reduce top margin for price */
+                margin-left: 0; /* Remove left margin for price */
+            }
+        }
+
+
+
     /* Search bar */
 
     .section {
