@@ -1585,12 +1585,13 @@ textarea.input {
   background-color: #FFF;
   color: black;
   border-color: black;
-  padding: 0px 30px 0px 50px;
+  /* padding: 0px 30px 0px 50px; */
 }
 
 .product-details .add-to-cart .add-to-cart-btn:hover>i {
   opacity: 1;
   visibility: visible;
+  padding: 5px;
 }
 
 .product-details .add-to-cart .qty-label {
