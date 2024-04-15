@@ -65,9 +65,9 @@
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">
-                                <div class="products-slick" data-nav="#slick-nav-1">
+                                <div class="products-slick" data-nav="#slick-nav-1" >
 
-
+                            
                                     @foreach ($products as $product)
                                         <div class="product" >
                                             <a href="{{ route('product_details') }}">

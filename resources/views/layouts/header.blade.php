@@ -3,7 +3,7 @@
         <form class="mobile-search">
             <input class="m-search" type="text" placeholder="Search here" role="search">
             <button type="submit" class="m-search-btn">
-                <i class="fa fa-search m-search-icon"></i>
+                <i class=" m-search-icon fa fa-search m-search-icon"></i>
             </button>
         </form>
 
@@ -29,9 +29,9 @@
             </li>
         </ul>
     </div>
-    
 
-   
+
+
 
 
     {{-- <div class="user-info mobile-user" id="mobile-user">
@@ -44,11 +44,12 @@
 
 
 
-<header class="header " style="display: flex;">
+<header class="header" style="display: flex;">
 
 
     <img src="./img/logo.jpg" alt="Logo" class="logo">
-    <div class="info-container header-links " style="">
+    <div class="info-container header-links mlinks"
+        style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
         <img src="./img/delivery_icon.jpg" alt="" style="width: 2rem;" class="micon">
         <!-- <p>Delivery</p> -->
@@ -58,12 +59,12 @@
 
             <span style="font-weight: bold;">Muyenga</span>
         </div>
-        <hr class="pull-middle">
+        <hr class="pull-middle" style="margin-left : 50px !important; margin-right: 30px !important;">
         <!-- <i class="fa fa-money"></i> -->
         <img src="./img/ASM_icon.jpg" alt="" style="width: 3rem;" class="micon">
         <div class="pull-right">
             <p style="font-weight: 200;">ASM Impact</p>
-            <span style="font-weight: bold;">1.2 million ASM</span>
+            <span style="font-weight: bold;">1,200 ASM impacted</span>
         </div>
     </div>
     <div class="user-info web">
@@ -268,7 +269,7 @@
         position: relative;
         height: 14px;
         margin-right: 0 !important;
-        color: black;
+        color: black !important;
     }
 
     .header {
@@ -302,36 +303,41 @@
 
     @media screen and (max-width: 767px) {
 
-      .section {
-        border: 0 !important;
-      }
+        .section {
+            border: 0 !important;
+        }
 
-      .mitems {
-        justify-content: justify !important;
-       
-      }
+        #navigation {
+            display: none;
+            border: 0 !important;
+        }
+
+        .mitems {
+            justify-content: justify !important;
+
+        }
 
 
-       .items>li>a {
-     padding: 2px 40px; 
-  
-  
-    color: grey;
-  }
+        .items>li>a {
+            padding: 2px 40px;
 
-     
-      
-      
 
- 
+            color: grey;
+        }
 
-     
+
+
+
+
+
+
+
 
         #micon {
             display: none;
         }
 
-     
+
 
         .m-search-icon {
             display: flex;
@@ -352,21 +358,21 @@
         .items {
             display: flex !important;
             justify-content: space-between !important;
-        
+
         }
 
         .mobile-nav {
-           display: inline-block;
-           justify-content: space-between;
+            display: inline-block;
+            justify-content: space-between;
 
-        
+
             align-items: justify !important;
             padding-top: 10px !important;
-          
+
             padding-bottom: 0px !important;
 
             margin: 10px;
-           
+
         }
 
         .web {
@@ -378,11 +384,11 @@
 
         .mobile {
             display: flex;
-             border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
 
         }
 
-      
+
 
         .mobile-user {
             display: flex !important;
@@ -408,7 +414,7 @@
         }
 
         .header {
-          
+
             margin: 0px 0px;
             padding-bottom: 0px !important;
             display: flex;
@@ -442,22 +448,23 @@
         .info-container,
         .user-info {
             margin-right: 0;
-            
+
         }
 
-       
+
     }
 
-  
+
 
     .info-container hr {
-        border: 1px solid #ddd;
+        border: 2px solid #ddd;
         margin: 0 10px;
-        height: 50px;
+        height: 55px;
     }
 
     .fa {
         font-size: 20px;
+  
         margin-right: 5px;
     }
 

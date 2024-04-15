@@ -431,6 +431,7 @@ textarea.input {
   display: inline-block;
   margin-right: 15px;
   font-size: 12px;
+  
 }
 
 .header-links li:last-child {
@@ -644,6 +645,8 @@ textarea.input {
 
   /* border-top: 3px solid black; */
 }
+
+
 
 /*----------------------------*\
 	Main nav
@@ -1191,7 +1194,7 @@ textarea.input {
 }
 
 .products-slick .product.slick-slide {
-  margin: 15px;
+  margin: 20px;
 }
 
 .products-tabs>.tab-pane {
