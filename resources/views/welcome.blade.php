@@ -69,11 +69,11 @@
 
 
                                     @foreach ($products as $product)
-                                        <div class="product">
+                                        <div class="product" >
                                             <a href="{{ route('product_details') }}">
                                                 <div class="product-img">
-                                                    {{-- <img src="{{ $product->image }}" alt="{{ $product->name }}"> --}}
-                                                    <img src="./img/download.jpeg" alt="" style="height: 15em;">
+                                                    <img src="{{ $product->image }}" alt="{{ $product->name }}" style="height: 15em;">
+                                                    {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
@@ -133,127 +133,182 @@
                             <div id="tab2" class="tab-pane fade in active">
                                 <div class="products-slick" data-nav="#slick-nav-2">
 
-                                    <div class="product ">
-                                        <a href="{{ route('product_details') }}">
-                                            <div class="product-img">
-                                                <img src="./img/download.jpeg" alt="" style="height: 15em;">
-                                                <div class="product-label">
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                                <div class="lower">
 
-                                                    <div class="add-to-cart-btn">
-                                                        <span>Add</span>
-                                                        <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                        <img src="./img/cart_icon.jpg" alt=""
-                                                            style="width: 30px;" class="micon">
+
+                                    @foreach ($valueAddedProducts as $valueAddedProduct)
+                                        <div class="product" style="width: 10px !important; ">
+                                            <a href="{{ route('product_details') }}">
+                                                <div class="product-img">
+                                                    <img src="{{ $valueAddedProduct->image }}" alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
+                                                    {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
+                                                    <div class="product-label"></div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <h3 class="product-name"><a href="#">{{ $valueAddedProduct->name }}</a>
+                                                    </h3>
+                                                    <div class="lower">
+                                                        <div class="add-to-cart-btn">
+                                                            <span>Add</span>
+                                                            <img src="./img/cart_icon.jpg" alt=""
+                                                                style="width: 30px;" class="micon">
+                                                        </div>
+                                                        <h6 class="product-price">{{ $valueAddedProduct->price }}</h6>
                                                     </div>
-                                                    <h6 class="product-price" 1>UGX 120,000</h6>
-
-
                                                 </div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-
-                                    <div class="product ">
-                                        <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="" style="height: 15em;">
-                                            <div class="product-label">
-                                            </div>
+                                            </a>
                                         </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
+                                    @endforeach
 
-                                                <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt=""
-                                                        style="width: 30px;" class="micon">
+                                
+
+
+                                  
+                                  
+                                </div>
+                                <div id="slick-nav-2" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
+
+
+        <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12">
+                <h3 class="" style="text-decoration: underline;">Hardware</h3>
+                    <div class="section-title">
+                        <h3 class="title">Safety</h3>
+
+                    </div>
+                </div>
+                <!-- /section title -->
+
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab2" class="tab-pane fade in active">
+                                <div class="products-slick" data-nav="#slick-nav-3">
+
+
+
+                                    @foreach ($safetyProducts as $safetyProduct)
+                                        <div class="product" style="width: 10px !important; ">
+                                            <a href="{{ route('product_details') }}">
+                                                <div class="product-img">
+                                                    <img src="{{ $safetyProduct->image }}" alt="{{ $safetyProduct->name }}" style="height: 15em;">
+                                                    {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
+                                                    <div class="product-label"></div>
                                                 </div>
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product ">
-                                        <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="" style="height: 15em;">
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-                                                <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt=""
-                                                        style="width: 30px;" class="micon">
+                                                <div class="product-body">
+                                                    <h3 class="product-name"><a href="#">{{ $safetyProduct->name }}</a>
+                                                    </h3>
+                                                    <div class="lower">
+                                                        <div class="add-to-cart-btn">
+                                                            <span>Add</span>
+                                                            <img src="./img/cart_icon.jpg" alt=""
+                                                                style="width: 30px;" class="micon">
+                                                        </div>
+                                                        <h6 class="product-price">{{ $safetyProduct->price }}</h6>
+                                                    </div>
                                                 </div>
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
+                                            </a>
                                         </div>
-                                    </div>
+                                    @endforeach
+
+                                
 
 
-                                    <div class="product ">
-                                        <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="" style="height: 15em;">
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
+                                  
+                                  
+                                </div>
+                                <div id="slick-nav-2" class="products-slick-nav"></div>
+                            </div>
+                            <!-- /tab -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /Products tab & slick -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /SECTION -->
 
-                                                <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt=""
-                                                        style="width: 30px;" class="micon">
+
+
+
+        <!-- SECTION -->
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
+
+                <!-- section title -->
+                <div class="col-md-12">
+                    <div class="section-title">
+                        <h3 class="title">Tools</h3>
+
+                    </div>
+                </div>
+                <!-- /section title -->
+
+                <!-- Products tab & slick -->
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="products-tabs">
+                            <!-- tab -->
+                            <div id="tab2" class="tab-pane fade in active">
+                                <div class="products-slick" data-nav="#slick-nav-4">
+
+
+
+                                    @foreach ($tools as $tool)
+                                        <div class="product" style="width: 10px !important; ">
+                                            <a href="{{ route('product_details') }}">
+                                                <div class="product-img">
+                                                    <img src="{{ $tool->image }}" alt="{{ $tool->name }}" style="height: 15em;">
+                                                    {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
+                                                    <div class="product-label"></div>
                                                 </div>
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product ">
-                                        <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="" style="height: 15em;">
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-                                                <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt=""
-                                                        style="width: 30px;" class="micon">
+                                                <div class="product-body">
+                                                    <h3 class="product-name"><a href="#">{{ $tool->name }}</a>
+                                                    </h3>
+                                                    <div class="lower">
+                                                        <div class="add-to-cart-btn">
+                                                            <span>Add</span>
+                                                            <img src="./img/cart_icon.jpg" alt=""
+                                                                style="width: 30px;" class="micon">
+                                                        </div>
+                                                        <h6 class="product-price">{{ $tool->price }}</h6>
+                                                    </div>
                                                 </div>
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
+                                            </a>
                                         </div>
-                                    </div>
+                                    @endforeach
 
+                                
+
+
+                                  
+                                  
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>

@@ -278,7 +278,7 @@
         /* Distribute space evenly */
         align-items: center;
         /* Align vertically */
-        padding: 20px 50px;
+        padding: 5px 5px;
         background-color: white;
 
     }
@@ -408,7 +408,7 @@
         }
 
         .header {
-            padding: 10px 10px;
+          
             margin: 0px 0px;
             padding-bottom: 0px !important;
             display: flex;
