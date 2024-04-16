@@ -9,9 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $casts = [
-        'description' => 'array',
-    ];
+    
     protected $fillable = [
         'name',
         'description',
@@ -21,6 +19,12 @@ class Product extends Model
         'cooperative_id',
         'status',
     ];
+
+    //cast the description to an array
+    protected $casts = [
+        'description' => 'array',
+    ];
+
 
     //a product belongs to a category
     public function category()
@@ -32,5 +36,11 @@ class Product extends Model
     public function cooperative()
     {
         return $this->belongsTo(Cooperative::class);
+    }
+
+    public function getImageUrlAttribute($value)
+    {
+        $imagePath = $this->attributes['image'];
+        return $imagePath ? "http://localhost:8001/storage/{$imagePath}" : null;
     }
 }

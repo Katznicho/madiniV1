@@ -14,39 +14,29 @@ class WelcomeController extends Controller
     {
         //
 
-        $products = [
-            (object)[
-                'name' => 'Lake Sand',
-                'price' => 'UGX 120,000',
-                'image' => 'img/lake sand.png',
-                'description' => 'This is a product description',
-            ],
-            (object)[
-                'name' => 'Nyanja Sand',
-                'price' => 'UGX 150,000',
-                'image' => 'img/Plaster Sand.png',
-                'description' => 'This is a product description',
-            ],
-            (object)[
-                'name' => 'Lwera Sand',
-                'price' => 'UGX 150,000',
-                'image' => 'img/Lwera Sand.png',
-                'description' => 'This is a product description',
-            ],
-            // (object)[
-            //     'name' => 'Sand',
-            //     'price' => 'UGX 120,000',
-            //     'image' => 'img/download.jpeg',
-            //     'description' => 'This is a product description',
-            // ],
-            // (object)[
-            //     'name' => 'Sand',
-            //     'price' => 'UGX 120,000',
-            //     'image' => 'img/download.jpeg',
-            //     'description' => 'This is a product description',
-            
-            // ]
-        ];
+        $products = Product::where("category_id", 1)->get();
+        // dd($products[0]->image_url);
+
+        // $products = [
+        //     (object)[
+        //         'name' => 'Lake Sand',
+        //         'price' => 'UGX 120,000',
+        //         'image' => 'img/lake sand.png',
+        //         'description' => 'This is a product description',
+        //     ],
+        //     (object)[
+        //         'name' => 'Nyanja Sand',
+        //         'price' => 'UGX 150,000',
+        //         'image' => 'img/Plaster Sand.png',
+        //         'description' => 'This is a product description',
+        //     ],
+        //     (object)[
+        //         'name' => 'Lwera Sand',
+        //         'price' => 'UGX 150,000',
+        //         'image' => 'img/Lwera Sand.png',
+        //         'description' => 'This is a product description',
+        //     ],
+        // ];
 
 
         $valueAddedProducts = [
@@ -184,6 +174,7 @@ class WelcomeController extends Controller
     public function show(string $id)
     {
         //
+
     }
 
     /**

@@ -22,7 +22,9 @@ Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 Route::resource("products", ProductController::class);
 // Route::get("products/{id}", [ProductController::class, "show"])->name("products.show");
 Route::get("products", [ProductController::class, "index"])->name("product_details");
-Route::get("productCheckout", [ProductController::class , "productCheckout"])->name("productCheckout");
+// Route::get("productCheckout", [ProductController::class , "productCheckout"])->name("productCheckout");
+Route::get("productCheckout/{product}", [ProductController::class , "productCheckout"])->name("productCheckout");
+
 Route::post('placeOrder', [PlaceOrderController::class, 'placeOrder'])->name('placeOrder');
 
 Route::get('/dashboard', function () {

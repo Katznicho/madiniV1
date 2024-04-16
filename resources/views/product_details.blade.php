@@ -52,7 +52,7 @@
                 <div class="col-md-4 col-md-push-1">
                     <div id="product-main-img">
                         <!-- <div class="product-preview"> -->
-                        <img src="./img/download.jpeg" alt="">
+                        <img src="{{$product->image_url}}" alt="">
                         <!-- <div class="add-to-cart-btn">
                                 <span>Add</span> -->
                         <!-- <i class="fa fa-shopping-cart"></i> -->
@@ -71,7 +71,7 @@
 
 
                     </div> --}}
-                    <h3 class="product-price" style="text-align: center;">UGX 120,000</h3>
+                    <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
                 </div>
                 <!-- /Product main img -->
 
@@ -86,7 +86,7 @@
                     <div class="product-details">
                         <h3 class="title" style="text-decoration: underline;">Properties</h3>
                         <hr>
-                        <h2 class="product-name" style="font-size: 12px;">Lwera Sand</h2>
+                        <h2 class="product-name" style="font-size: 12px;">{{ $product->name }}</h2>
 
                         <div>
                             <!-- <h3 class="product-price">UGX 120,000</h3> -->
@@ -98,30 +98,22 @@
 
                             <span class="product-available" style="font-size: 10px !important;">Aggregate Size</span>
 
-
-
                         </div>
                         <hr>
                         <!-- <p>25mm aggregate size lake sand</p> -->
 
-
-
                         <div class="add-to-cart buttons">
-                            <span> Ideal for Plaster: Locally sourced from Lwera Masaka.</span>
-                            <!-- <div class="qty-label">
-                                Qty
-                                <div class="input-number">
-                                    <input type="number">
-                                    <span class="qty-up">+</span>
-                                    <span class="qty-down">-</span>
-                                </div>
-                            </div> -->
-                            
-                            <button class="add-to-cart-btn" ><i class="fa fa-shopping-cart" ></i> add to cart</button>
-                            {{-- add space between buttons --}}
-                            <div style="margin-right: 10px;"></div>
-                            <a class="add-to-cart-btn" href="{{ route('productCheckout') }}"><i class="fa fa-shopping-cart" ></i> Buy Now</a>
-                        </div>
+    <span>{{ $product->description }}</span>
+    
+    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+    <div style="margin-right: 10px;"></div>
+    <a class="add-to-cart-btn" href="{{ route('productCheckout', $product) }}"><i class="fa fa-shopping-cart"></i> Buy Now</a>
+    
+    <!-- Back option -->
+    <a class="back-btn" href="{{ route('welcome') }}">Back</a>
+</div>
+
 
 
 
@@ -159,7 +151,7 @@
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                             class="micon"> -->
                                                     </div>
-                                                    <h6 class="product-price" 1>UGX 120,000</h6>
+                                                    <h6 class="product-price" 1>UGX {{ number_format($product->price) }}</h6>
 
 
                                                 </div>
@@ -233,7 +225,9 @@
                                     <div class="col-md-12">
                                         <p>
                                             <!-- take about sand as a construction material -->
-                                           We have the best granular sand for your building needs both for making cementing and your building needs. Our sand comes from Lwera mines and is of the best quality. We have it at various measurements and delivery is on demand and by booking.
+                                            {{
+                                                $product->description
+                                            }}
                                         </p>
                                     </div>
                                 </div>

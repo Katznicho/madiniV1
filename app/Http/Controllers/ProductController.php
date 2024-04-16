@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,8 +16,8 @@ class ProductController extends Controller
         return view("product_details");
     }
 
-     public function productCheckout(Request $request){
-        return view("checkout");
+     public function productCheckout(Product $product){
+        return view("checkout", compact('product'));
      }
     /**
      * Show the form for creating a new resource.
@@ -38,8 +39,9 @@ class ProductController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
-        //
+    {   
+        $product =  Product::find($id);
+        return view("product_details", compact('product'));
         //return view("")
     }
 

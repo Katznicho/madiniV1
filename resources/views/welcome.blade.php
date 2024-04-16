@@ -70,14 +70,14 @@
                             
                                     @foreach ($products as $product)
                                         <div class="product" >
-                                            <a href="{{ route('product_details') }}">
+                                            <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
-                                                    <img src="{{ $product->image }}" alt="{{ $product->name }}" style="height: 15em;">
+                                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">{{ $product->name }}</a>
+                                                    <h3 class="product-name"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -85,7 +85,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ $product->price }}</h6>
+                                                        <h6 class="product-price">{{ number_format($product->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>

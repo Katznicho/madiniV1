@@ -162,7 +162,9 @@
                   <form method="POST" action="{{ route('placeOrder') }}">
 
                     @csrf
-
+                     <input type="hidden" name="product_id" value="{{ $product->id }}"/>
+					 <input type="hidden" name="product_name" value="{{ $product->name }}"/>
+					 <input type="hidden" name="product_price" value="{{ $product->price }}"/>
 					<div class="col-md-5 order-details">
 						<div class="section-title text-center">
 							<h3 class="title">Your Order</h3>
@@ -174,12 +176,8 @@
 							</div>
 							<div class="order-products">
 								<div class="order-col">
-									<div>1x Product Name Goes Here</div>
-									<div>UGX98,000</div>
-								</div>
-								<div class="order-col">
-									<div>2x Product Name Goes Here</div>
-									<div>UGX 98,000</div>
+									<div>{{ $product->name }}</div>
+									<div>UGX {{ number_format($product->price)}}</div>
 								</div>
 							</div>
 							<div class="order-col">
@@ -188,10 +186,10 @@
 							</div>
 							<div class="order-col">
 								<div><strong>TOTAL</strong></div>
-								<div><strong class="order-total">UGX 294,000</strong></div>
+								<div><strong class="order-total">UGX {{ number_format($product->price) }}</strong></div>
 							</div>
 						</div>
-						<div class="payment-method">
+						{{-- <div class="payment-method">
 							<div class="input-radio">
 								<input type="radio" name="payment" id="payment-1">
 								<label for="payment-1">
@@ -222,7 +220,7 @@
 									<p>Pay us using paypal online aggregation</p>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 						<div class="input-checkbox">
 							<input type="checkbox" id="terms">
 							<label for="terms">
