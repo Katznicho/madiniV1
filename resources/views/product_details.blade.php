@@ -50,7 +50,7 @@
             <div class="row">
                 <!-- Product main img -->
                 <div class="col-md-4 col-md-push-1">
-                    <div id="product-main-img">
+                    <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
                         <img src="{{$product->image_url}}" alt="">
                         <!-- <div class="add-to-cart-btn">
@@ -84,7 +84,7 @@
                 <!-- Product details -->
                 <div class="col-md-5">
                     <div class="product-details">
-                        <h3 class="title" style="text-decoration: underline;">Properties</h3>
+                        <h3 class="title" style="text-decoration: underline;"></h3>
                         <hr>
                         <h2 class="product-name" style="font-size: 12px;">{{ $product->name }}</h2>
 
@@ -145,7 +145,7 @@
                                                 <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                                 <div class="lower">
 
-                                                    <div class="add-to-cart-btn">
+                                                    <div class="add-to-cart-btn similar-cart" >
                                                         <span>Add</span>
                                                         <i class="fa fa-shopping-cart"></i>
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
@@ -173,7 +173,7 @@
                                                 <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                                 <div class="lower">
 
-                                                    <div class="add-to-cart-btn">
+                                                    <div class="add-to-cart-btn similar-cart">
                                                         <span>Add</span>
                                                         <i class="fa fa-shopping-cart"></i>
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
@@ -482,12 +482,12 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                <div class="add-to-cart-btn">
+                                                {{-- <div class="add-to-cart-btn">
                                                     <span>Add</span>
                                                     <!-- <i class="fa fa-shopping-cart"></i> -->
                                                     <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                         class="micon">
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -506,12 +506,12 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                <div class="add-to-cart-btn">
+                                                {{-- <div class="add-to-cart-btn">
                                                     <span>Add</span>
                                                     <!-- <i class="fa fa-shopping-cart"></i> -->
                                                     <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                         class="micon">
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -530,12 +530,12 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                <div class="add-to-cart-btn">
+                                                {{-- <div class="add-to-cart-btn">
                                                     <span>Add</span>
                                                     <!-- <i class="fa fa-shopping-cart"></i> -->
                                                     <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                         class="micon">
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -554,12 +554,12 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                <div class="add-to-cart-btn">
+                                                {{-- <div class="add-to-cart-btn">
                                                     <span>Add</span>
                                                     <!-- <i class="fa fa-shopping-cart"></i> -->
                                                     <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                         class="micon">
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -579,12 +579,12 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                <div class="add-to-cart-btn">
+                                                {{-- <div class="add-to-cart-btn" >
                                                     <span>Add</span>
                                                     <!-- <i class="fa fa-shopping-cart"></i> -->
                                                     <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                         class="micon">
-                                                </div>
+                                                </div> --}}
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -627,6 +627,10 @@
     justify-content: space-between;
     /* margin: 20%; */
 
+}
+
+.similar-cart {
+    display: none !important;
 }
 
 /* on small screens display vertical */

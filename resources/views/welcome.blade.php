@@ -459,7 +459,8 @@
 
 
     .add-to-cart-btn {
-        display: flex;
+       
+        display: none;
         /* Allow elements to sit side-by-side */
         align-items: center;
         /* Vertically center content */
@@ -535,6 +536,7 @@
 
     .add-to-cart-btn span {
         margin-right: 5px;
+        display: none;
         /* Add spacing between text and icon */
     }
 
