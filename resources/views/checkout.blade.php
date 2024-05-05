@@ -255,4 +255,24 @@
 <script src="{{ asset('js/main.js') }}"></script>
 
 	</body>
+
+
+	<style>
+	
+       .m-search {
+        display: flex;
+      
+    
+        float: right !important;
+        padding: 2% !important;
+        margin: 0% !important;
+    }
+
+    .m-search-icon {
+        display: none;
+   
+        float: right !important;
+    }
+
+	</style>
 </html>

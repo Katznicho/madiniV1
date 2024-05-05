@@ -12,35 +12,35 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-<!-- Bootstrap -->
-<link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
-<!-- Slick -->
-<link type="text/css" rel="stylesheet" href="{{ asset('css/slick.css') }}" />
-<link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }}" />
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/slick.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }}" />
 
-<!-- nouislider -->
-<link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }}" />
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }}" />
 
-<!-- Font Awesome Icon -->
-<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
-<!-- Custom stylesheet -->
-<link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <!-- Custom stylesheet -->
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
 
 <body>
 
     <!-- HEADER -->
-  @include('layouts.header')
+    @include('layouts.header')
 
     <!-- SECTION -->
     <div class="section">
@@ -52,7 +52,7 @@
                 <div class="col-md-4 col-md-push-1">
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
-                        <img src="{{$product->image_url}}" alt="">
+                        <img src="{{ $product->image_url }}" alt="">
                         <!-- <div class="add-to-cart-btn">
                                 <span>Add</span> -->
                         <!-- <i class="fa fa-shopping-cart"></i> -->
@@ -66,8 +66,8 @@
                     </div>
                     {{-- <div class="add-to-cart-btn">
                         <span>Add</span> --}}
-                        <!-- <i class="fa fa-shopping-cart"></i> -->
-                        {{-- <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
+                    <!-- <i class="fa fa-shopping-cart"></i> -->
+                    {{-- <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
 
 
                     </div> --}}
@@ -103,16 +103,17 @@
                         <!-- <p>25mm aggregate size lake sand</p> -->
 
                         <div class="add-to-cart buttons">
-    <span>{{ $product->description }}</span>
-    
-    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            <span>{{ $product->description }}</span>
 
-    <div style="margin-right: 10px;"></div>
-    <a class="add-to-cart-btn" href="{{ route('productCheckout', $product) }}"><i class="fa fa-shopping-cart"></i> Buy Now</a>
-    
-    <!-- Back option -->
-    <a class="back-btn" href="{{ route('welcome') }}">Back</a>
-</div>
+                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+                            <div style="margin-right: 10px;"></div>
+                            <a class="add-to-cart-btn" href="{{ route('productCheckout', $product) }}"><i
+                                    class="fa fa-shopping-cart"></i> Buy Now</a>
+
+                            <!-- Back option -->
+                            <a class="back-btn" href="{{ route('welcome') }}">Back</a>
+                        </div>
 
 
 
@@ -145,13 +146,14 @@
                                                 <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                                 <div class="lower">
 
-                                                    <div class="add-to-cart-btn similar-cart" >
+                                                    <div class="add-to-cart-btn similar-cart">
                                                         <span>Add</span>
                                                         <i class="fa fa-shopping-cart"></i>
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                             class="micon"> -->
                                                     </div>
-                                                    <h6 class="product-price" 1>UGX {{ number_format($product->price) }}</h6>
+                                                    <h6 class="product-price" 1>UGX
+                                                        {{ number_format($product->price) }}</h6>
 
 
                                                 </div>
@@ -163,7 +165,7 @@
 
 
                                         <!-- product -->
-                                        <div class="product s product1"  style = "margin-right: 1rem !important;">
+                                        <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
                                                 <img src="./img/download.jpeg" alt="">
                                                 <div class="product-label">
@@ -225,9 +227,7 @@
                                     <div class="col-md-12">
                                         <p>
                                             <!-- take about sand as a construction material -->
-                                            {{
-                                                $product->description
-                                            }}
+                                            {{ $product->description }}
                                         </p>
                                     </div>
                                 </div>
@@ -239,12 +239,12 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <p>
-                                            <ul>
-                                                <li>Granular size: 25mm</li>
-                                                <li>Source: Lwera Masaka</li>
-                                                <li>Delivery: On demand</li>
-                                                <li>Booking: Required</li>
-                                            </ul>
+                                        <ul>
+                                            <li>Granular size: 25mm</li>
+                                            <li>Source: Lwera Masaka</li>
+                                            <li>Delivery: On demand</li>
+                                            <li>Booking: Required</li>
+                                        </ul>
                                         </p>
                                     </div>
                                 </div>
@@ -372,7 +372,8 @@
                                                     </div>
                                                     <div class="review-body">
                                                         <p>
-                                                            They offered me good buiding advice, the team has great experts, they helped guide me on quality building standards
+                                                            They offered me good buiding advice, the team has great
+                                                            experts, they helped guide me on quality building standards
                                                         </p>
                                                     </div>
                                                 </li>
@@ -390,8 +391,10 @@
                                                     </div>
                                                     <div class="review-body">
                                                         <p>
-                                                            I was able to get the best sand for my building needs, the team was very helpful and the delivery was on time.
-                                                            I will surely be using them for all my building needs and highly recommmend them.
+                                                            I was able to get the best sand for my building needs, the
+                                                            team was very helpful and the delivery was on time.
+                                                            I will surely be using them for all my building needs and
+                                                            highly recommmend them.
                                                         </p>
                                                     </div>
                                                 </li>
@@ -417,16 +420,16 @@
                                                 <div class="input-rating">
                                                     <span>Your Rating: </span>
                                                     <div class="stars">
-                                                        <input id="star5" name="rating" value="5" type="radio"><label
-                                                            for="star5"></label>
-                                                        <input id="star4" name="rating" value="4" type="radio"><label
-                                                            for="star4"></label>
-                                                        <input id="star3" name="rating" value="3" type="radio"><label
-                                                            for="star3"></label>
-                                                        <input id="star2" name="rating" value="2" type="radio"><label
-                                                            for="star2"></label>
-                                                        <input id="star1" name="rating" value="1" type="radio"><label
-                                                            for="star1"></label>
+                                                        <input id="star5" name="rating" value="5"
+                                                            type="radio"><label for="star5"></label>
+                                                        <input id="star4" name="rating" value="4"
+                                                            type="radio"><label for="star4"></label>
+                                                        <input id="star3" name="rating" value="3"
+                                                            type="radio"><label for="star3"></label>
+                                                        <input id="star2" name="rating" value="2"
+                                                            type="radio"><label for="star2"></label>
+                                                        <input id="star1" name="rating" value="1"
+                                                            type="radio"><label for="star1"></label>
                                                     </div>
                                                 </div>
                                                 <button class="primary-btn">Submit</button>
@@ -607,195 +610,214 @@
     </div>
     <!-- /SECTION -->
 
- @include('layouts.footer')
-<!-- jQuery Plugins -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/slick.min.js') }}"></script>
-<script src="{{ asset('js/nouislider.min.js') }}"></script>
-<script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+    @include('layouts.footer')
+    <!-- jQuery Plugins -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/nouislider.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
 </body>
 
 <style>
-
-
-.buttons {
-    /* either they are positioned horizontally on same line */
-    display: flex;
-    justify-content: space-between;
-    /* margin: 20%; */
-
-}
-
-.similar-cart {
-    display: none !important;
-}
-
-/* on small screens display vertical */
-@media (max-width: 600px) {
     .buttons {
-        flex-direction: column;
-        /* margin : 10%; */
-        /* padding: 10%; */
-        /* add space between the buttons */
-        justify-self: unset;
+        /* either they are positioned horizontally on same line */
+        display: flex;
         justify-content: space-between;
-        justify-items: center;
+        /* margin: 20%; */
 
     }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.add-to-cart-btn {
-    display: flex;
-    /* Allow elements to sit side-by-side */
-    align-items: left !important;
-
-    text-align: left !important;
-    /* Vertically center content */
-
-
-    padding: 5px 10px;
-    /* Add some padding */
-    border: 2px solid #ddd;
-    /* Add a border on right and bottom */
-
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-    width: 20rem !important;
-    height: 5rem !important;
-}
-
-.product {
- 
-    /* margin-right: 10rem !important; */
-    /* Add some padding */
-    border: 3px solid #ddd;
-    /* Add a border on right and bottom */
-    border-top: none !important;
-    /* Remove border on top */
-    border-left: none !important;
-    /* Remove border on left */
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-}
-
-
-.sproduct {
- 
- /* margin-right: 10rem !important; */
- /* Add some padding */
- border: 3px solid #ddd;
- /* Add a border on right and bottom */
- border-top: none !important;
- /* Remove border on top */
- border-left: none !important;
- /* Remove border on left */
- border-radius: 3px;
- /* Add rounded corners */
- cursor: pointer;
- /* Indicate clickable button */
-}
-
-@media only screen and (max-width: 600px) {
-    .sproduct {
-        margin-right: 10rem !important;
-    /* Add some padding */
-    border: 3px solid #ddd;
-    /* Add a border on right and bottom */
-    border-top: none !important;
-    /* Remove border on top */
-    border-left: none !important;
-    /* Remove border on left */
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-    width: 100%;
+    .similar-cart {
+        display: none !important;
     }
 
-    .sproduct .product-img {
-        width: 100%;
-    }
-}
+    /* on small screens display vertical */
+    @media (max-width: 600px) {
+        .buttons {
+            flex-direction: column;
+            /* margin : 10%; */
+            /* padding: 10%; */
+            /* add space between the buttons */
+            justify-self: unset;
+            justify-content: space-between;
+            justify-items: center;
 
-/* small screens keep margin 0 for product */
-@media only screen and (max-width: 600px) {
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .add-to-cart-btn {
+        display: flex;
+        /* Allow elements to sit side-by-side */
+        align-items: left !important;
+
+        text-align: left !important;
+        /* Vertically center content */
+
+
+        padding: 5px 10px;
+        /* Add some padding */
+        border: 2px solid #ddd;
+        /* Add a border on right and bottom */
+
+        border-radius: 3px;
+        /* Add rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+        width: 20rem !important;
+        height: 5rem !important;
+    }
+
     .product {
-        margin-right: 0 !important;
+
+        /* margin-right: 10rem !important; */
+        /* Add some padding */
+        border: 3px solid #ddd;
+        /* Add a border on right and bottom */
+        border-top: none !important;
+        /* Remove border on top */
+        border-left: none !important;
+        /* Remove border on left */
+        border-radius: 3px;
+        /* Add rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
     }
-}
-
-.lower {
-    justify-self: space-between;
-    display: flex;
-    /* Allow elements to sit side-by-side */
-}
-
-.product-name {
-    margin-right: 10px;
-    /* Add spacing between image and text */
-    text-align: left;
-    /* Center text */
-}
 
 
+    .sproduct {
+
+        /* margin-right: 10rem !important; */
+        /* Add some padding */
+        border: 3px solid #ddd;
+        /* Add a border on right and bottom */
+        border-top: none !important;
+        /* Remove border on top */
+        border-left: none !important;
+        /* Remove border on left */
+        border-radius: 3px;
+        /* Add rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+    }
+
+    @media only screen and (max-width: 600px) {
+        .sproduct {
+            margin-right: 10rem !important;
+            /* Add some padding */
+            border: 3px solid #ddd;
+            /* Add a border on right and bottom */
+            border-top: none !important;
+            /* Remove border on top */
+            border-left: none !important;
+            /* Remove border on left */
+            border-radius: 3px;
+            /* Add rounded corners */
+            cursor: pointer;
+            /* Indicate clickable button */
+            width: 100%;
+        }
+
+        .sproduct .product-img {
+            width: 100%;
+        }
+    }
+
+    /* small screens keep margin 0 for product */
+    @media only screen and (max-width: 600px) {
+        .product {
+            margin-right: 0 !important;
+        }
+    }
+
+    .lower {
+        justify-self: space-between;
+        display: flex;
+        /* Allow elements to sit side-by-side */
+    }
+
+    .product-name {
+        margin-right: 10px;
+        /* Add spacing between image and text */
+        text-align: left;
+        /* Center text */
+    }
 
 
-.add-to-cart-btn {
-    display: flex;
-    /* Allow elements to sit side-by-side */
-    align-items: center;
-    /* Vertically center content */
-    padding: 5px 10px;
-    margin-right: 5px;
-    height: 6rem;
-    width: 10rem ;
-    /* Add some padding */
-    border: 2px solid #ddd;
-    /* Add a border on right and bottom */
 
-    border-radius: 3px;
-    /* Add rounded corners */
-    cursor: pointer;
-    /* Indicate clickable button */
-    /* width: 50%; */
-}
 
-.product-price {
-    /* align items and position them on the same line */
-    /* display: flex; */
-    /* align-items: center; */
-    justify-content: space-between;
-    /* make font light */
-    /* font-weight: 300; */
-    font-size: 1.5rem !important;
-    margin-top: 30px;
-    margin-left: 10px;
+    .add-to-cart-btn {
+        display: flex;
+        /* Allow elements to sit side-by-side */
+        align-items: center;
+        /* Vertically center content */
+        padding: 5px 10px;
+        margin-right: 5px;
+        height: 6rem;
+        width: 10rem;
+        /* Add some padding */
+        border: 2px solid #ddd;
+        /* Add a border on right and bottom */
 
-}
+        border-radius: 3px;
+        /* Add rounded corners */
+        cursor: pointer;
+        /* Indicate clickable button */
+        /* width: 50%; */
+    }
+
+    .product-price {
+        /* align items and position them on the same line */
+        /* display: flex; */
+        /* align-items: center; */
+        justify-content: space-between;
+        /* make font light */
+        /* font-weight: 300; */
+        font-size: 1.5rem !important;
+        margin-top: 30px;
+        margin-left: 10px;
+
+    }
+
+ 
+
+       .m-search {
+        display: flex;
+      
+    
+        float: right !important;
+        padding: 2% !important;
+        margin: 0% !important;
+    }
+
+    .m-search-icon {
+        display: none;
+   
+        float: right !important;
+    }
+
+    
 </style>
+
+
 
 
 

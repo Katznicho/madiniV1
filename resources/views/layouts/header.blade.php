@@ -243,7 +243,7 @@
         border: 1px solid #ccc;
         border-radius: 30px;
         padding: 3%;
-        margin-left: 8%;
+        margin-left: 2%;
       
         /* Add curved corners */
         /* height: 2rem; */
@@ -270,7 +270,7 @@
         width: 0 !important;
         position: relative;
         height: 14px;
-        margin-right: 10px !important;
+        margin-right: 5px !important;
         color: black !important;
         padding: 15px !important;
         margin-bottom: 60px !important;
@@ -300,7 +300,7 @@
         /* Adjust width as needed */
         height: auto;
         /* Maintain aspect ratio */
-        margin-left: 11.5%;
+        margin-left: 12.2%;
         cursor: pointer;
     }
 

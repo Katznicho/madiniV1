@@ -65,19 +65,21 @@
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">
-                                <div class="products-slick" data-nav="#slick-nav-1" >
+                                <div class="products-slick" data-nav="#slick-nav-1">
 
-                            
+
                                     @foreach ($products as $product)
-                                        <div class="product" >
+                                        <div class="product">
                                             <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
-                                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="height: 15em;">
+                                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                                        style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
+                                                    <h3 class="product-name"><a
+                                                            href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -85,7 +87,8 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ number_format($product->price) }}</h6>
+                                                        <h6 class="product-price">{{ number_format($product->price) }}
+                                                        </h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -139,12 +142,14 @@
                                         <div class="product" style="width: 10px !important; ">
                                             <a href="{{ route('product_details') }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $valueAddedProduct->image }}" alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
+                                                    <img src="{{ $valueAddedProduct->image }}"
+                                                        alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">{{ $valueAddedProduct->name }}</a>
+                                                    <h3 class="product-name"><a
+                                                            href="#">{{ $valueAddedProduct->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -159,11 +164,11 @@
                                         </div>
                                     @endforeach
 
-                                
 
 
-                                  
-                                  
+
+
+
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>
@@ -180,7 +185,7 @@
     <!-- /SECTION -->
 
 
-        <!-- SECTION -->
+    <!-- SECTION -->
     <div class="section">
         <!-- container -->
         <div class="container">
@@ -189,7 +194,7 @@
 
                 <!-- section title -->
                 <div class="col-md-12">
-                <h3 class="" style="text-decoration: underline;">Hardware</h3>
+                    <h3 class="" style="text-decoration: underline;">Hardware</h3>
                     <div class="section-title">
                         <h3 class="title">Safety</h3>
 
@@ -211,12 +216,14 @@
                                         <div class="product" style="width: 10px !important; ">
                                             <a href="{{ route('product_details') }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $safetyProduct->image }}" alt="{{ $safetyProduct->name }}" style="height: 15em;">
+                                                    <img src="{{ $safetyProduct->image }}"
+                                                        alt="{{ $safetyProduct->name }}" style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">{{ $safetyProduct->name }}</a>
+                                                    <h3 class="product-name"><a
+                                                            href="#">{{ $safetyProduct->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -231,11 +238,11 @@
                                         </div>
                                     @endforeach
 
-                                
 
 
-                                  
-                                  
+
+
+
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>
@@ -254,7 +261,7 @@
 
 
 
-        <!-- SECTION -->
+    <!-- SECTION -->
     <div class="section">
         <!-- container -->
         <div class="container">
@@ -284,12 +291,14 @@
                                         <div class="product" style="width: 10px !important; ">
                                             <a href="{{ route('product_details') }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $tool->image }}" alt="{{ $tool->name }}" style="height: 15em;">
+                                                    <img src="{{ $tool->image }}" alt="{{ $tool->name }}"
+                                                        style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">{{ $tool->name }}</a>
+                                                    <h3 class="product-name"><a
+                                                            href="#">{{ $tool->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -304,11 +313,11 @@
                                         </div>
                                     @endforeach
 
-                                
 
 
-                                  
-                                  
+
+
+
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>
@@ -338,41 +347,54 @@
 </body>
 
 <style>
-           /* Define styles for small screens */
-        @media only screen and (max-width: 768px) {
-            .cats li {
-                display: inline-block; /* Display li items horizontally */
-                margin-right: 10px; /* Add some spacing between items */
-                color: black;
-            
-            }
+    /* Define styles for small screens */
+    @media only screen and (max-width: 768px) {
+        .cats li {
+            display: inline-block;
+            /* Display li items horizontally */
+            margin-right: 10px;
+            /* Add some spacing between items */
+            color: black;
 
-            .product {
-                width: 70%; /* Set product width to fill 70% of the screen */
-                margin: 0 auto; /* Center products horizontally */
-                margin-bottom: 20px; /* Add some bottom margin */
-            }
-
-            .products-slick {
-                display: flex; /* Use flexbox for product layout */
-                flex-wrap: wrap; /* Allow products to wrap to the next row */
-                justify-content: space-between; /* Distribute products evenly */
-            }
-
-            .product-body {
-                width: 100%; /* Make product body take full width */
-            }
-
-            .product-name {
-                font-size: 1.8rem; /* Decrease font size for product name */
-            }
-
-            .product-price {
-                font-size: 1.2rem; /* Decrease font size for product price */
-                margin-top: 10px; /* Reduce top margin for price */
-                margin-left: 0; /* Remove left margin for price */
-            }
         }
+
+        .product {
+            width: 70%;
+            /* Set product width to fill 70% of the screen */
+            margin: 0 auto;
+            /* Center products horizontally */
+            margin-bottom: 20px;
+            /* Add some bottom margin */
+        }
+
+        .products-slick {
+            display: flex;
+            /* Use flexbox for product layout */
+            flex-wrap: wrap;
+            /* Allow products to wrap to the next row */
+            justify-content: space-between;
+            /* Distribute products evenly */
+        }
+
+        .product-body {
+            width: 100%;
+            /* Make product body take full width */
+        }
+
+        .product-name {
+            font-size: 1.8rem;
+            /* Decrease font size for product name */
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            /* Decrease font size for product price */
+            margin-top: 10px;
+            /* Reduce top margin for price */
+            margin-left: 0;
+            /* Remove left margin for price */
+        }
+    }
 
 
 
@@ -459,7 +481,7 @@
 
 
     .add-to-cart-btn {
-       
+
         display: none;
         /* Allow elements to sit side-by-side */
         align-items: center;
