@@ -52,7 +52,7 @@
                 <div class="col-md-4 col-md-push-1">
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
-                        <img src="{{ $product->image_url }}" alt="">
+                        {{-- <img src="{{ $product->image_url }}" alt=""> --}}
                         <!-- <div class="add-to-cart-btn">
                                 <span>Add</span> -->
                         <!-- <i class="fa fa-shopping-cart"></i> -->
