@@ -103,7 +103,7 @@
                         <!-- <p>25mm aggregate size lake sand</p> -->
 
                         <div class="add-to-cart buttons">
-                            <span>{{ $product->description }}</span>
+                            {{-- <span>{{ $product->description }}</span> --}}
 
                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
 

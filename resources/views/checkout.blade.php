@@ -82,9 +82,49 @@
                             <h3 class="title">Your Order Details</h3>
                         </div>
                         <!-- Add product details here -->
-                        <img src="{{ $product->image_url }}" alt="{{ $product->name }}" />
-                        <h3>{{ $product->name }}</h3>
-                        <h4>UGX {{ number_format($product->price) }}</h4>
+                        {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
+                        <p style="font-weight: 900;"> Quantity:</p>
+                        <p>1 x {{ $product->name }}</p>
+                        <a href="#" class="  float-right"
+                            style="float: right; text-decoration: underline;">Edit</a>
+                        {{-- add edit button right aligned --}}
+                        <p style="font-weight: 900;"> Deliver To:</p>
+                        <p>Muyenga {{ $product->name }}</p>
+                        {{-- add edit button right aligned --}}
+                        <a href="#" class="  float-right"
+                            style="float: right; text-decoration: underline;">Edit</a>
+                        <!-- Shiping Details -->
+                        <div class="shiping-details">
+                            <div class="section-title">
+                                <h3 class="title">Address Details</h3>
+                            </div>
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="shiping-address">
+                                <label for="shiping-address">
+                                    <span></span>
+                                    Ship to a different address?
+                                </label>
+                                <div class="caption">
+                                    {{-- <div class="form-group">
+										<input class="input" type="text" name="first-name" placeholder="First Name">
+									</div>
+									<div class="form-group">
+										<input class="input" type="text" name="last-name" placeholder="Last Name">
+									</div> --}}
+                                    <div class="form-group">
+                                        <input class="input" type="email" name="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input" type="text" name="address" placeholder="Address">
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Shiping Details -->
+
                     </div>
                     <!-- /Product Details -->
 
@@ -97,6 +137,20 @@
                         </div>
                         <!-- Add Pay with buttons (Google Pay, Visa, Mastercard) here -->
                         <div class="payment-method">
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-google">
+                                <label for="payment-google">
+                                    <span></span>
+                                    MTN Momo
+                                </label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-google">
+                                <label for="payment-google">
+                                    <span></span>
+                                    Airtel Money
+                                </label>
+                            </div>
                             <div class="input-radio">
                                 <input type="radio" name="payment" id="payment-google">
                                 <label for="payment-google">
@@ -120,12 +174,14 @@
                             </div>
                         </div>
 
-                        <div class="">
 
-                            <button type="submit" class="primary-btn order-submit"
-                                style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                        <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
+                            <div class="">
+                                <button type="submit" class="primary-btn order-submit"
+                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                            </div>
+                        </form>
 
-                        </div>
                     </div>
                     <!-- /Pay with -->
 
@@ -149,16 +205,40 @@
                         </div>
                     </div>
                     <!-- /Phone number input -->
+
+                    <!-- Billing Details -->
+                    <div class="billing-details">
+
+
+                        <div class="form-group">
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="create-account">
+                                <label for="create-account">
+                                    <span></span>
+                                    Create Account?
+                                </label>
+                                <div class="caption">
+                                    <p>Create an account with Madini to get customized construction experience from our
+                                        experts and authentic building materials.</p>
+                                    <input class="input" type="password" name="password"
+                                        placeholder="Enter Your Password">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /Billing Details -->
                 </div>
                 <!-- /Left Column -->
 
                 <!-- Right Column -->
                 <div class="col-md-6 ">
                     <!-- Order Details -->
-                    <form method="POST" action="{{ route('placeOrder') }}" class="order-details">
+                    <form method="POST" action="{{ route('placeOrder') }}" class="">
 
                         {{-- add dummy image --}}
-                        <img src="{{ $product->image_url }}" style="justify-content: center;"
+                        {{-- <img src="{{ $product->image_url }}" style="justify-content: center;"
+                            alt="{{ $product->name }} " /> --}}
+                        <img src="{{ asset('img/download.jpeg') }}" style="justify-content: center;"
                             alt="{{ $product->name }} " />
                         {{-- add product name --}}
                         <h3>{{ $product->name }}</h3>
@@ -198,7 +278,9 @@
                             </label>
                         </div>
                         <!-- "Place order" button -->
-
+						      <button type="submit" class="primary-btn order-submit"
+                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                          
                     </form>
                     <!-- /Order Details -->
 
@@ -209,15 +291,17 @@
                         </div>
                         <!-- Add Continue with buttons (Google, Facebook, Apple) here -->
                         <div class="continue-with-buttons">
-                            <button type="button" class="btn-google">Google</button>
-                            <button type="button" class="btn-facebook">Facebook</button>
-                            <button type="button" class="btn-apple">Apple</button>
+                            <button type="button" class="btn-google button">Google</button>
+                            <button type="button" class="btn-facebook button">Facebook</button>
+                            <button type="button" class="btn-apple button">Apple</button>
                         </div>
 
                         <div class="">
-                            <button type="button" class="btn-google mt-4 p-5">Continue with Email</button>
+                            <button type="button" class="btn-google mt-4 p-5 button" style="">Continue with
+                                Email</button>
 
                         </div>
+
                     </div>
                     <!-- /Continue with -->
                 </div>
@@ -268,6 +352,15 @@
             display: none;
 
             float: right !important;
+        }
+
+
+        .button {
+            background-color: white;
+            /* Green */
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
         }
     </style>
 

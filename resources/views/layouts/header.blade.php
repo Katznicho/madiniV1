@@ -47,11 +47,11 @@
 <header class="header" style="display: flex;">
 
 
-    <img src="./img/logo.jpg" alt="Logo" class="logo">
+    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo">
     <div class="info-container header-links mlinks"
         style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
-        <img src="./img/delivery_icon.jpg" alt="" style="width: 2rem; " class="micon">
+        <img src="{{ asset('img/delivery_icon.jpg') }}" alt="" style="width: 2rem; " class="micon">
         <!-- <p>Delivery</p> -->
         <div class="header-links pull-left">
 
@@ -61,7 +61,7 @@
         </div>
         <hr class="pull-middle" style="margin-left : 50px !important; margin-right: 30px !important;">
         <!-- <i class="fa fa-money"></i> -->
-        <img src="./img/ASM_icon.jpg" alt="" style="width: 3rem;" class="micon">
+        <img src="{{ asset('img/ASM_icon.jpg') }}" alt="" style="width: 3rem;" class="micon">
         <div class="pull-right">
             <p style="font-weight: 200; padding-left: 10px;">ASM Impact</p>
             <span style="font-weight: bold; padding-left: 10px;">1,218 ASM impacted</span>
@@ -69,7 +69,7 @@
     </div>
     <div class="user-info web">
         <!-- <i class="fa fa-user"></i> -->
-        <img src="./img/user_icon.jpg" alt="" style="width: 3rem;" class="micon" id="micon">
+        <img src="{{ asset('img/user_icon.jpg') }}" alt="" style="width: 3rem;" class="micon" id="micon">
         <span id="name">Bert</span>
     </div>
 </header>
@@ -90,17 +90,17 @@
             <ul class="main-nav nav  navbar-nav" style="text-align: center">
                 <li class="active">
                     <!-- <i class="fa fa-home fa-2x"></i> -->
-                    <img src="./img/sand_icon.jpg" alt="" style="width: 3.7rem;" class="micon">
+                    <img src="{{ asset('img/sand_icon.jpg') }}" alt="" style="width: 3.7rem;" class="micon">
                     <a href="#" style="margin-top: 0px;">Construction</a>
                 </li>
                 <li>
                     <!-- <i class="fa fa-industry fa-2x"></i> -->
-                    <img src="./img/industry_icon.jpg" alt="" style="width: 4.5rem;" class="micon">
+                    <img src="{{ asset('img/industry_icon.jpg') }}" alt="" style="width: 4.5rem;" class="micon">
                     <a href="#" style="font-weight: lighter;">Industry</a>
                 </li>
                 <li>
                     <!-- <i class="fa fa-diamond fa-2x"></i> -->
-                    <img src="./img/precious_icon.jpg" alt="" style="width: 2.8rem;" class="micon">
+                    <img src="{{ asset('img/precious_icon.jpg') }}" alt="" style="width: 2.8rem;" class="micon">
                     <a href="#" style="font-weight: lighter;">Precious</a>
                 </li>
 
@@ -123,7 +123,7 @@
                     <div class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <!-- <i class="fa  fa-shopping-cart fa-2x"></i> -->
-                            <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
+                            <img src="{{ asset('img/cart_icon.jpg') }}" alt="" style="width: 50px;" class="micon">
                             <!-- <span>Your Cart</span> -->
                             <!-- <div class="qty">3</div> -->
                         </a>
@@ -131,7 +131,7 @@
                             <div class="cart-list">
                                 <div class="product-widget">
                                     <div class="product-img">
-                                        <img src="./img/download.jpeg" alt="">
+                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
                                         <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -142,7 +142,7 @@
 
                                 <div class="product-widget">
                                     <div class="product-img">
-                                        <img src="./img/download.jpeg" alt="">
+                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
                                         <h3 class="product-name"><a href="#">product name goes here</a></h3>
