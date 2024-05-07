@@ -1,9 +1,9 @@
 <header class="header mobile head" style="display: flex;">
     <div class="header-search mobile-search">
         <form class="mobile-search">
-            <input class="m-search" type="text" placeholder="Search here" role="search">
-            <button type="submit" class="m-search-btn">
-                <i class=" m-search-icon fa fa-search m-search-icon"></i>
+            <input class="m-search" type="text" placeholder="Search here" role="search" style="padding: 10px;">
+            <button type="submit" class="m-search-btn"  style="padding: 10px;">
+                <i class=" m-search-icon fa fa-search m-search-icon "  style="padding: 10px;"></i>
             </button>
         </form>
 
@@ -47,29 +47,29 @@
 <header class="header" style="display: flex;">
 
 
-    <img src="./img/logo.jpg" alt="Logo" class="logo">
+    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo">
     <div class="info-container header-links mlinks"
         style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
-        <img src="./img/delivery_icon.jpg" alt="" style="width: 2rem;" class="micon">
+        <img src="{{ asset('img/delivery_icon.jpg') }}" alt="" style="width: 2rem; " class="micon">
         <!-- <p>Delivery</p> -->
         <div class="header-links pull-left">
 
-            <p style="font-weight: 200;">Delivery</p>
+            <p style="font-weight: 200; padding-left: 10px;">Delivery</p>
 
-            <span style="font-weight: bold;">Muyenga</span>
+            <span style="font-weight: bold; padding-left: 10px;">Muyenga</span>
         </div>
         <hr class="pull-middle" style="margin-left : 50px !important; margin-right: 30px !important;">
         <!-- <i class="fa fa-money"></i> -->
-        <img src="./img/ASM_icon.jpg" alt="" style="width: 3rem;" class="micon">
+        <img src="{{ asset('img/ASM_icon.jpg') }}" alt="" style="width: 3rem;" class="micon">
         <div class="pull-right">
-            <p style="font-weight: 200;">ASM Impact</p>
-            <span style="font-weight: bold;">1,200 ASM impacted</span>
+            <p style="font-weight: 200; padding-left: 10px;">ASM Impact</p>
+            <span style="font-weight: bold; padding-left: 10px;">1,218 ASM impacted</span>
         </div>
     </div>
     <div class="user-info web">
         <!-- <i class="fa fa-user"></i> -->
-        <img src="./img/user_icon.jpg" alt="" style="width: 4rem;" class="micon" id="micon">
+        <img src="{{ asset('img/user_icon.jpg') }}" alt="" style="width: 3rem;" class="micon" id="micon">
         <span id="name">Bert</span>
     </div>
 </header>
@@ -90,17 +90,17 @@
             <ul class="main-nav nav  navbar-nav" style="text-align: center">
                 <li class="active">
                     <!-- <i class="fa fa-home fa-2x"></i> -->
-                    <img src="./img/sand_icon.jpg" alt="" style="width: 3.7rem;" class="micon">
+                    <img src="{{ asset('img/sand_icon.jpg') }}" alt="" style="width: 3.7rem;" class="micon">
                     <a href="#" style="margin-top: 0px;">Construction</a>
                 </li>
                 <li>
                     <!-- <i class="fa fa-industry fa-2x"></i> -->
-                    <img src="./img/industry_icon.jpg" alt="" style="width: 4.5rem;" class="micon">
+                    <img src="{{ asset('img/industry_icon.jpg') }}" alt="" style="width: 4.5rem;" class="micon">
                     <a href="#" style="font-weight: lighter;">Industry</a>
                 </li>
                 <li>
                     <!-- <i class="fa fa-diamond fa-2x"></i> -->
-                    <img src="./img/precious_icon.jpg" alt="" style="width: 2.8rem;" class="micon">
+                    <img src="{{ asset('img/precious_icon.jpg') }}" alt="" style="width: 2.8rem;" class="micon">
                     <a href="#" style="font-weight: lighter;">Precious</a>
                 </li>
 
@@ -123,7 +123,7 @@
                     <div class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <!-- <i class="fa  fa-shopping-cart fa-2x"></i> -->
-                            <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
+                            <img src="{{ asset('img/cart_icon.jpg') }}" alt="" style="width: 50px;" class="micon">
                             <!-- <span>Your Cart</span> -->
                             <!-- <div class="qty">3</div> -->
                         </a>
@@ -131,7 +131,7 @@
                             <div class="cart-list">
                                 <div class="product-widget">
                                     <div class="product-img">
-                                        <img src="./img/download.jpeg" alt="">
+                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
                                         <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -142,7 +142,7 @@
 
                                 <div class="product-widget">
                                     <div class="product-img">
-                                        <img src="./img/download.jpeg" alt="">
+                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
                                         <h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -233,7 +233,7 @@
 
     .m-search {
         width: 60rem !important;
-        height: 5rem !important;
+        height: 5.3rem !important;
         display: block;
         /* Makes the input take full width */
         /* width: 100%; */
@@ -242,7 +242,9 @@
         /* Adjust padding as needed */
         border: 1px solid #ccc;
         border-radius: 30px;
-        margin-left: 8%;
+        padding: 3%;
+        margin-left: 2%;
+      
         /* Add curved corners */
         /* height: 2rem; */
         /* Set input height */
@@ -252,7 +254,7 @@
         position: absolute;
         /* Positions button inside input */
         top: 0;
-        right: 3px;
+       
         /* Adjust right padding for icon placement */
         bottom: 0;
         padding: 0;
@@ -268,8 +270,10 @@
         width: 0 !important;
         position: relative;
         height: 14px;
-        margin-right: 0 !important;
+        margin-right: 5px !important;
         color: black !important;
+        padding: 15px !important;
+        margin-bottom: 60px !important;
     }
 
     .header {
@@ -296,7 +300,7 @@
         /* Adjust width as needed */
         height: auto;
         /* Maintain aspect ratio */
-        margin-left: 10%;
+        margin-left: 12.2%;
         cursor: pointer;
     }
 
@@ -340,11 +344,31 @@
 
 
         .m-search-icon {
-            display: flex;
-            padding-right: 3rem;
-            position: relative;
+            
+           display: block;
+           margin-right: 30px !important;
+           padding-bottom: 25px !important;
+           margin-bottom: 15px !important;
 
+        }
 
+        .m-search{
+
+         width: 60rem !important;
+        height: 5rem !important;
+        display: flex;
+        /* Makes the input take full width */
+        /* width: 100%; */
+        /* Fills remaining space in parent */
+        /* padding: 10px 10px; */
+        /* Adjust padding as needed */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        margin: 1% 0%;
+      
+        /* Add curved corners */
+        /* height: 2rem; */
+        /* Set input height */
         }
 
         #name {
@@ -399,6 +423,7 @@
             width: 100% !important;
             justify-content: center;
             margin: 0 auto !important;
+            padding: 10px;
         }
 
 
@@ -439,7 +464,7 @@
     .user-info {
         display: flex;
         align-items: center;
-        margin-right: 12rem;
+        margin-right: 11.5%;
     }
 
     /* for smaller screens remove margin right on user info */

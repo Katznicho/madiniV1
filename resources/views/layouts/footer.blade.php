@@ -24,7 +24,7 @@
                             <ul class="footer-links">
                                 <li><a href="#"><i class="fa fa-map-marker" style="color: white;"></i>Hamlet Hub, Mimosa Courts, Uganda Kampala.</a></li>
                                 <li><a href="#"><i class="fa fa-phone" style="color: white;"></i>+256 393 100 200</a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o" style="color: white;"></i>connect@madinigroup.com</a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o" style="color: white;"></i>&nbsp;connect@madinigroup.com</a></li>
                             </ul>
                         </ul>
                     </div>
@@ -171,11 +171,18 @@
         }
 
          .footer-links>li.fa {
+           
         font-size: 20px;
         color: white !important;
     
         margin-right: 5px;
     }
+
+    .footer{
+         {{-- justify-content: center;
+            align-items: center;
+            text-align: center;
+    } --}}
     }
 
  
