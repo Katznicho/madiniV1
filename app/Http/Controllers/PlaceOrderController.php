@@ -17,7 +17,7 @@ class PlaceOrderController extends Controller
     {
         try {
             // code...
-            // dd("placing order");
+            dd("placing order");
 
             $user_id = 3;
 

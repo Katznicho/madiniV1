@@ -40,7 +40,9 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {   
+        // dd("am here");
         $product =  Product::find($id);
+        // dd($product);
         return view("product_details", compact('product'));
         //return view("")
     }

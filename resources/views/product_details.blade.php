@@ -48,12 +48,12 @@
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
                         {{-- <img src="{{ $product->image_url }}" alt=""> --}}
-                          <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
-                                                                             
-                  
+                        <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+
+
 
                     </div>
-                  
+
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
                 </div>
                 <!-- /Product main img -->
@@ -98,9 +98,6 @@
                             {{-- <a class="back-btn" href="{{ route('welcome') }}">Back</a> --}}
                         </div>
 
-
-
-
                         <ul class="product-links">
                             <li>Category:</li>
                             <li><a href="#">Construction</a></li>
@@ -122,7 +119,8 @@
                                         <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
                                                 {{-- <img src="./img/download.jpeg" alt=""> --}}
-  <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+                                                <img src="{{ asset('img/download.jpeg') }}" alt=""
+                                                    style="height: 15em;">
 
                                                 <div class="product-label">
                                                 </div>
@@ -130,8 +128,8 @@
                                             <div class="product-body">
                                                 <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                                 <div class="lower">
-                                                 {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
-                                                   
+                                                    {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
+
 
                                                     <div class="add-to-cart-btn similar-cart">
                                                         <span>Add</span>
@@ -155,7 +153,8 @@
                                         <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
                                                 {{-- <img src="./img/download.jpeg" alt=""> --}}
-  <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+                                                <img src="{{ asset('img/download.jpeg') }}" alt=""
+                                                    style="height: 15em;">
 
                                                 <div class="product-label">
                                                 </div>
@@ -169,8 +168,8 @@
                                                         <i class="fa fa-shopping-cart"></i>
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                             class="micon"> -->
-                                                           
-                                                   
+
+
                                                     </div>
                                                     <h6 class="product-price" 1>UGX 120,000</h6>
 
@@ -187,7 +186,7 @@
                             </li>
                         </ul>
 
-                    
+
 
                     </div>
                 </div>
@@ -462,7 +461,8 @@
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     <div class="product product1">
                                         <div class="product-img">
-                                             <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+                                            <img src="{{ asset('img/download.jpeg') }}" alt=""
+                                                style="height: 15em;">
 
                                             <div class="product-label">
                                             </div>
@@ -471,7 +471,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                             
+
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -482,7 +482,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                             <img src="{{ asset('img/axe.png') }}" alt="" style="height: 15em;">
+                                            <img src="{{ asset('img/axe.png') }}" alt=""
+                                                style="height: 15em;">
 
                                             <div class="product-label">
                                             </div>
@@ -491,7 +492,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                              
+
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -502,7 +503,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="{{ asset('img/Safety hat.png') }}" alt="" style="height: 15em;">
+                                            <img src="{{ asset('img/Safety hat.png') }}" alt=""
+                                                style="height: 15em;">
 
                                             <div class="product-label">
                                             </div>
@@ -511,7 +513,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                             
+
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -522,7 +524,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                             <img src="{{ asset('img/Lwera Sand.png') }}" alt="" style="height: 15em;">
+                                            <img src="{{ asset('img/Lwera Sand.png') }}" alt=""
+                                                style="height: 15em;">
 
                                             <div class="product-label">
                                             </div>
@@ -531,7 +534,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                          
+
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -543,7 +546,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="{{ asset('img/lake sand.png') }}" alt="" style="height: 15em;">
+                                            <img src="{{ asset('img/lake sand.png') }}" alt=""
+                                                style="height: 15em;">
 
                                             <div class="product-label">
                                             </div>
@@ -771,12 +775,12 @@
 
     }
 
- 
 
-       .m-search {
+
+    .m-search {
         display: flex;
-      
-    
+
+
         float: right !important;
         padding: 2% !important;
         margin: 0% !important;
@@ -784,15 +788,13 @@
 
     .m-search-icon {
         display: none;
-   
+
         float: right !important;
     }
 
     .m-search {
         display: none;
     }
-
-    
 </style>
 
 

@@ -69,6 +69,8 @@
     <!-- /BREADCRUMB -->
 
     <!-- SECTION -->
+                            <form method="POST" action="{{route('placeOrder') }}" class="rounded-full ">
+                           @csrf 
     <div class="section">
         <!-- container -->
         <div class="container">
@@ -99,12 +101,11 @@
                                 <h5 class="title">Phone Number</h5>
                             </div>
                             <div class="form-group phone">
-                                <input class="input phone" type="tel" id="phone"
-                                    name="phone"style=" "
+                                <input class="input phone" type="tel" id="phone" name="phone"style=" "
                                     placeholder="0701234567">
                             </div>
                             <p>We call or text you to confirm your number. Standard Message and data rates may apply. <a
-                                href="#">Privacy Policy</a></p>
+                                    href="#">Privacy Policy</a></p>
                         </div>
                         <!-- /Phone number input -->
 
@@ -153,29 +154,34 @@
                         <div class="section-title">
                             <h3 class="title">Pay with</h3>
                         </div>
-               
-                       
+
+
                         <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
                         <div class="payment-method">
-                         <label for="payment-airtel-money">
-                                <i class="fa fa-mobile"><img src="{{ asset('img/airtel.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                            <label for="payment-airtel-money">
+                                <i class="fa fa-mobile"><img src="{{ asset('img/airtel.jpg') }}" width="90"
+                                        height="40" alt="airtel"> </i>
                             </label>
                             <label for="payment-mtn-momo">
-                            {{-- random svg --}}
-                           
-                                <i class="fa fa-mobile"><img src="{{ asset('img/mtn.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                                {{-- random svg --}}
+
+                                <i class="fa fa-mobile"><img src="{{ asset('img/mtn.jpg') }}" width="90"
+                                        height="40" alt="airtel"> </i>
                             </label>
-                           
+
                             <label for="payment-google-pay">
-                                <i class="fa fa-mobile"><img src="{{ asset('img/gpay.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                                <i class="fa fa-mobile"><img src="{{ asset('img/gpay.jpg') }}" width="90"
+                                        height="40" alt="airtel"> </i>
                             </label>
                             <label for="payment-mastercard">
-                                <i class="fa fa-mobile"><img src="{{ asset('img/mastercard.jpg') }}" width="70" height="40" alt="airtel"> </i>
+                                <i class="fa fa-mobile"><img src="{{ asset('img/mastercard.jpg') }}" width="70"
+                                        height="40" alt="airtel"> </i>
                             </label>
                             <label for="payment-visa">
-                               <i class="fa fa-mobile"><img src="{{ asset('img/visa.jpg') }}" width="70" height="40" alt="airtel"> </i>
+                                <i class="fa fa-mobile"><img src="{{ asset('img/visa.jpg') }}" width="70"
+                                        height="40" alt="airtel"> </i>
                             </label>
-                            
+
                             <!-- Hide the radio buttons -->
                             <input type="radio" name="payment" id="payment-mtn-momo" style="display: none;">
                             <input type="radio" name="payment" id="payment-airtel-money" style="display: none;">
@@ -183,24 +189,26 @@
                             <input type="radio" name="payment" id="payment-visa" style="display: none;">
                             <input type="radio" name="payment" id="payment-mastercard" style="display: none;">
                         </div>
-                
-                    <!-- /Pay with -->
+
+                        <!-- /Pay with -->
 
                         <div class="section-title">
                             <h3 class="title">Pay on Delivery</h3>
-                            <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong> may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a></p>
+                            <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong> may
+                                apply. <a href="#" style="text-decoration: underline;"> Learn More. </a></p>
                             <p> Pay online for a contactless delivery.</p>
                         </div>
 
 
-                        <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
                             <div class="">
                                 <button type="submit" class="primary-btn order-submit flex"
                                     style="background-color: #d90166; border-radius: 5%; width: 560px;">Purchase</button>
                             </div>
 
-                            <p> By clicking "Purchase", I agree to  <a href="#" style="text-decoration: underline;"> Madini's policy </a> , <a
-                                 style="text-decoration: underline;"   href="#"> Delivery and Refund Policy </a> and that Madini can charge my payment method if items have been ordered.</p>
+                            <p> By clicking "Purchase", I agree to <a href="#"
+                                    style="text-decoration: underline;"> Madini's policy </a> , <a
+                                    style="text-decoration: underline;" href="#"> Delivery and Refund Policy
+                                </a> and that Madini can charge my payment method if items have been ordered.</p>
                         </form>
 
                     </div>
@@ -248,7 +256,8 @@
                 <div class="col-md-2">
                 </div>
                 <!-- Right Column -->
-                <div class="col-md-4" style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%;">
+                <div class="col-md-4"
+                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%;">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
                         <div class="row ">
@@ -273,7 +282,7 @@
                                 </div>
                             </div>
 
-                            <hr/>
+                            <hr />
 
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
@@ -288,7 +297,7 @@
                                 <div class="order-products">
                                     <div class="order-col">
                                         <div>{{ $product->name }} x 1 Tonne</div>
-                                        
+
                                         <div>UGX {{ number_format($product->price) }}</div>
                                     </div>
                                 </div>
@@ -488,10 +497,10 @@
             }
 
         }
-         
-            .m-search {
-                display: none !important;
-            }
+
+        .m-search {
+            display: none !important;
+        }
     </style>
 
 </body>
