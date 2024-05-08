@@ -48,11 +48,9 @@
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
                         {{-- <img src="{{ $product->image_url }}" alt=""> --}}
-                        <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
-
-
-
+                        <img src="{{ $product->image_url }}" alt="" style="height: 15em;">
                     </div>
+                     
 
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
                 </div>
