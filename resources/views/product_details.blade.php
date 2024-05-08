@@ -709,6 +709,10 @@
         .sproduct .product-img {
             width: 100%;
         }
+
+        .m-search-icon {
+            display: none;
+        }
     }
 
     /* small screens keep margin 0 for product */

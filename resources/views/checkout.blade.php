@@ -248,7 +248,7 @@
                 <div class="col-md-2">
                 </div>
                 <!-- Right Column -->
-                <div class="col-md-4" style="border: 1px black solid; padding: 2%; border-radius: 2%;">
+                <div class="col-md-4" style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%;">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
                         <div class="row ">
