@@ -85,126 +85,130 @@
                         {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
                         <p style="font-weight: 900;"> Quantity:</p>
                         <p>1 x {{ $product->name }}</p>
-                        <a href="#" class="  float-right"
-                            style="float: right; text-decoration: underline;">Edit</a>
-                        {{-- add edit button right aligned --}}
+
                         <p style="font-weight: 900;"> Deliver To:</p>
                         <p>Muyenga {{ $product->name }}</p>
                         {{-- add edit button right aligned --}}
-                        <a href="#" class="  float-right"
-                            style="float: right; text-decoration: underline;">Edit</a>
-                        <!-- Shiping Details -->
-                        <div class="shiping-details">
+                        <hr />
+
+
+
+                        <!-- Phone number input -->
+                        <div class="phone-number">
                             <div class="section-title">
-                                <h3 class="title">Address Details</h3>
+                                <h5 class="title">Phone Number</h5>
                             </div>
-                            <div class="input-checkbox">
-                                <input type="checkbox" id="shiping-address">
-                                <label for="shiping-address">
-                                    <span></span>
-                                    Ship to a different address?
-                                </label>
-                                <div class="caption">
-                                    {{-- <div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div> --}}
-                                    <div class="form-group">
-                                        <input class="input" type="email" name="email" placeholder="Email">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="input" type="text" name="address" placeholder="Address">
-                                    </div>
-
-
-
-                                </div>
+                            <div class="form-group phone">
+                                <input class="input phone" type="tel" id="phone"
+                                    name="phone"style=" "
+                                    placeholder="0701234567">
                             </div>
+                            <p>We call or text you to confirm your number. Standard Message and data rates may apply. <a
+                                href="#">Privacy Policy</a></p>
                         </div>
-                        <!-- /Shiping Details -->
+                        <!-- /Phone number input -->
 
                     </div>
                     <!-- /Product Details -->
 
                     <hr />
 
+
+                    <!-- Enter ASM Coupon -->
+
+                    <!-- /Enter ASM Coupon -->
+
+
+                    <!-- Shiping Details -->
+                    <div class="shiping-details">
+
+                        <div class="input-checkbox">
+                            <a>
+                                <input type="checkbox" id="shiping-address" class="hidden" style="display: none;">
+                                <label for="shiping-address">
+
+                                    <h4 class="" style="text-decoration: underline; color:grey;">Enter ASM Coupon
+                                    </h4>
+
+                                </label>
+                                <div class="caption">
+
+                                    {{-- <div class="form-group">
+                                        <input class="input" type="email" name="email" placeholder="Email">
+                                    </div> --}}
+                                    <div class="form-group">
+                                        <input class="input" type="text" name="coupon" placeholder="ASM Coupon">
+                                    </div>
+
+
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- /Shiping Details -->
+
                     <!-- Pay with -->
-                    <div class="pay-with">
+                    <div class="pay-with row">
                         <div class="section-title">
                             <h3 class="title">Pay with</h3>
                         </div>
-                        <!-- Add Pay with buttons (Google Pay, Visa, Mastercard) here -->
+               
+                       
+                        <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
                         <div class="payment-method">
-                            <div class="input-radio">
-                                <input type="radio" name="payment" id="payment-google">
-                                <label for="payment-google">
-                                    <span></span>
-                                    MTN Momo
-                                </label>
-                            </div>
-                            <div class="input-radio">
-                                <input type="radio" name="payment" id="payment-google">
-                                <label for="payment-google">
-                                    <span></span>
-                                    Airtel Money
-                                </label>
-                            </div>
-                            <div class="input-radio">
-                                <input type="radio" name="payment" id="payment-google">
-                                <label for="payment-google">
-                                    <span></span>
-                                    Google Pay
-                                </label>
-                            </div>
-                            <div class="input-radio">
-                                <input type="radio" name="payment" id="payment-visa">
-                                <label for="payment-visa">
-                                    <span></span>
-                                    Visa
-                                </label>
-                            </div>
-                            <div class="input-radio">
-                                <input type="radio" name="payment" id="payment-mastercard">
-                                <label for="payment-mastercard">
-                                    <span></span>
-                                    Mastercard
-                                </label>
-                            </div>
+                         <label for="payment-airtel-money">
+                                <i class="fa fa-mobile"><img src="{{ asset('img/airtel.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                            </label>
+                            <label for="payment-mtn-momo">
+                            {{-- random svg --}}
+                           
+                                <i class="fa fa-mobile"><img src="{{ asset('img/mtn.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                            </label>
+                           
+                            <label for="payment-google-pay">
+                                <i class="fa fa-mobile"><img src="{{ asset('img/gpay.jpg') }}" width="90" height="40" alt="airtel"> </i>
+                            </label>
+                            <label for="payment-mastercard">
+                                <i class="fa fa-mobile"><img src="{{ asset('img/mastercard.jpg') }}" width="70" height="40" alt="airtel"> </i>
+                            </label>
+                            <label for="payment-visa">
+                               <i class="fa fa-mobile"><img src="{{ asset('img/visa.jpg') }}" width="70" height="40" alt="airtel"> </i>
+                            </label>
+                            
+                            <!-- Hide the radio buttons -->
+                            <input type="radio" name="payment" id="payment-mtn-momo" style="display: none;">
+                            <input type="radio" name="payment" id="payment-airtel-money" style="display: none;">
+                            <input type="radio" name="payment" id="payment-google-pay" style="display: none;">
+                            <input type="radio" name="payment" id="payment-visa" style="display: none;">
+                            <input type="radio" name="payment" id="payment-mastercard" style="display: none;">
+                        </div>
+                
+                    <!-- /Pay with -->
+
+                        <div class="section-title">
+                            <h3 class="title">Pay on Delivery</h3>
+                            <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong> may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a></p>
+                            <p> Pay online for a contactless delivery.</p>
                         </div>
 
 
                         <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
                             <div class="">
-                                <button type="submit" class="primary-btn order-submit"
-                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                                <button type="submit" class="primary-btn order-submit flex"
+                                    style="background-color: #d90166; border-radius: 5%; width: 560px;">Purchase</button>
                             </div>
+
+                            <p> By clicking "Purchase", I agree to  <a href="#" style="text-decoration: underline;"> Madini's policy </a> , <a
+                                 style="text-decoration: underline;"   href="#"> Delivery and Refund Policy </a> and that Madini can charge my payment method if items have been ordered.</p>
                         </form>
 
                     </div>
                     <!-- /Pay with -->
 
-                    <!-- Enter ASM Coupon -->
-                    <div class="enter-coupon">
-                        <div class="section-title">
-                            <h3 class="title">Enter ASM Coupon</h3>
-                        </div>
-                        <input class="input" type="text" name="asm_coupon" placeholder="Enter ASM Coupon">
-                    </div>
-                    <!-- /Enter ASM Coupon -->
 
-                    <!-- Phone number input -->
-                    <div class="phone-number">
-                        <div class="section-title">
-                            <h3 class="title">Phone Number</h3>
-                        </div>
-                        <div class="form-group phone">
-                            <input class="input phone" type="tel" id="phone" name="phone"
-                                placeholder="0701234567">
-                        </div>
-                    </div>
-                    <!-- /Phone number input -->
+
+
 
                     <!-- Billing Details -->
                     <div class="billing-details">
@@ -224,87 +228,87 @@
                                         placeholder="Enter Your Password">
                                 </div>
                             </div>
+
+
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="terms">
+                                <label for="terms">
+                                    <span></span>
+                                    I've read and accept the <a href="#">terms & conditions</a>
+                                </label>
+                            </div>
                         </div>
+
+
                     </div>
                     <!-- /Billing Details -->
                 </div>
                 <!-- /Left Column -->
 
+                <div class="col-md-2">
+                </div>
                 <!-- Right Column -->
-                <div class="col-md-6 ">
+                <div class="col-md-4" style="border: 1px black solid; padding: 2%; border-radius: 2%;">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
-
-                        {{-- add dummy image --}}
-                        {{-- <img src="{{ $product->image_url }}" style="justify-content: center;"
-                            alt="{{ $product->name }} " /> --}}
-                        <img src="{{ asset('img/download.jpeg') }}" style="justify-content: center;"
-                            alt="{{ $product->name }} " />
-                        {{-- add product name --}}
-                        <h3>{{ $product->name }}</h3>
-                        {{-- add product price --}}
-                        <h4>UGX {{ number_format($product->price) }}</h4>
-
-                        @csrf
-                        <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                        <input type="hidden" name="product_name" value="{{ $product->name }}" />
-                        <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                        <div class="order-summary">
-                            <div class="order-col">
-                                <div><strong>PRODUCT</strong></div>
-                                <div><strong>TOTAL</strong></div>
+                        <div class="row ">
+                            <div class="col-md-6">
+                                {{-- Add dummy image --}}
+                                {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
+                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
                             </div>
-                            <div class="order-products">
+                            <div class="col-md-6" style="margin-top: 12%;">
+                                {{-- Add product name --}}
+                                <h3>{{ $product->name }}</h3>
+
+                                <p> 25 mm Lake Sand </p>
+                                {{-- Add product price --}}
+                                <h4>UGX {{ number_format($product->price) }}</h4>
+
+                                {{-- add rating 5 star --}}
+                                <div class="rating">
+                                    <div class="rating">
+                                        <i class="fa fa-star fa-2x">5.00 (1)</i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr/>
+
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                            <input type="hidden" name="product_name" value="{{ $product->name }}" />
+                            <input type="hidden" name="product_price" value="{{ $product->price }}" />
+                            <hr />
+                            <div class="order-summary">
                                 <div class="order-col">
-                                    <div>{{ $product->name }}</div>
-                                    <div>UGX {{ number_format($product->price) }}</div>
+                                    <div><strong>Price Details</strong></div>
+                                    <div><strong>TOTAL</strong></div>
+                                </div>
+                                <div class="order-products">
+                                    <div class="order-col">
+                                        <div>{{ $product->name }} x 1 Tonne</div>
+                                        
+                                        <div>UGX {{ number_format($product->price) }}</div>
+                                    </div>
+                                </div>
+                                <div class="order-col">
+                                    <div style="text-decoration:underline;">Madini Service Fee</div>
+                                    <div><strong>UGX 12,000</strong></div>
+                                </div>
+
+                                <hr />
+                                <div class="order-col">
+                                    <div><strong>TOTAL</strong></div>
+                                    <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="order-col">
-                                <div>Shipping</div>
-                                <div><strong>FREE</strong></div>
-                            </div>
-                            <div class="order-col">
-                                <div><strong>TOTAL</strong></div>
-                                <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-checkbox">
-                            <input type="checkbox" id="terms">
-                            <label for="terms">
-                                <span></span>
-                                I've read and accept the <a href="#">terms & conditions</a>
-                            </label>
-                        </div>
-                        <!-- "Place order" button -->
-						      <button type="submit" class="primary-btn order-submit"
-                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
-                          
                     </form>
                     <!-- /Order Details -->
-
-                    <!-- Continue with -->
-                    <div class="continue-with">
-                        <div class="section-title">
-                            <h3 class="title">Continue with</h3>
-                        </div>
-                        <!-- Add Continue with buttons (Google, Facebook, Apple) here -->
-                        <div class="continue-with-buttons">
-                            <button type="button" class="btn-google button">Google</button>
-                            <button type="button" class="btn-facebook button">Facebook</button>
-                            <button type="button" class="btn-apple button">Apple</button>
-                        </div>
-
-                        <div class="">
-                            <button type="button" class="btn-google mt-4 p-5 button" style="">Continue with
-                                Email</button>
-
-                        </div>
-
-                    </div>
-                    <!-- /Continue with -->
                 </div>
+                <!-- /Right Column -->
+
                 <!-- /Right Column -->
             </div>
             <!-- /row -->
@@ -354,6 +358,10 @@
             float: right !important;
         }
 
+        .m-search-icon {
+            display: none;
+        }
+
 
         .button {
             background-color: white;
@@ -362,6 +370,128 @@
             margin: 10px;
             border-radius: 10px;
         }
+
+        @media only screen and (max-width: 600px) {
+            .m-search-icon {
+                display: block;
+            }
+
+            .search-icon {
+                display: none;
+            }
+
+            .button {
+                background-color: white;
+                /* Green */
+                padding: 10px;
+                margin: 10px;
+                border-radius: 10px;
+            }
+
+            .order-submit {
+                width: 100% !important;
+            }
+
+            .order-details {
+                background-color: #f9f9f9;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .order-summary {
+                background-color: #f9f9f9;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .order-col {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-products {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-total {
+                color: deeppink;
+            }
+
+            .order-summary {
+                background-color: #f9f9f9;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .order-col {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-products {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-total {
+                color: deeppink;
+            }
+
+            .order-summary {
+                background-color: #f9f9f9;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .order-col {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-products {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-total {
+                color: deeppink;
+            }
+
+            .order-summary {
+                background-color: #f9f9f9;
+                border-radius: 15px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .order-col {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-products {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .order-total {
+                color: deeppink;
+            }
+
+            .input {
+                width: 100% !important;
+            }
+
+        }
+         
+            .m-search {
+                display: none !important;
+            }
     </style>
 
 </body>

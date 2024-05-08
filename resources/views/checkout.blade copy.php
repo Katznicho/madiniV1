@@ -12,9 +12,6 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
@@ -31,6 +28,18 @@
     <!-- Custom stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
+    <!-- International Telephone Input -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/css/intlTelInput.css">
+
+    <style>
+        /* Add custom CSS styles for curved borders */
+        .order-details {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,7 +55,7 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="breadcrumb-header">Checkout</h3>
+                    <h3 class="breadcrumb-header">CONFIRM AND PAY</h3>
                     <ul class="breadcrumb-tree">
                         <li><a href="#">Home</a></li>
                         <li class="active">Checkout</li>
@@ -65,17 +74,137 @@
         <div class="container">
             <!-- row -->
             <div class="row">
+                <!-- Left Column -->
+                <div class="col-md-6">
+                    <!-- Product Details -->
+                    <div class="product-details">
+                        <div class="section-title">
+                            <h3 class="title">Your Order Details</h3>
+                        </div>
+                        <!-- Add product details here -->
+                        {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
+                        <p style="font-weight: 900;"> Quantity:</p>
+                        <p>1 x {{ $product->name }}</p>
+                        <a href="#" class="  float-right"
+                            style="float: right; text-decoration: underline;">Edit</a>
+                        {{-- add edit button right aligned --}}
+                        <p style="font-weight: 900;"> Deliver To:</p>
+                        <p>Muyenga {{ $product->name }}</p>
+                        {{-- add edit button right aligned --}}
+                        <a href="#" class="  float-right"
+                            style="float: right; text-decoration: underline;">Edit</a>
+                        <!-- Shiping Details -->
+                        <div class="shiping-details">
+                            <div class="section-title">
+                                <h3 class="title">Address Details</h3>
+                            </div>
+                            <div class="input-checkbox">
+                                <input type="checkbox" id="shiping-address">
+                                <label for="shiping-address">
+                                    <span></span>
+                                    Ship to a different address?
+                                </label>
+                                <div class="caption">
+                                 
+                                    <div class="form-group">
+                                        <input class="input" type="email" name="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="input" type="text" name="address" placeholder="Address">
+                                    </div>
 
-                <div class="col-md-7">
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Shiping Details -->
+
+                    </div>
+                    <!-- /Product Details -->
+
+                    <hr />
+
+                    <!-- Pay with -->
+                    <div class="pay-with">
+                        <div class="section-title">
+                            <h3 class="title">Pay with</h3>
+                        </div>
+                        <!-- Add Pay with buttons (Google Pay, Visa, Mastercard) here -->
+                        <div class="payment-method">
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-google">
+                                <label for="payment-google">
+                                    <span></span>
+                                    MTN Momo
+                                </label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-google">
+                                <label for="payment-google">
+                                    <span></span>
+                                    Airtel Money
+                                </label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-google">
+                                <label for="payment-google">
+                                    <span></span>
+                                    Google Pay
+                                </label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-visa">
+                                <label for="payment-visa">
+                                    <span></span>
+                                    Visa
+                                </label>
+                            </div>
+                            <div class="input-radio">
+                                <input type="radio" name="payment" id="payment-mastercard">
+                                <label for="payment-mastercard">
+                                    <span></span>
+                                    Mastercard
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
+                            <div class="">
+                                <button type="submit" class="primary-btn order-submit"
+                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!-- /Pay with -->
+
+                    <!-- Enter ASM Coupon -->
+                    <div class="enter-coupon">
+                        <div class="section-title">
+                            <h3 class="title">Enter ASM Coupon</h3>
+                        </div>
+                        <input class="input" type="text" name="asm_coupon" placeholder="Enter ASM Coupon">
+                    </div>
+                    <!-- /Enter ASM Coupon -->
+
+                    <!-- Phone number input -->
+                    <div class="phone-number">
+                        <div class="section-title">
+                            <h3 class="title">Phone Number</h3>
+                        </div>
+                        <div class="form-group phone">
+                            <input class="input phone" type="tel" id="phone" name="phone"
+                                placeholder="0701234567">
+                        </div>
+                    </div>
+                    <!-- /Phone number input -->
+
                     <!-- Billing Details -->
                     <div class="billing-details">
-                        <div class="section-title">
-                            <h3 class="title">Billing address</h3>
-                        </div>
 
-                        <div class="phone form-group">
-                            <input class=" phone input" type="tel" name="tel" placeholder="Telephone">
-                        </div>
+
                         <div class="form-group">
                             <div class="input-checkbox">
                                 <input type="checkbox" id="create-account">
@@ -93,74 +222,28 @@
                         </div>
                     </div>
                     <!-- /Billing Details -->
-
-                    <!-- Shiping Details -->
-                    <div class="shiping-details">
-                        <div class="section-title">
-                            <h3 class="title">Shiping address</h3>
-                        </div>
-                        <div class="input-checkbox">
-                            <input type="checkbox" id="shiping-address">
-                            <label for="shiping-address">
-                                <span></span>
-                                Ship to a different address?
-                            </label>
-                            <div class="caption">
-                                {{-- <div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div> --}}
-                                <div class="form-group">
-                                    <input class="input" type="email" name="email" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="address" placeholder="Address">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="city" placeholder="City">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="country" placeholder="Country">
-                                </div>
-                                {{-- <div class="form-group">
-										<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-									</div> --}}
-                                <div class="form-group phone">
-                                    <input class="input phone" type="tel" name="tel" placeholder="Telephone">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Shiping Details -->
-
-                    <!-- Order notes -->
-                    <div class="order-notes">
-                        <textarea class="input" placeholder="Order Notes"></textarea>
-                    </div>
-                    <!-- /Order notes -->
                 </div>
+                <!-- /Left Column -->
 
-                <!-- Order Details -->
-                <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
+                <!-- Right Column -->
+                <div class="col-md-6 ">
+                    <!-- Order Details -->
+                    <form method="POST" action="{{ route('placeOrder') }}" class="">
 
-                    {{-- add dummy image --}}
-                    <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " />
-                    {{-- add product name --}}
-                    <h3>{{ $product->name }}</h3>
-                    {{-- add product price --}}
-                    <h4>UGX {{ number_format($product->price) }}</h4>
+                        {{-- add dummy image --}}
+                        {{-- <img src="{{ $product->image_url }}" style="justify-content: center;"
+                            alt="{{ $product->name }} " /> --}}
+                        <img src="{{ asset('img/download.jpeg') }}" style="justify-content: center;"
+                            alt="{{ $product->name }} " />
+                        {{-- add product name --}}
+                        <h3>{{ $product->name }}</h3>
+                        {{-- add product price --}}
+                        <h4>UGX {{ number_format($product->price) }}</h4>
 
-
-                    @csrf
-                    <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                    <input type="hidden" name="product_name" value="{{ $product->name }}" />
-                    <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                    <div class="col-md-5 order-details">
-                        <div class="section-title text-center">
-                            <h3 class="title">Your Order</h3>
-                        </div>
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                        <input type="hidden" name="product_name" value="{{ $product->name }}" />
+                        <input type="hidden" name="product_price" value="{{ $product->price }}" />
                         <div class="order-summary">
                             <div class="order-col">
                                 <div><strong>PRODUCT</strong></div>
@@ -173,7 +256,7 @@
                                 </div>
                             </div>
                             <div class="order-col">
-                                <div>Shiping</div>
+                                <div>Shipping</div>
                                 <div><strong>FREE</strong></div>
                             </div>
                             <div class="order-col">
@@ -182,38 +265,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1">
-								<label for="payment-1">
-									<span></span>
-									Direct Bank Transfer
-								</label>
-								<div class="caption">
-									<p>We accept payments from authroized partnering banks online</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
-									<span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>We accept cheques from banks in Uganda and abroad</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3">
-								<label for="payment-3">
-									<span></span>
-									Paypal System
-								</label>
-								<div class="caption">
-									<p>Pay us using paypal online aggregation</p>
-								</div>
-							</div>
-						</div> --}}
                         <div class="input-checkbox">
                             <input type="checkbox" id="terms">
                             <label for="terms">
@@ -221,12 +272,35 @@
                                 I've read and accept the <a href="#">terms & conditions</a>
                             </label>
                         </div>
-                        {{-- <a href="#" class="primary-btn order-submit">Place order</a> --}}
                         <!-- "Place order" button -->
-                        <button type="submit" class="primary-btn order-submit">Place order</button>
+						      <button type="submit" class="primary-btn order-submit"
+                                    style="background-color: deeppink; border-radius: 10%;">Continue and Pay</button>
+                          
+                    </form>
+                    <!-- /Order Details -->
+
+                    <!-- Continue with -->
+                    <div class="continue-with">
+                        <div class="section-title">
+                            <h3 class="title">Continue with</h3>
+                        </div>
+                        <!-- Add Continue with buttons (Google, Facebook, Apple) here -->
+                        <div class="continue-with-buttons">
+                            <button type="button" class="btn-google button">Google</button>
+                            <button type="button" class="btn-facebook button">Facebook</button>
+                            <button type="button" class="btn-apple button">Apple</button>
+                        </div>
+
+                        <div class="">
+                            <button type="button" class="btn-google mt-4 p-5 button" style="">Continue with
+                                Email</button>
+
+                        </div>
+
                     </div>
-                </form>
-                <!-- /Order Details -->
+                    <!-- /Continue with -->
+                </div>
+                <!-- /Right Column -->
             </div>
             <!-- /row -->
         </div>
@@ -235,24 +309,9 @@
     <!-- /SECTION -->
 
     <!-- NEWSLETTER -->
-
-
-
     @include('layouts.footer')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput-jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput-jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.1.0/build/css/intlTelInput.css">
-
-
-    <!-- jQuery Plugins -->
+    <!-- JavaScript Libraries -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/slick.min.js') }}"></script>
@@ -260,45 +319,50 @@
     <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
 
+    <!-- International Telephone Input -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.js"></script>
+
+    <script>
+        // Initialize International Telephone Input
+        const input = document.querySelector("#phone");
+        window.intlTelInput(input, {
+            initialCountry: "ug",
+            strictMode: true,
+            utilsScript: "/intl-tel-input/js/utils.js" // just for formatting/placeholders etc
+        });
+    </script>
+
+
+    <style>
+        /* Add custom CSS styles for curved borders */
+        .order-details {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .m-search-icon {
+            display: none;
+
+            float: right !important;
+        }
+
+        .m-search-icon {
+            display: none;
+        }
+
+
+        .button {
+            background-color: white;
+            /* Green */
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+
 </body>
-
-
-<style>
-    .m-search {
-        display: flex;
-
-
-        float: right !important;
-        padding: 2% !important;
-        margin: 0% !important;
-    }
-
-    .m-search-icon {
-        display: none;
-
-        float: right !important;
-    }
-</style>
-
-
-
-
-
-
-<script>
-    const input = document.querySelector("#phone");
-    window.intlTelInput(input, {
-        initialCountry: "ug",
-        strictMode: true,
-        utilsScript: "/intl-tel-input/js/utils.js?1711461746916" // just for formatting/placeholders etc
-    });
-
-    const inputContact = document.querySelector("#primary_contact_phone");
-    window.intlTelInput(inputContact, {
-        initialCountry: "ug",
-        strictMode: true,
-        utilsScript: "/intl-tel-input/js/utils.js?1711461746916" // just for formatting/placeholders etc
-    });
-</script>
 
 </html>

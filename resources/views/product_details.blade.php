@@ -28,12 +28,7 @@
     <!-- Custom stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+
 
 </head>
 
@@ -53,24 +48,12 @@
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
                         {{-- <img src="{{ $product->image_url }}" alt=""> --}}
-                        <!-- <div class="add-to-cart-btn">
-                                <span>Add</span> -->
-                        <!-- <i class="fa fa-shopping-cart"></i> -->
-                        <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
-
-
-                            </div>
-                            <h3 class="product-price">UGX 120,000</h3> -->
-                        <!-- </div> -->
+                          <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+                                                                             
+                  
 
                     </div>
-                    {{-- <div class="add-to-cart-btn">
-                        <span>Add</span> --}}
-                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                    {{-- <img src="./img/cart_icon.jpg" alt="" style="width: 50px;" class="micon">
-
-
-                    </div> --}}
+                  
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
                 </div>
                 <!-- /Product main img -->
@@ -112,7 +95,7 @@
                                     class="fa fa-shopping-cart"></i> Buy Now</a>
 
                             <!-- Back option -->
-                            <a class="back-btn" href="{{ route('welcome') }}">Back</a>
+                            {{-- <a class="back-btn" href="{{ route('welcome') }}">Back</a> --}}
                         </div>
 
 
@@ -138,13 +121,17 @@
 
                                         <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
-                                                <img src="./img/download.jpeg" alt="">
+                                                {{-- <img src="./img/download.jpeg" alt=""> --}}
+  <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+
                                                 <div class="product-label">
                                                 </div>
                                             </div>
                                             <div class="product-body">
                                                 <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                                 <div class="lower">
+                                                 {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
+                                                   
 
                                                     <div class="add-to-cart-btn similar-cart">
                                                         <span>Add</span>
@@ -167,7 +154,9 @@
                                         <!-- product -->
                                         <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
-                                                <img src="./img/download.jpeg" alt="">
+                                                {{-- <img src="./img/download.jpeg" alt=""> --}}
+  <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+
                                                 <div class="product-label">
                                                 </div>
                                             </div>
@@ -180,6 +169,8 @@
                                                         <i class="fa fa-shopping-cart"></i>
                                                         <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
                                                             class="micon"> -->
+                                                           
+                                                   
                                                     </div>
                                                     <h6 class="product-price" 1>UGX 120,000</h6>
 
@@ -196,13 +187,7 @@
                             </li>
                         </ul>
 
-                        <!-- <ul class="product-links">
-                            <li>Share:</li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        </ul> -->
+                    
 
                     </div>
                 </div>
@@ -477,7 +462,8 @@
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     <div class="product product1">
                                         <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="">
+                                             <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+
                                             <div class="product-label">
                                             </div>
                                         </div>
@@ -485,12 +471,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                {{-- <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                        class="micon">
-                                                </div> --}}
+                                             
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -501,7 +482,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="">
+                                             <img src="{{ asset('img/axe.png') }}" alt="" style="height: 15em;">
+
                                             <div class="product-label">
                                             </div>
                                         </div>
@@ -509,12 +491,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                {{-- <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                        class="micon">
-                                                </div> --}}
+                                              
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -525,7 +502,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="">
+                                            <img src="{{ asset('img/Safety hat.png') }}" alt="" style="height: 15em;">
+
                                             <div class="product-label">
                                             </div>
                                         </div>
@@ -533,12 +511,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                {{-- <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                        class="micon">
-                                                </div> --}}
+                                             
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -549,7 +522,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="">
+                                             <img src="{{ asset('img/Lwera Sand.png') }}" alt="" style="height: 15em;">
+
                                             <div class="product-label">
                                             </div>
                                         </div>
@@ -557,12 +531,7 @@
                                             <h3 class="product-name"><a href="#">Lake Sand</a></h3>
                                             <div class="lower">
 
-                                                {{-- <div class="add-to-cart-btn">
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                        class="micon">
-                                                </div> --}}
+                                          
                                                 <h6 class="product-price" 1>UGX 120,000</h6>
 
 
@@ -574,7 +543,8 @@
 
                                     <div class="product">
                                         <div class="product-img">
-                                            <img src="./img/download.jpeg" alt="">
+                                            <img src="{{ asset('img/lake sand.png') }}" alt="" style="height: 15em;">
+
                                             <div class="product-label">
                                             </div>
                                         </div>
@@ -812,6 +782,10 @@
         display: none;
    
         float: right !important;
+    }
+
+    .m-search {
+        display: none;
     }
 
     

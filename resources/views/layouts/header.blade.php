@@ -36,7 +36,7 @@
 
     {{-- <div class="user-info mobile-user" id="mobile-user">
         <img src="./img/user_icon.jpg" alt="" style="width: 4rem;" class="micon">
-        <span>Bert</span>
+        <span>Sign in</span>
     </div> --}}
 </header>
 
@@ -70,7 +70,7 @@
     <div class="user-info web">
         <!-- <i class="fa fa-user"></i> -->
         <img src="{{ asset('img/user_icon.jpg') }}" alt="" style="width: 3rem;" class="micon" id="micon">
-        <span id="name">Bert</span>
+        <span id="name" style="font-weight: bold;">Sign in</span>
     </div>
 </header>
 
