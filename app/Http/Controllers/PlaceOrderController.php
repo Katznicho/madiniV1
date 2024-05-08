@@ -18,7 +18,7 @@ class PlaceOrderController extends Controller
     public function placeOrder(Request $request)
     {
         try {
-            dd($request->all());
+            // dd($request->all());
             // code...
             //dd("placing order");
 
