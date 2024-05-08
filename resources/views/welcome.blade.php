@@ -135,12 +135,9 @@
                             <!-- tab -->
                             <div id="tab2" class="tab-pane fade in active">
                                 <div class="products-slick" data-nav="#slick-nav-2">
-
-
-
                                     @foreach ($valueAddedProducts as $valueAddedProduct)
                                         <div class="product" style="width: 10px !important; ">
-                                            <a href="{{ route('product_details') }}">
+                                            <a href="{{ route('products.show', $product->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $valueAddedProduct->image }}"
                                                         alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
@@ -149,7 +146,7 @@
                                                 </div>
                                                 <div class="product-body">
                                                     <h3 class="product-name"><a
-                                                            href="#">{{ $valueAddedProduct->name }}</a>
+                                                            href="{{ route('products.show', $product->id) }}">{{ $valueAddedProduct->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -209,8 +206,6 @@
                             <!-- tab -->
                             <div id="tab2" class="tab-pane fade in active">
                                 <div class="products-slick" data-nav="#slick-nav-3">
-
-
 
                                     @foreach ($safetyProducts as $safetyProduct)
                                         <div class="product" style="width: 10px !important; ">

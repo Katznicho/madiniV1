@@ -41,6 +41,6 @@ class Product extends Model
     public function getImageUrlAttribute($value)
     {
         $imagePath = $this->attributes['image'];
-        return $imagePath ? "http://localhost:8001/storage/{$imagePath}" : null;
+        return $imagePath ? "https://admin.madinigroup.com/storage/{$imagePath}" : null;
     }
 }
