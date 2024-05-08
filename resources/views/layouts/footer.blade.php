@@ -81,6 +81,11 @@
         color: white;
     }
 
+    .footer{
+        bottom: 0;
+        position: sticky;
+    }
+
     i {
         color: white;
     }
@@ -161,11 +166,13 @@
         }
 
         .footer {
-            {{-- justify-content: center;
-            align-items: center;
-            text-align: center;
-    } --}}
-        }
+                
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+   
+    }
 </style>
 
 

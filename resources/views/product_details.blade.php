@@ -47,9 +47,10 @@
                 <div class="col-md-4 col-md-push-1">
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
-                        {{-- <img src="{{ $product->image_url }}" alt=""> --}}
+                        {{-- <img src="{{ asset('img/download.jpeg') }}" style="height: 15em;" alt=""> --}}
                         <img src="{{ $product->image_url }}" alt="" style="height: 15em;">
                     </div>
+
                      
 
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
@@ -788,10 +789,6 @@
         display: none;
 
         float: right !important;
-    }
-
-    .m-search {
-        display: none;
     }
 </style>
 

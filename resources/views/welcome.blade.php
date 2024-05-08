@@ -72,9 +72,9 @@
                                         <div class="product">
                                             <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
-                                                    {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
-                                                        style="height: 15em;"> --}}
-                                                    <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;">
+                                                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
+                                                        style="height: 15em;">
+                                                    {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">

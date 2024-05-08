@@ -134,7 +134,7 @@
                                         <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h3 class="product-name"><a href="#">sand</a></h3>
                                         <h4 class="product-price"><span class="qty">1x</span>UGX 120,000</h4>
                                     </div>
                                     <button class="delete"><i class="fa fa-close"></i></button>
@@ -145,7 +145,7 @@
                                         <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h3 class="product-name"><a href="#">sand</a></h3>
                                         <h4 class="product-price"><span class="qty">3x</span>UGX 120,000</h4>
                                     </div>
                                     <button class="delete"><i class="fa fa-close"></i></button>
