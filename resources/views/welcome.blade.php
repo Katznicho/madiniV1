@@ -67,14 +67,13 @@
                             <div id="tab1" class="tab-pane active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
 
-
                                     @foreach ($products as $product)
                                         <div class="product">
                                             <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
                                                     {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                                                         style="height: 15em;"> --}}
-                                                    <img src="{{ asset('img/download.jpeg') }}" alt=""
+                                                    <img src="{{ $product->image_url }}" alt=""
                                                         style="height: 15em;">
                                                     <div class="product-label"></div>
                                                 </div>
@@ -141,7 +140,7 @@
                                         <div class="product" style="width: 10px !important; ">
                                             <a href="{{ route('products.show', $valueAddedProduct->id) }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $valueAddedProduct->image }}"
+                                                    <img src="{{ $valueAddedProduct->image_url }}"
                                                         alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
@@ -208,7 +207,7 @@
                                         <div class="product" style="width: 10px !important; ">
                                             <a href="{{ route('products.show', $safetyProduct->id) }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $safetyProduct->image }}"
+                                                    <img src="{{ $safetyProduct->image_url }}"
                                                         alt="{{ $safetyProduct->name }}" style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
@@ -228,11 +227,6 @@
                                             </a>
                                         </div>
                                     @endforeach
-
-
-
-
-
 
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
@@ -280,16 +274,15 @@
 
                                     @foreach ($tools as $tool)
                                         <div class="product" style="width: 10px !important; ">
-                                            <a href="{{ route('product_details') }}">
+                                            <a href="{{ route('products.show', $tool->id) }}">
                                                 <div class="product-img">
-                                                    <img src="{{ $tool->image }}" alt="{{ $tool->name }}"
+                                                    <img src="{{ $tool->image_url }}" alt="{{ $tool->name }}"
                                                         style="height: 15em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a
-                                                            href="#">{{ $tool->name }}</a>
+                                                    <h3 class="product-name"><a href="{{ route('products.show', $tool->id) }}">{{ $tool->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">

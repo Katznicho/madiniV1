@@ -42,8 +42,10 @@ class ProductController extends Controller
     {   
         // dd("am here");
         $product =  Product::find($id);
+        $similarItems = Product::where("category_id", $product->category_id)->where("id", "!=" , $product->id)->get();
+        // dd($similarItems);
         // dd($product);
-        return view("product_details", compact('product'));
+        return view("product_details", compact('product', 'similarItems'));
         //return view("")
     }
 

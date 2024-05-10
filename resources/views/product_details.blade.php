@@ -112,20 +112,20 @@
                                             <h3 class="title">Similar Items</h3>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-xs-6">
-
-
+                                    @foreach ($similarItems as $similarItem)
+                                     <a href="{{ route('products.show', $similarItem->id) }}" class="product-img">
+                                      <div class="col-md-6 col-xs-6">
                                         <div class="product s product1" style = "margin-right: 1rem !important;">
                                             <div class="product-img">
                                                 {{-- <img src="./img/download.jpeg" alt=""> --}}
-                                                <img src="{{ asset('img/download.jpeg') }}" alt=""
+                                                <img src="{{ $similarItem->image_url }}" alt=""
                                                     style="height: 15em;">
 
                                                 <div class="product-label">
                                                 </div>
                                             </div>
                                             <div class="product-body">
-                                                <h3 class="product-name"><a href="#">Lake Sand</a></h3>
+                                                <h3 class="product-name"><a href="#">{{ $similarItem->name }}</a></h3>
                                                 <div class="lower">
                                                     {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
 
@@ -144,40 +144,10 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-md-6 col-xs-6">
-
-
-                                        <!-- product -->
-                                        <div class="product s product1" style = "margin-right: 1rem !important;">
-                                            <div class="product-img">
-                                                {{-- <img src="./img/download.jpeg" alt=""> --}}
-                                                <img src="{{ asset('img/download.jpeg') }}" alt=""
-                                                    style="height: 15em;">
-
-                                                <div class="product-label">
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                                <div class="lower">
-
-                                                    <div class="add-to-cart-btn similar-cart">
-                                                        <span>Add</span>
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                            class="micon"> -->
-
-
-                                                    </div>
-                                                    <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix visible-sm visible-xs"></div>
-                                    </div>
+                                    </a>
+                                        
+                                    @endforeach
+                                    
 
 
 
