@@ -8,23 +8,30 @@
             <div class="row">
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-					 <a href="#home" class="mhome" id="#mhome"><img src = "img/Madini Logo img.png" style="align-items: center; padding: 10px; width: 15rem;" id="#mhome"></a>
-                     <h6 style="text-align: center !important; margin-bottom: 30px !important; align-items: center !important; justify-content: center !important; color: white;"> Madini, A digital mineral  market place </h6>
-                        
-                        <p>Madini a digital online market place where Artisanal and Small-Scale miners can showcase their products
-                            <br>
+                        <a href="#home" class="mhome" id="#mhome"><img src = "{{ asset("img/Madini Logo img.png") }}" alt="Madini Logo"
+                                style="align-items: center; padding: 10px; width: 15rem;" id="#mhome"></a>
+                        <h6
+                            style="text-align: center !important; margin-bottom: 30px !important; align-items: center !important; justify-content: center !important; color: white;">
+                            Madini, A digital mineral market place </h6>
+
+                        {{-- <p>Madini a digital online market place where Artisanal and Small-Scale miners can
+                            showcase their products
+                            </p>> --}}
 
                     </div>
                 </div>
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">CONTACT US</h3>
+                        {{-- <h3 class="footer-title">CONTACT US</h3> --}}
                         <ul class="footer-links">
                             <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-map-marker" style="color: white;"></i>Hamlet Hub, Mimosa Courts, Uganda Kampala.</a></li>
-                                <li><a href="#"><i class="fa fa-phone" style="color: white;"></i>+256 393 100 200</a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o" style="color: white;"></i>&nbsp;connect@madinigroup.com</a></li>
+                                {{-- <li><a href="#"><i class="fa fa-map-marker" style="color: white;"></i>Hamlet Hub,
+                                        Mimosa Courts, Uganda Kampala.</a></li>
+                                <li><a href="#"><i class="fa fa-phone" style="color: white;"></i>+256 393 100
+                                        200</a></li> --}}
+                                <li><a href="#"><i class="fa fa-envelope-o"
+                                            style="color: white;"></i>&nbsp;connect@madinigroup.com</a></li>
                             </ul>
                         </ul>
                     </div>
@@ -34,26 +41,26 @@
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Information</h3>
+                        {{-- <h3 class="footer-title">Information</h3> --}}
                         <ul class="footer-links">
                             <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            {{-- <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Orders and Returns</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Terms & Conditions</a></li> --}}
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Service</h3>
+                        {{-- <h3 class="footer-title">Service</h3> --}}
                         <ul class="footer-links">
                             <li><a href="#">My Account</a></li>
-                            <li><a href="#">View Cart</a></li>
+                            {{-- <li><a href="#">View Cart</a></li>
                             <li><a href="#">Wishlist</a></li>
                             <li><a href="#">Track My Order</a></li>
-                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Help</a></li> --}}
                         </ul>
                     </div>
                 </div>
@@ -62,32 +69,7 @@
         </div>
         <!-- /container -->
     </div>
-    <!-- /top footer -->
 
-    <!-- bottom footer -->
-    <!-- <div id="bottom-footer" class="section">
-    <div class="container"> -->
-    <!-- row -->
-    <!-- <div class="row">
-      <div class="col-md-12 text-center"> -->
-    <!-- <ul class="footer-payments">
-        <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-        <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-        <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-        <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-        <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-        <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-       </ul> -->
-    <!-- <span class="copyright">
-        <a target="_blank" href="https://madinigroup.com">Madini</a>
-       </span>
-      </div>
-     </div> -->
-    <!-- /row -->
-    <!-- </div> -->
-    <!-- /container -->
-    <!-- </div> -->
-    <!-- /bottom footer -->
 
 
 
@@ -95,38 +77,7 @@
 <!-- /FOOTER -->
 
 <style>
-    .footer-links {
-        color: white;
-    }
-
-    i {
-        color: white;
-    }
-
-
-
-    .bar {
-
-        display: none;
-
-
-    }
-
-    #home {
-        display: none !important;
-    }
-
-	   #mhome {
-        display: none !important;
-    }
-
-    .bar a {
-        display: none;
-    }
-
-	.mhome{
-		display: none;
-	}
+  
 
     /* Media query for smaller screens */
     @media screen and (max-width: 768px) {
@@ -148,18 +99,18 @@
             margin: 0;
         }
 
-		.aboutus {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+        .aboutus {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-		.mhome {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			border-radius: 50%;
-		}
+        .mhome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
 
         #home {
             display: flex;
@@ -170,22 +121,22 @@
             display: flex;
         }
 
-         .footer-links>li.fa {
-           
-        font-size: 20px;
-        color: white !important;
-    
-        margin-right: 5px;
-    }
+        .footer-links>li.fa {
 
-    .footer{
-         {{-- justify-content: center;
-            align-items: center;
-            text-align: center;
-    } --}}
-    }
+            font-size: 20px;
+            color: white !important;
 
- 
+            margin-right: 5px;
+        }
+
+        .footer {
+                
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                }
+   
+    }
 </style>
 
 

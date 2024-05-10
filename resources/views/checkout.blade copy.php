@@ -12,9 +12,6 @@
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
@@ -31,6 +28,18 @@
     <!-- Custom stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
 
+    <!-- International Telephone Input -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/css/intlTelInput.css">
+
+    <style>
+        /* Add custom CSS styles for curved borders */
+        .order-details {
+            background-color: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,7 +55,7 @@
             <!-- row -->
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="breadcrumb-header">Checkout</h3>
+                    <h3 class="breadcrumb-header">CONFIRM AND PAY</h3>
                     <ul class="breadcrumb-tree">
                         <li><a href="#">Home</a></li>
                         <li class="active">Checkout</li>
@@ -60,173 +69,268 @@
     <!-- /BREADCRUMB -->
 
     <!-- SECTION -->
+
+    @csrf
     <div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
             <div class="row">
 
-                <div class="col-md-7">
-                    <!-- Billing Details -->
-                    <div class="billing-details">
-                        <div class="section-title">
-                            <h3 class="title">Billing address</h3>
-                        </div>
 
-                        <div class="phone form-group">
-                            <input class=" phone input" type="tel" name="tel" placeholder="Telephone">
+
+                <!-- Left Column -->
+
+                <div class="col-md-6">
+                    <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
+
+                        <!-- Product Details -->
+                        <div class="product-details">
+                            <div class="section-title">
+                                <h3 class="title">Your Order Details</h3>
+                            </div>
+                            <!-- Add product details here -->
+                            {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
+                            <div class = "quantities">
+                                <p style="font-weight: 900; text-align: left"> Quantity:</p>
+                                <p>1 x {{ $product->name }}
+
+                                    <i class="fa fa-plus" style="float: right; color: #007bff;">
+                                    </i>
+                                    {{-- add quantity input field here --}}
+                                    <input type="number" name="quantity" value="1" min="1" max="100"
+                                        style="float: right; margin-left: 0.5%; margin-right: 0.5%; margin-bottom: 1.5% !important;" />
+                                    <i class="fa fa-minus" style="float: right ; color: #007bff;">
+                                    </i>
+                                </p>
+                            </div>
+                            <div class="deliveries">
+                                <p style="font-weight: 900;  text-align: left;"> Deliver To:</p>
+
+                                <p style="margin-right: 10px; text-align: left;">Muyenga {{ $product->name }} <a
+                                        href="#" style="color: #007bff; "><i class="fa fa-pencil"
+                                            style="float: right">
+                                        </i>
+                                    </a>
+                                </p>
+
+
+                            </div>
+                            {{-- add edit button right aligned --}}
+                            <hr />
+
+
+
+                            <!-- Phone number input -->
+                            <div class="phone-number">
+                                <div class="section-title">
+                                    <h5 class="title">Required for your delivery</h5>
+                                    <p> Add and confirm your phone number below to get delivery updates. </p>
+                                </div>
+                                <div class="form-group phone" style="width: 100% !important;">
+                                    <input class="input phone" type="tel" id="phone" name="phone"style=" "
+                                        placeholder="0701234567">
+                                </div>
+                                <p>We call or text you to confirm your number. Standard Message and data rates may
+                                    apply. <a href="#">Privacy Policy</a></p>
+                            </div>
+                            <!-- /Phone number input -->
+
                         </div>
-                        <div class="form-group">
+                        <!-- /Product Details -->
+
+                        <hr />
+
+
+                        <!-- Enter ASM Coupon -->
+
+                        <!-- /Enter ASM Coupon -->
+
+
+                        <!-- Shiping Details -->
+                        <div class="shiping-details">
+
                             <div class="input-checkbox">
-                                <input type="checkbox" id="create-account">
-                                <label for="create-account">
-                                    <span></span>
-                                    Create Account?
+                                <a>
+                                    <input type="checkbox" id="shiping-address" class="hidden"
+                                        style="display: none !important;">
+                                    <label for="shiping-address">
+
+                                        <h4 class="" style="text-decoration: underline; color:grey;">Enter ASM
+                                            Coupon
+                                        </h4>
+
+                                    </label>
+                                    <div class="caption">
+
+                                        {{-- <div class="form-group">
+                                        <input class="input" type="email" name="email" placeholder="Email">
+                                    </div> --}}
+                                        <div class="form-group">
+                                            <input class="input" type="text" name="coupon"
+                                                placeholder="ASM Coupon">
+                                        </div>
+
+
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /Shiping Details -->
+
+                        <!-- Pay with -->
+                        <div class="pay-with row" style="justify-content: space-between;  width: 100%;">
+                            <div class="section-title">
+                                <input type="radio" name="payment" id="payment-mtn-momo">
+                                <h3 class="title" style="text-decoration: none !important;">Pay with</h3>
+                            </div>
+
+
+                            <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
+                            <div class="payment-method" style="justity-content: space-between;">
+                                <label for="payment-airtel-money">
+                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="90"
+                                            height="40" alt="airtel"> </i>
                                 </label>
-                                <div class="caption">
-                                    <p>Create an account with Madini to get customized construction experience from our
-                                        experts and authentic building materials.</p>
-                                    <input class="input" type="password" name="password"
-                                        placeholder="Enter Your Password">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Billing Details -->
+                                <label for="payment-mtn-momo">
+                                    {{-- random svg --}}
 
-                    <!-- Shiping Details -->
-                    <div class="shiping-details">
-                        <div class="section-title">
-                            <h3 class="title">Shiping address</h3>
-                        </div>
-                        <div class="input-checkbox">
-                            <input type="checkbox" id="shiping-address">
-                            <label for="shiping-address">
-                                <span></span>
-                                Ship to a different address?
-                            </label>
-                            <div class="caption">
-                                {{-- <div class="form-group">
-										<input class="input" type="text" name="first-name" placeholder="First Name">
-									</div>
-									<div class="form-group">
-										<input class="input" type="text" name="last-name" placeholder="Last Name">
-									</div> --}}
-                                <div class="form-group">
-                                    <input class="input" type="email" name="email" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="address" placeholder="Address">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="city" placeholder="City">
-                                </div>
-                                <div class="form-group">
-                                    <input class="input" type="text" name="country" placeholder="Country">
-                                </div>
-                                {{-- <div class="form-group">
-										<input class="input" type="text" name="zip-code" placeholder="ZIP Code">
-									</div> --}}
-                                <div class="form-group phone">
-                                    <input class="input phone" type="tel" name="tel" placeholder="Telephone">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Shiping Details -->
+                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="90"
+                                            height="40" alt="airtel"> </i>
+                                </label>
 
-                    <!-- Order notes -->
-                    <div class="order-notes">
-                        <textarea class="input" placeholder="Order Notes"></textarea>
-                    </div>
-                    <!-- /Order notes -->
+                                <label for="payment-google-pay">
+                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="90"
+                                            height="40" alt="airtel"> </i>
+                                </label>
+                                <label for="payment-mastercard">
+                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="70"
+                                            height="40" alt="airtel"> </i>
+                                </label>
+                                <label for="payment-visa">
+                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="70"
+                                            height="40" alt="airtel"> </i>
+                                </label>
+
+                                <!-- Hide the radio buttons -->
+                                <input type="radio" name="payment" id="payment-mtn-momo" style="display: none;">
+                                <input type="radio" name="payment" id="payment-airtel-money"
+                                    style="display: none;">
+                                <input type="radio" name="payment" id="payment-google-pay" style="display: none;">
+                                <input type="radio" name="payment" id="payment-visa" style="display: none;">
+                                <input type="radio" name="payment" id="payment-mastercard" style="display: none;">
+                            </div>
+
+                            <!-- /Pay with -->
+
+                            <div class="section-title">
+                                <input type="radio" name="payment" id="payment-cod">
+                                <h3 class="title" style="text-decoration: none !important;">Pay on Delivery</h3>
+                                <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong>
+                                    may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a>
+                                </p>
+                                <p> Pay online for a contactless delivery.</p>
+                            </div>
+
+
+                            <div class="">
+                                <button type="submit" class="primary-btn order-submit flex"
+                                    style="background-color: #DE1D40; border-radius: 5%; ">Purchase</button>
+                            </div>
+
+                            <p> By clicking "Purchase", I agree to <a href="#"
+                                    style="text-decoration: underline;"> Madini's policy </a> , <a
+                                    style="text-decoration: underline;" href="#"> Delivery and Refund Policy
+                                </a> and that Madini can charge my payment method if items have been ordered.
+                            </p>
+                        </div>
+                    </form>
+                    <!-- /Pay with -->
+
+
                 </div>
 
-                <!-- Order Details -->
-                <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
-
-                    {{-- add dummy image --}}
-                    <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " />
-                    {{-- add product name --}}
-                    <h3>{{ $product->name }}</h3>
-                    {{-- add product price --}}
-                    <h4>UGX {{ number_format($product->price) }}</h4>
 
 
+
+
+
+                <!-- /Left Column -->
+
+                <div class="col-md-1">
+                </div>
+                <!-- Right Column -->
+                <div class="col-md-5 right col-md-6 mobile-top-right right-column"
+                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
+                    <!-- Order Details -->
+                    <form method="POST" action="{{ route('placeOrder') }}" class="">
                     @csrf
-                    <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                    <input type="hidden" name="product_name" value="{{ $product->name }}" />
-                    <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                    <div class="col-md-5 order-details">
-                        <div class="section-title text-center">
-                            <h3 class="title">Your Order</h3>
-                        </div>
-                        <div class="order-summary">
-                            <div class="order-col">
-                                <div><strong>PRODUCT</strong></div>
-                                <div><strong>TOTAL</strong></div>
+                        <div class="row ">
+                            <div class="col-md-6">
+                                {{-- Add dummy image --}}
+                                {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
+                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
                             </div>
-                            <div class="order-products">
+                            <div class="col-md-6" style="margin-top: 12%;">
+                                {{-- Add product name --}}
+                                <h3>{{ $product->name }}</h3>
+
+                                <p> 25 mm Lake Sand </p>
+                                {{-- Add product price --}}
+                                <h4>UGX {{ number_format($product->price) }}</h4>
+
+                                {{-- add rating 5 star --}}
+                                <div class="rating">
+                                    <div class="rating">
+                                        <i class="fa fa-star fa-2x">5.00 (1)</i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <hr>
+                                {{-- add horizontal line  --}}
+                            </div>
+
+
+
+
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                            <input type="hidden" name="product_name" value="{{ $product->name }}" />
+                            <input type="hidden" name="product_price" value="{{ $product->price }}" />
+                            <hr />
+                            <div class="order-summary">
                                 <div class="order-col">
-                                    <div>{{ $product->name }}</div>
-                                    <div>UGX {{ number_format($product->price) }}</div>
+                                    <div><strong>Price Details</strong></div>
+                                    <div><strong>TOTAL</strong></div>
+                                </div>
+                                <div class="order-products">
+                                    <div class="order-col">
+                                        <div>{{ $product->name }} x 1 Tonne</div>
+
+                                        <div>UGX {{ number_format($product->price) }}</div>
+                                    </div>
+                                </div>
+                                <div class="order-col">
+                                    <div style="text-decoration:underline;">Madini Service Fee</div>
+                                    <div><strong>UGX 12,000</strong></div>
+                                </div>
+
+                                <hr />
+                                <div class="order-col">
+                                    <div><strong>TOTAL</strong></div>
+                                    <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="order-col">
-                                <div>Shiping</div>
-                                <div><strong>FREE</strong></div>
-                            </div>
-                            <div class="order-col">
-                                <div><strong>TOTAL</strong></div>
-                                <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="payment-method">
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-1">
-								<label for="payment-1">
-									<span></span>
-									Direct Bank Transfer
-								</label>
-								<div class="caption">
-									<p>We accept payments from authroized partnering banks online</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-2">
-								<label for="payment-2">
-									<span></span>
-									Cheque Payment
-								</label>
-								<div class="caption">
-									<p>We accept cheques from banks in Uganda and abroad</p>
-								</div>
-							</div>
-							<div class="input-radio">
-								<input type="radio" name="payment" id="payment-3">
-								<label for="payment-3">
-									<span></span>
-									Paypal System
-								</label>
-								<div class="caption">
-									<p>Pay us using paypal online aggregation</p>
-								</div>
-							</div>
-						</div> --}}
-                        <div class="input-checkbox">
-                            <input type="checkbox" id="terms">
-                            <label for="terms">
-                                <span></span>
-                                I've read and accept the <a href="#">terms & conditions</a>
-                            </label>
-                        </div>
-                        {{-- <a href="#" class="primary-btn order-submit">Place order</a> --}}
-                        <!-- "Place order" button -->
-                        <button type="submit" class="primary-btn order-submit">Place order</button>
-                    </div>
-                </form>
-                <!-- /Order Details -->
+                    </form>
+                    <!-- /Order Details -->
+                </div>
+                <!-- /Right Column -->
+
+                <!-- /Right Column -->
             </div>
             <!-- /row -->
         </div>
@@ -238,67 +342,196 @@
 
 
 
-    @include('layouts.footer')
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/css/intlTelInput.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput-jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput-jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.min.js"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.1.0/build/css/intlTelInput.css">
-
-
-    <!-- jQuery Plugins -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/nouislider.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    {{-- @include('layouts.footer') --}}
 
 </body>
 
-
-<style>
-    .m-search {
-        display: flex;
+</html>
 
 
-        float: right !important;
-        padding: 2% !important;
-        margin: 0% !important;
-    }
+<!-- JavaScript Libraries -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/nouislider.min.js') }}"></script>
+<script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
-    .m-search-icon {
-        display: none;
-
-        float: right !important;
-    }
-</style>
-
-
-
-
-
+<!-- International Telephone Input -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/20.2.0/js/utils.js"></script>
 
 <script>
+    // Initialize International Telephone Input
     const input = document.querySelector("#phone");
     window.intlTelInput(input, {
         initialCountry: "ug",
         strictMode: true,
-        utilsScript: "/intl-tel-input/js/utils.js?1711461746916" // just for formatting/placeholders etc
-    });
-
-    const inputContact = document.querySelector("#primary_contact_phone");
-    window.intlTelInput(inputContact, {
-        initialCountry: "ug",
-        strictMode: true,
-        utilsScript: "/intl-tel-input/js/utils.js?1711461746916" // just for formatting/placeholders etc
+        utilsScript: "/intl-tel-input/js/utils.js" // just for formatting/placeholders etc
     });
 </script>
 
-</html>
+
+<style>
+    /* Add custom CSS styles for curved borders */
+    .order-details {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    /*  .m-search-icon {
+        display: none;
+
+        float: right !important;
+    }
+*/
+
+    @media (max-width: 767px) {
+
+        /* Custom CSS for mobile layout */
+        .right-column {
+            order: -1;
+            padding: 0px;
+            margin: 0px;
+            
+            /* Move the right column to the top */
+            width: 100%;
+            /* Make the right column take full width in mobile view */
+            margin-bottom: 20px;
+            /* Add some space between the columns */
+        }
+
+        .
+    }
+
+
+
+
+    .button {
+        background-color: white;
+        /* Green */
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 767px) {
+
+        /* Custom CSS for mobile layout */
+        .mobile-top-right {
+            order: -1;
+            /* This moves the element to the beginning of the row */
+        }
+    }
+
+
+
+
+    @media only screen and (max-width: 600px) {
+        .m-search-icon {
+            display: block;
+        }
+
+        .search-icon {
+            display: none;
+        }
+
+
+        .input {
+            width: 100% !important;
+        }
+
+        .right {
+            padding: 2% !important;
+            margin: 2% !important;
+        }
+
+    }
+
+
+
+    .footer {
+        bottom: 0 !important;
+
+    }
+
+
+    .m-search {
+        display: block;
+        /* Makes the input take full width */
+        /* width: 100%; */
+        /* Fills remaining space in parent */
+        padding: 10px 10px 10px 10px;
+        /* Adjust padding as needed */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        /* Add curved corners */
+        height: 6rem;
+        width: 60rem;
+        /* Set input height */
+        /* width: 30rem; */
+    }
+
+    .m-search-btn {
+        position: absolute;
+        /* Positions button inside input */
+        top: 0;
+        right: 10px;
+        /* Adjust right padding for icon placement */
+        bottom: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+    }
+
+    .m-search-icon {
+        fill: #ccc;
+        /* Change color as needed */
+        width: 14px;
+        height: 14px;
+        /* margin-right: 500px; */
+    }
+
+    /* Style checkboxes */
+    input[type="checkbox"] {
+        display: inline-flex;
+        /* Hide the actual checkboxes */
+    }
+
+    /* Style labels for checkboxes */
+    input[type="checkbox"]+label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    /* Style custom checkbox appearance */
+    input[type="checkbox"]+label:before {
+        content: "";
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-right: 5px;
+        background-color: #fff;
+    }
+
+    /* Style custom checkbox checked state */
+    input[type="checkbox"]:checked+label:before {
+        background-color: #007bff;
+        /* Change to desired color */
+    }
+
+    /* Style text of labels */
+    input[type="checkbox"]+label {
+        color: #333;
+        /* Change to desired color */
+        font-size: 14px;
+    }
+</style>

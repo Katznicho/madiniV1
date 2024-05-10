@@ -40,8 +40,12 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {   
+        // dd("am here");
         $product =  Product::find($id);
-        return view("product_details", compact('product'));
+        $similarItems = Product::where("category_id", $product->category_id)->where("id", "!=" , $product->id)->get();
+        // dd($similarItems);
+        // dd($product);
+        return view("product_details", compact('product', 'similarItems'));
         //return view("")
     }
 

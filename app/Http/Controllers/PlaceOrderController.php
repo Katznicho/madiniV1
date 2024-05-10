@@ -7,17 +7,20 @@ use App\Models\OrderItem;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Payments\Pesapal;
+use App\Traits\MessageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class PlaceOrderController extends Controller
 {
+    use MessageTrait;
     //
     public function placeOrder(Request $request)
     {
         try {
+            // dd($request->all());
             // code...
-            // dd("placing order");
+            //dd("placing order");
 
             $user_id = 3;
 
