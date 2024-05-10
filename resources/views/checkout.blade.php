@@ -42,7 +42,7 @@
     </style>
 </head>
 
-<body >
+<body>
 
     <!-- include header -->
     @include('layouts.header')
@@ -70,288 +70,19 @@
 
     <!-- SECTION -->
 
-    <div class="section web">
+    @csrf
+    <div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
             <div class="row">
 
-                <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
-                    @csrf
-
-                    <!-- Left Column -->
-
-                    <div class="col-md-6">
-
-                        <!-- Product Details -->
-                        <div class="product-details">
-                            <div class="section-title">
-                                <h3 class="title">Your Order Details</h3>
-                            </div>
-                            <!-- Add product details here -->
-                            {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
-                            <div class = "quantities">
-                                <p style="font-weight: 900; text-align: left"> Quantity:</p>
-                                <p>1 x {{ $product->name }}
-
-                                    <i class="fa fa-plus" style="float: right; color: #007bff;">
-                                    </i>
-                                    {{-- add quantity input field here --}}
-                                    <input type="number" name="quantity" value="1" min="1" max="100"
-                                        style="float: right; margin-left: 0.5%; margin-right: 0.5%; margin-bottom: 1.5% !important;" />
-                                    <i class="fa fa-minus" style="float: right ; color: #007bff;">
-                                    </i>
-                                </p>
-                            </div>
-                            <div class="deliveries">
-                                <p style="font-weight: 900;  text-align: left;"> Deliver To:</p>
-
-                                <p style="margin-right: 10px; text-align: left;">Muyenga {{ $product->name }} <a
-                                        href="#" style="color: #007bff; "><i class="fa fa-pencil"
-                                            style="float: right">
-                                        </i>
-                                    </a>
-                                </p>
 
 
-                            </div>
-                            {{-- add edit button right aligned --}}
-                            <hr />
+                <!-- Left Column -->
 
-
-
-                            <!-- Phone number input -->
-                            <div class="phone-number">
-                                <div class="section-title">
-                                    <h5 class="title">Required for your delivery</h5>
-                                    <p> Add and confirm your phone number below to get delivery updates. </p>
-                                </div>
-                                <div class="form-group phone" style="width: 100% !important;">
-                                    <input class="input phone" type="tel" id="phone" name="phone"style=" "
-                                        placeholder="0701234567">
-                                </div>
-                                <p>We call or text you to confirm your number. Standard Message and data rates may
-                                    apply. <a href="#">Privacy Policy</a></p>
-                            </div>
-                            <!-- /Phone number input -->
-
-                        </div>
-                        <!-- /Product Details -->
-
-                        <hr />
-
-
-                        <!-- Enter ASM Coupon -->
-
-                        <!-- /Enter ASM Coupon -->
-
-
-                        <!-- Shiping Details -->
-                        <div class="shiping-details">
-
-                            <div class="input-checkbox">
-                                <a>
-                                    <input type="checkbox" id="shiping-address" class="hidden"
-                                        style="display: none !important;">
-                                    <label for="shiping-address">
-
-                                        <h4 class="" style="text-decoration: underline; color:grey;">Enter ASM
-                                            Coupon
-                                        </h4>
-
-                                    </label>
-                                    <div class="caption">
-
-                                        {{-- <div class="form-group">
-                                        <input class="input" type="email" name="email" placeholder="Email">
-                                    </div> --}}
-                                        <div class="form-group">
-                                            <input class="input" type="text" name="coupon"
-                                                placeholder="ASM Coupon">
-                                        </div>
-
-
-
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- /Shiping Details -->
-
-                        <!-- Pay with -->
-                        <div class="pay-with row" style="justify-content: space-between;  width: 100%;">
-                            <div class="section-title">
-                                <input type="radio" name="payment" id="payment-mtn-momo">
-                                <h3 class="title" style="text-decoration: none !important;">Pay with</h3>
-                            </div>
-
-
-                            <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
-                            <div class="payment-method" style="justity-content: space-between;">
-                                <label for="payment-airtel-money">
-                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
-                                </label>
-                                <label for="payment-mtn-momo">
-                                    {{-- random svg --}}
-
-                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
-                                </label>
-
-                                <label for="payment-google-pay">
-                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
-                                </label>
-                                <label for="payment-mastercard">
-                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="70"
-                                            height="40" alt="airtel"> </i>
-                                </label>
-                                <label for="payment-visa">
-                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="70"
-                                            height="40" alt="airtel"> </i>
-                                </label>
-
-                                <!-- Hide the radio buttons -->
-                                <input type="radio" name="payment" id="payment-mtn-momo" style="display: none;">
-                                <input type="radio" name="payment" id="payment-airtel-money"
-                                    style="display: none;">
-                                <input type="radio" name="payment" id="payment-google-pay" style="display: none;">
-                                <input type="radio" name="payment" id="payment-visa" style="display: none;">
-                                <input type="radio" name="payment" id="payment-mastercard" style="display: none;">
-                            </div>
-
-                            <!-- /Pay with -->
-
-                            <div class="section-title">
-                                <input type="radio" name="payment" id="payment-cod">
-                                <h3 class="title" style="text-decoration: none !important;">Pay on Delivery</h3>
-                                <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong>
-                                    may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a>
-                                </p>
-                                <p> Pay online for a contactless delivery.</p>
-                            </div>
-
-
-                            <div class="">
-                                <button type="submit" class="primary-btn order-submit flex"
-                                    style="background-color: #DE1D40; border-radius: 5%; ">Purchase</button>
-                            </div>
-
-                            <p> By clicking "Purchase", I agree to <a href="#"
-                                    style="text-decoration: underline;"> Madini's policy </a> , <a
-                                    style="text-decoration: underline;" href="#"> Delivery and Refund Policy
-                                </a> and that Madini can charge my payment method if items have been ordered.
-                            </p>
-                        </div>
-
-
-
-                    </div>
-                    <!-- /Left Column -->
-                </form>
-                <!-- /Pay with -->
-
-
-
-
-
-
-
-
-                <div class="col-md-1">
-                </div>
-
-
-                <!-- Right Column -->
-                <div class="col-md-5 right  mobile-top-right right-column"
-                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%; margin: 2%; ">
-                    <!-- Order Details -->
-                    <form method="POST" action="{{ route('placeOrder') }}" class="">
-                        <div class="row ">
-                            <div class="col-md-6">
-                                {{-- Add dummy image --}}
-                                {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
-                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
-                            </div>
-                            <div class="col-md-6" style="margin-top: 12%;">
-                                {{-- Add product name --}}
-                                <h3>{{ $product->name }}</h3>
-
-                                <p> 25 mm Lake Sand </p>
-                                {{-- Add product price --}}
-                                <h4>UGX {{ number_format($product->price) }}</h4>
-
-                                {{-- add rating 5 star --}}
-                                <div class="rating">
-                                    <div class="rating">
-                                        <i class="fa fa-star fa-2x">5.00 (1)</i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <hr>
-                                {{-- add horizontal line  --}}
-                            </div>
-
-
-
-
-                            @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                            <input type="hidden" name="product_name" value="{{ $product->name }}" />
-                            <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                            <hr />
-                            <div class="order-summary">
-                                <div class="order-col">
-                                    <div><strong>Price Details</strong></div>
-                                    <div><strong>TOTAL</strong></div>
-                                </div>
-                                <div class="order-products">
-                                    <div class="order-col">
-                                        <div>{{ $product->name }} x 1 Tonne</div>
-
-                                        <div>UGX {{ number_format($product->price) }}</div>
-                                    </div>
-                                </div>
-                                <div class="order-col">
-                                    <div style="text-decoration:underline;">Madini Service Fee</div>
-                                    <div><strong>UGX 12,000</strong></div>
-                                </div>
-
-                                <hr />
-                                <div class="order-col">
-                                    <div><strong>TOTAL</strong></div>
-                                    <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
-                                    </div>
-                                </div>
-                            </div>
-                    </form>
-                    <!-- /Order Details -->
-                </div>
-                <!-- /Right Column -->
-
-
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /SECTION -->
-
-    <div class="section mobo">
-        <!-- container -->
-        <div class="container mobo">
-            <!-- row -->
-            <div class="row">
-
-                <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
-                    @csrf
-
-                    <!-- Left Column -->
-
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
 
                         <!-- Product Details -->
                         <div class="product-details">
@@ -514,28 +245,24 @@
                                 </a> and that Madini can charge my payment method if items have been ordered.
                             </p>
                         </div>
+                    </form>
+                    <!-- /Pay with -->
 
 
-
-                    </div>
-                    <!-- /Left Column -->
-                </form>
-                <!-- /Pay with -->
-
-
-
-
-
-
-
-
-                <div class="col-md-1">
                 </div>
 
 
+
+
+
+
+                <!-- /Left Column -->
+
+                <div class="col-md-1">
+                </div>
                 <!-- Right Column -->
-                <div class="col-md-5 right  mobile-top-right right-column"
-                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%; margin: 2%; ">
+                <div class="col-md-5 right col-md-6 mobile-top-right right-column"
+                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
                         <div class="row ">
@@ -602,7 +329,7 @@
                 </div>
                 <!-- /Right Column -->
 
-
+                <!-- /Right Column -->
             </div>
             <!-- /row -->
         </div>
@@ -610,16 +337,15 @@
     </div>
     <!-- /SECTION -->
 
+    <!-- NEWSLETTER -->
 
 
-    @include('layouts.footer')
+
+    {{-- @include('layouts.footer') --}}
 
 </body>
 
-
-    
-
-  
+</html>
 
 
 <!-- JavaScript Libraries -->
@@ -654,10 +380,6 @@
         margin-bottom: 20px;
     }
 
-    .mobo {
-        display: none;
-    }
-
     /*  .m-search-icon {
         display: none;
 
@@ -670,6 +392,9 @@
         /* Custom CSS for mobile layout */
         .right-column {
             order: -1;
+            padding: 0px;
+            margin: 0px;
+            
             /* Move the right column to the top */
             width: 100%;
             /* Make the right column take full width in mobile view */
@@ -677,13 +402,7 @@
             /* Add some space between the columns */
         }
 
-        .mobo {
-            display: block;
-        }
-
-        .web {
-            display: none;
-        }
+        .
     }
 
 
@@ -698,9 +417,6 @@
     }
 
     @media (max-width: 767px) {
-           .mobo {
-            display: block;
-        }
 
         /* Custom CSS for mobile layout */
         .mobile-top-right {
@@ -729,14 +445,6 @@
         .right {
             padding: 2% !important;
             margin: 2% !important;
-        }
-
-        .mobo {
-            display: block;
-        }
-
-        .web {
-            display: none;
         }
 
     }
@@ -825,26 +533,4 @@
         /* Change to desired color */
         font-size: 14px;
     }
-
-    @media (max-width: 767px) {
-    /* Custom CSS for mobile layout */
-    .right-column {
-        order: -1;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .left-column {
-        width: 100%;
-    }
-
-    .mobo {
-        display: block;
-    }
-
-    .web {
-        display: none;
-    }
-}
-
 </style>

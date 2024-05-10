@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <a href="#home" class="mhome" id="#mhome"><img src = "img/Madini Logo img.png"
+                        <a href="#home" class="mhome" id="#mhome"><img src = "{{ asset("img/Madini Logo img.png") }}" alt="Madini Logo"
                                 style="align-items: center; padding: 10px; width: 15rem;" id="#mhome"></a>
                         <h6
                             style="text-align: center !important; margin-bottom: 30px !important; align-items: center !important; justify-content: center !important; color: white;">
