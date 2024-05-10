@@ -78,8 +78,8 @@
             <div class="row web">
 
                 <!-- Left Column -->
-                <div class="col-md-1">
-                </div>
+                {{-- <div class="col-md-1">
+                </div> --}}
 
                 <div class="col-md-6 order-md-2 order-sm-2 order-2">
                     <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
@@ -122,7 +122,7 @@
                             <!-- Phone number input -->
                             <div class="phone-number" style="width: 100%;">
                                 <div class="section-title">
-                                    <h5 class="title">Required for your delivery</h5>
+                                    <h5 class="title" style="text-decoration: none">Required for your delivery</h5>
                                     <p> Add and confirm your phone number below to get delivery updates. </p>
                                 </div>
                                 <div class="form-group phone" style="width: 100% !important;">
@@ -185,48 +185,29 @@
                                 <h3 class="title" style="text-decoration: none !important;">Pay with</h3>
                             </div>
 
+<!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
+<div class="payment-method" style="justity-content: space-between;">
+    <label for="payment-airtel-money">
+        <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="70" height="40" alt="airtel" style="margin: 5px;"></i>
+    </label>
+    <label for="payment-mtn-momo">
+        {{-- random svg --}}
+        <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="70" height="50" alt="mtn momo" style="margin: 5px;"></i>
+    </label>
+    <label for="payment-google-pay">
+        <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="80" height="50" alt="google pay" style="margin: 5px;"></i>
+    </label>
+    <label for="payment-apple-pay">
+        <i class=""><img src="{{ asset('img/apple pay.jpeg') }}" width="80" height="70" alt="apple pay" style="margin: 5px;"></i>
+    </label>
+    <label for="payment-mastercard">
+        <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="80" height="50" alt="master card" style="margin: 5px;"></i>
+    </label>
+    <label for="payment-visa">
+        <i class=""><img src="{{ asset('img/visa.jpg') }}" width="80" height="40" alt="visa" style="margin: 5px;"></i>
+    </label>
+</div>
 
-                            <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
-                            <div class="payment-method" style="justity-content: space-between;">
-                                <label for="payment-airtel-money">
-                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="60"
-                                            height="40" alt="airtel" style="margin: 15%;"> </i>
-                                </label>
-                                <label for="payment-mtn-momo">
-                                    {{-- random svg --}}
-
-                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="60"
-                                            height="40" alt="mtn momo" style="margin: 15%;"> </i>
-                                </label>
-
-                                <label for="payment-google-pay">
-                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="60"
-                                            height="70" alt="google pay" style="margin: 15%;"> </i>
-                                </label>
-
-                                 <label for="payment-apple-pay">
-                                    <i class=""><img src="{{ asset('img/apple pay.jpeg') }}" width="60"
-                                            height="70" alt="google pay" style="margin: 15%;"> </i>
-                                </label>
-
-
-                                <label for="payment-mastercard">
-                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="60"
-                                            height="40" alt="master card" style="margin: 15%;"> </i>
-                                </label>
-                                <label for="payment-visa">
-                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="60"
-                                            height="40" alt="visa" style="margin: 15%;"> </i>
-                                </label>
-
-                                <!-- Hide the radio buttons -->
-                                <input type="radio" name="payment" id="payment-mtn-momo" style="display: none;">
-                                <input type="radio" name="payment" id="payment-airtel-money"
-                                    style="display: none;">
-                                <input type="radio" name="payment" id="payment-google-pay" style="display: none;">
-                                <input type="radio" name="payment" id="payment-visa" style="display: none;">
-                                <input type="radio" name="payment" id="payment-mastercard" style="display: none;">
-                            </div>
 
                             <!-- /Pay with -->
 
@@ -268,38 +249,42 @@
 
                 <!-- /Left Column -->
 
-                {{-- <div class="col-md-1">
-                </div> --}}
+                <div class="col-md-1">
+                </div>
                 <!-- Right Column -->
                 <div class="col-md-4 right order-md-1 order-sm-1 order-1 mobile-top-right right-column"
-                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
+                    style="border: 1px black solid; padding: 1.5% 3%; border-radius: 2%; position: sticky; top: 10%; margin: 0%; ">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
                         @csrf
                         <div class="row ">
-                            <div class="col-md-6">
+                            <div class="col-md-4" style="margin-right: -7%;">
                                 {{-- Add dummy image --}}
                                 {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
-                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
+                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} "
+                                    width="80" height="80" />
                             </div>
-                            <div class="col-md-6" style="margin-top: 12%;">
+                            <div class="col-md-6" style="margin-top: 2%; ">
                                 {{-- Add product name --}}
-                                <h3>{{ $product->name }}</h3>
+                                <span
+                                    style="font-size: 12px !important; margin-bottom: 500px;"><strong>{{ $product->name }}</strong></span>
+                                <br />
 
-                                <p> 25 mm Lake Sand </p>
+                                <span> 25 mm Lake Sand </span>
                                 {{-- Add product price --}}
-                                <h4>UGX {{ number_format($product->price) }}</h4>
+                                <span style="font-size: 12px !important;">UGX
+                                    {{ number_format($product->price) }}</span>
 
                                 {{-- add rating 5 star --}}
-                                <div class="rating">
-                                    <div class="rating">
-                                        <i class="fa fa-star fa-2x">5.00 (1)</i>
-                                    </div>
-                                </div>
+                                <br>
+
+                                {{-- <i class="fa fa-star ">5.00 (1)</i> --}}
+                                <img src="{{ asset('img/star.png') }}" width="12" height="12" /> 5.00 (1)
+
                             </div>
 
                             <div>
-                                <hr>
+
                                 {{-- add horizontal line  --}}
                             </div>
 
@@ -310,12 +295,23 @@
                             <input type="hidden" name="product_id" value="{{ $product->id }}" />
                             <input type="hidden" name="product_name" value="{{ $product->name }}" />
                             <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                            <hr />
+
                             <div class="order-summary">
+
                                 <div class="order-col">
-                                    <div><strong>Price Details</strong></div>
-                                    <div><strong>TOTAL</strong></div>
+
+                                    <div style="display: none;"><strong>Price Details</strong></div>
+
+                                    {{-- <div style="display: none;"><strong>TOTAL</strong></div> --}}
                                 </div>
+                                <hr style="border-top: 1px solid grey; font-weight: bold;">
+
+                                {{-- <div class="order-col"> --}}
+
+                                <div><strong>Price Details</strong></div>
+
+                                {{-- <div><strong>TOTAL</strong></div> --}}
+                                {{-- </div> --}}
                                 <div class="order-products">
                                     <div class="order-col">
                                         <div>{{ $product->name }} x 1 Tonne</div>
@@ -328,10 +324,11 @@
                                     <div><strong>UGX 12,000</strong></div>
                                 </div>
 
-                                <hr />
-                                <div class="order-col">
+                                <hr style="border-top: 1px solid grey; font-weight: bold;">
+
+                                <div class="order-col" style="padding: -5% 0%; margin: -5% 0%;">
                                     <div><strong>TOTAL</strong></div>
-                                    <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
+                                    <div><strong class="order-total">UGX 132,000</strong>
                                     </div>
                                 </div>
                             </div>
@@ -395,14 +392,22 @@
 
     .phone {
         width: 100%;
-        
 
+
+    }
+
+    .m-search {
+        display: none !important;
+    }
+
+    .m-search-icon {
+        display: none;
     }
 
 
     #phone {
         width: 100% !important;
- 
+
     }
 
     /* Media query for screens smaller than 768px (typical mobile devices) */
@@ -520,21 +525,21 @@
     }
 
 
-    .m-search {
+    /* .m-search {
         display: block;
         /* Makes the input take full width */
-        /* width: 100%; */
-        /* Fills remaining space in parent */
+    /* width: 100%; */
+    /* Fills remaining space in parent
         padding: 10px 10px 10px 10px;
-        /* Adjust padding as needed */
+        /* Adjust padding as needed
         border: 1px solid #ccc;
         border-radius: 30px;
-        /* Add curved corners */
+        /* Add curved corners
         height: 6rem;
         width: 60rem;
         /* Set input height */
-        /* width: 30rem; */
-    }
+    /* width: 30rem;
+    } */
 
     .m-search-btn {
         position: absolute;
