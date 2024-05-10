@@ -16,15 +16,15 @@
     <div class="mobile-nav">
         <ul class="main-nav nav  navbar-nav items" style="text-align: center">
             <li class="active mitems">
-                <img src="./img/sand_icon.jpg" alt="" style="width: 3.7rem;" class="micon">
+                <img src="{{ asset("img/sand_icon.jpg") }}" alt="" style="width: 3.7rem;" class="micon">
                 <a href="#" style="margin-top: 0px;">Construction</a>
             </li>
             <li>
-                <img src="./img/industry_icon.jpg" alt="" style="width: 4.5rem;" class="micon">
+                <img src="{{ asset("img/industry_icon.jpg") }}" alt="" style="width: 4.5rem;" class="micon">
                 <a href="#" style="font-weight: lighter;">Industrial</a>
             </li>
             <li>
-                <img src="./img/precious_icon.jpg" alt="" style="width: 2.8rem;" class="micon">
+                <img src="{{ asset("img/precious_icon.jpg") }}" alt="" style="width: 2.8rem;" class="micon">
                 <a href="#" style="font-weight: lighter;">Critical</a>
             </li>
         </ul>
