@@ -139,7 +139,7 @@
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     @foreach ($valueAddedProducts as $valueAddedProduct)
                                         <div class="product" style="width: 10px !important; ">
-                                            <a href="{{ route('products.show', $product->id) }}">
+                                            <a href="{{ route('products.show', $valueAddedProduct->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $valueAddedProduct->image }}"
                                                         alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
@@ -148,7 +148,7 @@
                                                 </div>
                                                 <div class="product-body">
                                                     <h3 class="product-name"><a
-                                                            href="{{ route('products.show', $product->id) }}">{{ $valueAddedProduct->name }}</a>
+                                                            href="{{ route('products.show', $valueAddedProduct->id) }}">{{ $valueAddedProduct->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -162,11 +162,6 @@
                                             </a>
                                         </div>
                                     @endforeach
-
-
-
-
-
 
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
@@ -211,7 +206,7 @@
 
                                     @foreach ($safetyProducts as $safetyProduct)
                                         <div class="product" style="width: 10px !important; ">
-                                            <a href="{{ route('product_details') }}">
+                                            <a href="{{ route('products.show', $safetyProduct->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $safetyProduct->image }}"
                                                         alt="{{ $safetyProduct->name }}" style="height: 15em;">
@@ -219,8 +214,7 @@
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a
-                                                            href="#">{{ $safetyProduct->name }}</a>
+                                                    <h3 class="product-name">{{ $safetyProduct->name }}</>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
