@@ -47,7 +47,7 @@
 <header class="header" style="display: flex;">
 
 
-    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo">
+  <a href="{{ route('welcome') }}" class="logo">  <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo"></a>
     <div class="info-container header-links mlinks"
         style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
@@ -304,6 +304,16 @@
         cursor: pointer;
     }
 
+    a.logo{
+     
+        width: 20rem;
+        /* Adjust width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-left: 12.2%;
+        cursor: pointer;
+
+    }
 
     @media screen and (max-width: 767px) {
 
@@ -524,8 +534,5 @@
         document.querySelector('.header').classList.toggle('active');
     });
 
-    //logo routes to home page
-    document.querySelector('.logo').addEventListener('click', function() {
-        window.location.href = 'index.php';
-    });
+  
 </script>

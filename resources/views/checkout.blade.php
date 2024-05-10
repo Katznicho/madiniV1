@@ -77,7 +77,9 @@
                 <!-- row -->
                 <div class="row">
                     <!-- Left Column -->
+
                     <div class="col-md-6">
+
                         <!-- Product Details -->
                         <div class="product-details">
                             <div class="section-title">
@@ -85,17 +87,30 @@
                             </div>
                             <!-- Add product details here -->
                             {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
-                            <p style="font-weight: 900;"> Quantity:</p>
-                            <p>1 x {{ $product->name }}</p>
+                            <div class = "quantities">
+                                <p style="font-weight: 900; text-align: left"> Quantity:</p>
+                                <p>1 x {{ $product->name }}
 
-                            <p style="font-weight: 900;"> Deliver To:</p>
-                            <div style="display: flex; align-items: center;">
-                                <p style="margin-right: 10px;">Muyenga {{ $product->name }} <a href="#" style="color: #007bff; float: right"><i class="fa fa-pencil">
-                                </i><img
-                                        src="{{ asset('img/download.jpeg') }}"  width="10" height="10">
-                                        </a>
-                                        </p>
-                                
+                                    <i class="fa fa-plus" style="float: right; color: #007bff;">
+                                    </i>
+                                    {{-- add quantity input field here --}}
+                                    <input type="number" name="quantity" value="1" min="1" max="100"
+                                        style="float: right; margin-left: 0.5%; margin-right: 0.5%; margin-bottom: 1.5% !important;" />
+                                    <i class="fa fa-minus" style="float: right ; color: #007bff;">
+                                    </i>
+                                </p>
+                            </div>
+                            <div class="deliveries">
+                                <p style="font-weight: 900;  text-align: left;"> Deliver To:</p>
+
+                                <p style="margin-right: 10px; text-align: left;">Muyenga {{ $product->name }} <a
+                                        href="#" style="color: #007bff; "><i class="fa fa-pencil"
+                                            style="float: right">
+                                        </i>
+                                    </a>
+                                </p>
+
+
                             </div>
                             {{-- add edit button right aligned --}}
                             <hr />
@@ -105,9 +120,10 @@
                             <!-- Phone number input -->
                             <div class="phone-number">
                                 <div class="section-title">
-                                    <h5 class="title">Phone Number</h5>
+                                    <h5 class="title">Required for your delivery</h5>
+                                    <p> Add and confirm your phone number below to get delivery updates. </p>
                                 </div>
-                                <div class="form-group phone">
+                                <div class="form-group phone" style="width: 100% !important;">
                                     <input class="input phone" type="tel" id="phone" name="phone"style=" "
                                         placeholder="0701234567">
                                 </div>
@@ -132,7 +148,8 @@
 
                             <div class="input-checkbox">
                                 <a>
-                                    <input type="checkbox" id="shiping-address" class="hidden" style="display: none;">
+                                    <input type="checkbox" id="shiping-address" class="hidden"
+                                        style="display: none !important;">
                                     <label for="shiping-address">
 
                                         <h4 class="" style="text-decoration: underline; color:grey;">Enter ASM
@@ -159,35 +176,36 @@
                         <!-- /Shiping Details -->
 
                         <!-- Pay with -->
-                        <div class="pay-with row">
+                        <div class="pay-with row" style="justify-content: space-between;  width: 100%;">
                             <div class="section-title">
+                                <input type="radio" name="payment" id="payment-mtn-momo">
                                 <h3 class="title" style="text-decoration: none !important;">Pay with</h3>
                             </div>
 
 
                             <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
-                            <div class="payment-method">
+                            <div class="payment-method" style="justity-content: space-between;">
                                 <label for="payment-airtel-money">
-                                    <i class="fa fa-mobile"><img src="{{ asset('img/airtel.jpg') }}" width="90"
+                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="90"
                                             height="40" alt="airtel"> </i>
                                 </label>
                                 <label for="payment-mtn-momo">
                                     {{-- random svg --}}
 
-                                    <i class="fa fa-mobile"><img src="{{ asset('img/mtn.jpg') }}" width="90"
+                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="90"
                                             height="40" alt="airtel"> </i>
                                 </label>
 
                                 <label for="payment-google-pay">
-                                    <i class="fa fa-mobile"><img src="{{ asset('img/gpay.jpg') }}" width="90"
+                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="90"
                                             height="40" alt="airtel"> </i>
                                 </label>
                                 <label for="payment-mastercard">
-                                    <i class="fa fa-mobile"><img src="{{ asset('img/mastercard.jpg') }}"
-                                            width="70" height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="70"
+                                            height="40" alt="airtel"> </i>
                                 </label>
                                 <label for="payment-visa">
-                                    <i class="fa fa-mobile"><img src="{{ asset('img/visa.jpg') }}" width="70"
+                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="70"
                                             height="40" alt="airtel"> </i>
                                 </label>
 
@@ -203,6 +221,7 @@
                             <!-- /Pay with -->
 
                             <div class="section-title">
+                                <input type="radio" name="payment" id="payment-cod">
                                 <h3 class="title" style="text-decoration: none !important;">Pay on Delivery</h3>
                                 <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong>
                                     may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a>
@@ -213,16 +232,19 @@
 
                             <div class="">
                                 <button type="submit" class="primary-btn order-submit flex"
-                                    style="background-color: #DE1D40; border-radius: 5%; width: 560px;">Purchase</button>
+                                    style="background-color: #DE1D40; border-radius: 5%; ">Purchase</button>
                             </div>
 
                             <p> By clicking "Purchase", I agree to <a href="#"
                                     style="text-decoration: underline;"> Madini's policy </a> , <a
                                     style="text-decoration: underline;" href="#"> Delivery and Refund Policy
-                                </a> and that Madini can charge my payment method if items have been ordered.</p>
-    </form>
+                                </a> and that Madini can charge my payment method if items have been ordered.
+                            </p>
+                        </div>
 
-    </div>
+
+    {{-- </div> --}}
+            </form>
     <!-- /Pay with -->
 
 
@@ -245,14 +267,14 @@
     </div>
     <!-- Right Column -->
     <div class="col-md-5"
-        style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%;">
+        style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%; margin: 2%;">
         <!-- Order Details -->
         <form method="POST" action="{{ route('placeOrder') }}" class="">
             <div class="row ">
                 <div class="col-md-6">
                     {{-- Add dummy image --}}
-                    <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " />
-                    {{-- <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " /> --}}
+                    {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
+                    <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
                 </div>
                 <div class="col-md-6" style="margin-top: 12%;">
                     {{-- Add product name --}}
@@ -270,7 +292,13 @@
                     </div>
                 </div>
 
-                <hr />
+                <div>
+                    <hr>
+                    {{-- add horizontal line  --}}
+                </div>
+
+
+
 
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->id }}" />
@@ -322,6 +350,8 @@
 
 </body>
 
+</html>
+
 
 <!-- JavaScript Libraries -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
@@ -355,15 +385,13 @@
         margin-bottom: 20px;
     }
 
-    .m-search-icon {
+    /*  .m-search-icon {
         display: none;
 
         float: right !important;
     }
+*/
 
-    .m-search-icon {
-        display: none;
-    }
 
 
     .button {
@@ -492,14 +520,88 @@
 
     }
 
-    .m-search {
-        display: none !important;
-    }
+
 
     .footer {
         bottom: 0 !important;
 
     }
-</style>
 
-</html>
+
+    .m-search {
+        display: block;
+        /* Makes the input take full width */
+        /* width: 100%; */
+        /* Fills remaining space in parent */
+        padding: 10px 10px 10px 10px;
+        /* Adjust padding as needed */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        /* Add curved corners */
+        height: 6rem;
+        width: 60rem;
+        /* Set input height */
+        /* width: 30rem; */
+    }
+
+    .m-search-btn {
+        position: absolute;
+        /* Positions button inside input */
+        top: 0;
+        right: 10px;
+        /* Adjust right padding for icon placement */
+        bottom: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+    }
+
+    .m-search-icon {
+        fill: #ccc;
+        /* Change color as needed */
+        width: 14px;
+        height: 14px;
+        /* margin-right: 500px; */
+    }
+
+    /* Style checkboxes */
+    input[type="checkbox"] {
+        display: inline-flex;
+        /* Hide the actual checkboxes */
+    }
+
+    /* Style labels for checkboxes */
+    input[type="checkbox"]+label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+    /* Style custom checkbox appearance */
+    input[type="checkbox"]+label:before {
+        content: "";
+        display: none;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        margin-right: 5px;
+        background-color: #fff;
+    }
+
+    /* Style custom checkbox checked state */
+    input[type="checkbox"]:checked+label:before {
+        background-color: #007bff;
+        /* Change to desired color */
+    }
+
+    /* Style text of labels */
+    input[type="checkbox"]+label {
+        color: #333;
+        /* Change to desired color */
+        font-size: 14px;
+    }
+</style>

@@ -77,43 +77,7 @@
 <!-- /FOOTER -->
 
 <style>
-    .footer-links {
-        color: white;
-    }
-
-    .footer{
-        bottom: 0;
-        position: sticky;
-    }
-
-    i {
-        color: white;
-    }
-
-
-
-    .bar {
-
-        display: none;
-
-
-    }
-
-    #home {
-        display: none !important;
-    }
-
-    #mhome {
-        display: none !important;
-    }
-
-    .bar a {
-        display: none;
-    }
-
-    .mhome {
-        display: none;
-    }
+  
 
     /* Media query for smaller screens */
     @media screen and (max-width: 768px) {

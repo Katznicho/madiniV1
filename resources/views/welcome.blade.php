@@ -87,7 +87,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ number_format($product->price) }}
+                                                        <h6 class="product-price">UGX {{ number_format($product->price) }}
                                                         </h6>
                                                     </div>
                                                 </div>
