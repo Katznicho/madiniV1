@@ -78,6 +78,8 @@
             <div class="row web">
 
                 <!-- Left Column -->
+                <div class="col-md-1">
+                </div>
 
                 <div class="col-md-6 order-md-2 order-sm-2 order-2">
                     <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
@@ -85,29 +87,28 @@
                         <!-- Product Details -->
                         <div class="product-details">
                             <div class="section-title">
-                                <h3 class="title">Your Order Details</h3>
+                                <h3 class="title" style="text-decoration: none;">Your Order</h3>
                             </div>
                             <!-- Add product details here -->
                             {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}" /> --}}
                             <div class = "quantities">
                                 <p style="font-weight: 900; text-align: left"> Quantity:</p>
-                                <p>1 x {{ $product->name }}
+                                <p><strong>1 Tonne</strong> (1 Elf Truck)
 
-                                    <i class="fa fa-plus" style="float: right; color: #007bff;">
+                                    <i class="fa fa-plus" style="float: right; color: black;">
                                     </i>
                                     {{-- add quantity input field here --}}
-                                    <input type="number" name="quantity" value="1" min="1" max="100"
-                                        style="float: right; margin-left: 0.5%; margin-right: 0.5%; margin-bottom: 1.5% !important;" />
-                                    <i class="fa fa-minus" style="float: right ; color: #007bff;">
+                                    {{-- <input type="number" name="quantity" value="1" min="1" max="100"
+                                        style="float: right; margin-left: 0.5%; margin-right: 0.5%; margin-bottom: 1.5% !important;" /> --}}
+                                    <i class="fa fa-minus" style="float: right ; color: black;">
                                     </i>
                                 </p>
                             </div>
                             <div class="deliveries">
                                 <p style="font-weight: 900;  text-align: left;"> Deliver To:</p>
 
-                                <p style="margin-right: 10px; text-align: left;">Muyenga {{ $product->name }} <a
-                                        href="#" style="color: #007bff; "><i class="fa fa-pencil"
-                                            style="float: right">
+                                <p style="margin-right: 10px; text-align: left;">Muyenga, Uganda <a href="#"
+                                        style="color: black; "><i class="fa fa-pencil" style="float: right">
                                         </i>
                                     </a>
                                 </p>
@@ -119,14 +120,14 @@
 
 
                             <!-- Phone number input -->
-                            <div class="phone-number">
+                            <div class="phone-number" style="width: 100%;">
                                 <div class="section-title">
                                     <h5 class="title">Required for your delivery</h5>
                                     <p> Add and confirm your phone number below to get delivery updates. </p>
                                 </div>
                                 <div class="form-group phone" style="width: 100% !important;">
-                                    <input class="input phone" type="tel" id="phone" name="phone"style=" "
-                                        placeholder="0701234567">
+                                    <input class="input phone" type="tel" id="phone" name="phone"
+                                        style="width: 100%;" placeholder="0701234567">
                                 </div>
                                 <p>We call or text you to confirm your number. Standard Message and data rates may
                                     apply. <a href="#">Privacy Policy</a></p>
@@ -188,27 +189,27 @@
                             <!-- Add Pay with icons (Google Pay, Visa, Mastercard) here -->
                             <div class="payment-method" style="justity-content: space-between;">
                                 <label for="payment-airtel-money">
-                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/airtel.jpg') }}" width="60"
+                                            height="40" alt="airtel" style="margin: 15%;"> </i>
                                 </label>
                                 <label for="payment-mtn-momo">
                                     {{-- random svg --}}
 
-                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/mtn.jpg') }}" width="60"
+                                            height="40" alt="mtn momo" style="margin: 15%;"> </i>
                                 </label>
 
                                 <label for="payment-google-pay">
-                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="90"
-                                            height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="60"
+                                            height="40" alt="google pay" style="margin: 15%;"> </i>
                                 </label>
                                 <label for="payment-mastercard">
-                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="70"
-                                            height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="60"
+                                            height="40" alt="master card" style="margin: 15%;"> </i>
                                 </label>
                                 <label for="payment-visa">
-                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="70"
-                                            height="40" alt="airtel"> </i>
+                                    <i class=""><img src="{{ asset('img/visa.jpg') }}" width="60"
+                                            height="40" alt="visa" style="margin: 15%;"> </i>
                                 </label>
 
                                 <!-- Hide the radio buttons -->
@@ -225,6 +226,7 @@
                             <div class="section-title">
                                 <input type="radio" name="payment" id="payment-cod">
                                 <h3 class="title" style="text-decoration: none !important;">Pay on Delivery</h3>
+
                                 <p> Pay by cash on delivery. Non-refundable COD fees of <strong> UGX 10,000 </strong>
                                     may apply. <a href="#" style="text-decoration: underline;"> Learn More. </a>
                                 </p>
@@ -234,14 +236,17 @@
 
                             <div class="">
                                 <button type="submit" class="primary-btn order-submit flex"
-                                    style="background-color: #DE1D40; border-radius: 5%; ">Purchase</button>
+                                    style="background-color: #DE1D40; border-radius: 3%; width: 100%;">Purchase</button>
                             </div>
 
-                            <p> By clicking "Purchase", I agree to <a href="#"
+
+
+                            <p style="margin-top: 5%;"> By clicking "Purchase", I agree to <a href="#"
                                     style="text-decoration: underline;"> Madini's policy </a> , <a
                                     style="text-decoration: underline;" href="#"> Delivery and Refund Policy
                                 </a> and that Madini can charge my payment method if items have been ordered.
                             </p>
+
                         </div>
                     </form>
                     <!-- /Pay with -->
@@ -256,10 +261,10 @@
 
                 <!-- /Left Column -->
 
-                <div class="col-md-1">
-                </div>
+                {{-- <div class="col-md-1">
+                </div> --}}
                 <!-- Right Column -->
-                <div class="col-md-5 right order-md-1 order-sm-1 order-1 mobile-top-right right-column"
+                <div class="col-md-4 right order-md-1 order-sm-1 order-1 mobile-top-right right-column"
                     style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
@@ -328,6 +333,9 @@
                 </div>
                 <!-- /Right Column -->
 
+                <div class="col-md-2">
+                </div>
+
                 <!-- /Right Column -->
             </div>
             <!-- /row -->
@@ -373,6 +381,23 @@
 
 
 <style>
+    .form-group {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .phone {
+        width: 100%;
+        
+
+    }
+
+
+    #phone {
+        width: 100% !important;
+ 
+    }
+
     /* Media query for screens smaller than 768px (typical mobile devices) */
     @media (max-width: 767px) {
 
