@@ -16,15 +16,15 @@
     <div class="mobile-nav">
         <ul class="main-nav nav  navbar-nav items" style="text-align: center">
             <li class="active mitems">
-                <img src="./img/sand_icon.jpg" alt="" style="width: 3.7rem;" class="micon">
-                <a href="#" style="margin-top: 0px;">Construction</a>
+                <img src="{{ asset("img/sand_icon.jpg") }}" alt="" style="width: 3.7rem;" class="micon">
+                <a href="{{ route('welcome') }}"  style="margin-top: 0px;">Construction</a>
             </li>
             <li>
-                <img src="./img/industry_icon.jpg" alt="" style="width: 4.5rem;" class="micon">
+                <img src="{{ asset("img/industry_icon.jpg") }}" alt="" style="width: 4.5rem;" class="micon">
                 <a href="#" style="font-weight: lighter;">Industrial</a>
             </li>
             <li>
-                <img src="./img/precious_icon.jpg" alt="" style="width: 2.8rem;" class="micon">
+                <img src="{{ asset("img/precious_icon.jpg") }}" alt="" style="width: 2.8rem;" class="micon">
                 <a href="#" style="font-weight: lighter;">Critical</a>
             </li>
         </ul>
@@ -47,7 +47,7 @@
 <header class="header" style="display: flex;">
 
 
-    <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo">
+  <a href="{{ route('welcome') }}" class="logo">  <img src="{{ asset('img/logo.jpg') }}" alt="Logo" class="logo"></a>
     <div class="info-container header-links mlinks"
         style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
@@ -88,11 +88,12 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav  navbar-nav" style="text-align: center">
-                <li class="active">
+                 <a href="{{ route('welcome') }}"><li class="active">
                     <!-- <i class="fa fa-home fa-2x"></i> -->
                     <img src="{{ asset('img/sand_icon.jpg') }}" alt="" style="width: 3.7rem;" class="micon">
-                    <a href="#" style="margin-top: 0px;">Construction</a>
+                    <a href="{{ route('welcome') }}" style="margin-top: 0px;">Construction</a>
                 </li>
+                </a>
                 <li>
                     <!-- <i class="fa fa-industry fa-2x"></i> -->
                     <img src="{{ asset('img/industry_icon.jpg') }}" alt="" style="width: 4.5rem;" class="micon">
@@ -134,7 +135,7 @@
                                         <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h3 class="product-name"><a href="#">sand</a></h3>
                                         <h4 class="product-price"><span class="qty">1x</span>UGX 120,000</h4>
                                     </div>
                                     <button class="delete"><i class="fa fa-close"></i></button>
@@ -145,7 +146,7 @@
                                         <img src="{{ asset('img/download.jpeg') }}" alt="">
                                     </div>
                                     <div class="product-body">
-                                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                                        <h3 class="product-name"><a href="#">sand</a></h3>
                                         <h4 class="product-price"><span class="qty">3x</span>UGX 120,000</h4>
                                     </div>
                                     <button class="delete"><i class="fa fa-close"></i></button>
@@ -304,6 +305,16 @@
         cursor: pointer;
     }
 
+    a.logo{
+     
+        width: 20rem;
+        /* Adjust width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-left: 12.2%;
+        cursor: pointer;
+
+    }
 
     @media screen and (max-width: 767px) {
 
@@ -524,8 +535,5 @@
         document.querySelector('.header').classList.toggle('active');
     });
 
-    //logo routes to home page
-    document.querySelector('.logo').addEventListener('click', function() {
-        window.location.href = 'index.php';
-    });
+  
 </script>

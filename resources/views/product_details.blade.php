@@ -47,9 +47,10 @@
                 <div class="col-md-4 col-md-push-1">
                     <div id="product-main-img" style="margin-top : 20% !important;">
                         <!-- <div class="product-preview"> -->
-                        {{-- <img src="{{ $product->image_url }}" alt=""> --}}
+                        {{-- <img src="{{ asset('img/download.jpeg') }}" style="height: 15em;" alt=""> --}}
                         <img src="{{ $product->image_url }}" alt="" style="height: 15em;">
                     </div>
+
                      
 
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
@@ -582,7 +583,7 @@
     </div>
     <!-- /SECTION -->
 
-    @include('layouts.footer')
+    {{-- @include('layouts.footer') --}}
     <!-- jQuery Plugins -->
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
@@ -775,24 +776,47 @@
 
 
 
+   
     .m-search {
-        display: flex;
+        display: block;
+        /* Makes the input take full width */
+        /* width: 100%; */
+        /* Fills remaining space in parent */
+        padding: 10px 10px 10px 10px;
+        /* Adjust padding as needed */
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        /* Add curved corners */
+        height: 6rem;
+        width: 60rem;
+        /* Set input height */
+        /* width: 30rem; */
+    }
 
+    .m-search-btn {
+        position: absolute;
+        /* Positions button inside input */
+        top: 0;
+        right: 10px;
+        /* Adjust right padding for icon placement */
+        bottom: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
 
-        float: right !important;
-        padding: 2% !important;
-        margin: 0% !important;
     }
 
     .m-search-icon {
-        display: none;
-
-        float: right !important;
+        fill: #ccc;
+        /* Change color as needed */
+        width: 14px;
+        height: 14px;
+        /* margin-right: 500px; */
     }
 
-    .m-search {
-        display: none;
-    }
+ 
+   
 </style>
 
 
