@@ -201,8 +201,15 @@
 
                                 <label for="payment-google-pay">
                                     <i class=""><img src="{{ asset('img/gpay.jpg') }}" width="60"
-                                            height="40" alt="google pay" style="margin: 15%;"> </i>
+                                            height="70" alt="google pay" style="margin: 15%;"> </i>
                                 </label>
+
+                                 <label for="payment-apple-pay">
+                                    <i class=""><img src="{{ asset('img/apple pay.jpeg') }}" width="60"
+                                            height="70" alt="google pay" style="margin: 15%;"> </i>
+                                </label>
+
+
                                 <label for="payment-mastercard">
                                     <i class=""><img src="{{ asset('img/mastercard.jpg') }}" width="60"
                                             height="40" alt="master card" style="margin: 15%;"> </i>

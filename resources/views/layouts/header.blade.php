@@ -17,7 +17,7 @@
         <ul class="main-nav nav  navbar-nav items" style="text-align: center">
             <li class="active mitems">
                 <img src="{{ asset("img/sand_icon.jpg") }}" alt="" style="width: 3.7rem;" class="micon">
-                <a href="#" style="margin-top: 0px;">Construction</a>
+                <a href="{{ route('welcome') }}"  style="margin-top: 0px;">Construction</a>
             </li>
             <li>
                 <img src="{{ asset("img/industry_icon.jpg") }}" alt="" style="width: 4.5rem;" class="micon">
@@ -88,11 +88,12 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav  navbar-nav" style="text-align: center">
-                <li class="active">
+                 <a href="{{ route('welcome') }}"><li class="active">
                     <!-- <i class="fa fa-home fa-2x"></i> -->
                     <img src="{{ asset('img/sand_icon.jpg') }}" alt="" style="width: 3.7rem;" class="micon">
-                    <a href="#" style="margin-top: 0px;">Construction</a>
+                    <a href="{{ route('welcome') }}" style="margin-top: 0px;">Construction</a>
                 </li>
+                </a>
                 <li>
                     <!-- <i class="fa fa-industry fa-2x"></i> -->
                     <img src="{{ asset('img/industry_icon.jpg') }}" alt="" style="width: 4.5rem;" class="micon">
