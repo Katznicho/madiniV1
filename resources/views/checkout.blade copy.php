@@ -69,19 +69,20 @@
     <!-- /BREADCRUMB -->
 
     <!-- SECTION -->
-    <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
-        @csrf
-        <div class="section">
-            <!-- container -->
-            <div class="container">
-                <!-- row -->
-                <div class="row">
+
+    @csrf
+    <div class="section">
+        <!-- container -->
+        <div class="container">
+            <!-- row -->
+            <div class="row">
 
 
 
-                    <!-- Left Column -->
+                <!-- Left Column -->
 
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
 
                         <!-- Product Details -->
                         <div class="product-details">
@@ -244,104 +245,96 @@
                                 </a> and that Madini can charge my payment method if items have been ordered.
                             </p>
                         </div>
+                    </form>
+                    <!-- /Pay with -->
 
 
-                        {{-- </div> --}}
-    </form>
-    <!-- /Pay with -->
-
-
-
-
-
-    <!-- Billing Details -->
-    <div class="billing-details">
-
-
-
-
-
-    </div>
-    <!-- /Billing Details -->
-    </div>
-    <!-- /Left Column -->
-
-    <div class="col-md-1">
-    </div>
-    <!-- Right Column -->
-    <div class="col-md-5 right col-md-6 mobile-top-right right-column"
-        style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 20%; margin: 2%; ">
-        <!-- Order Details -->
-        <form method="POST" action="{{ route('placeOrder') }}" class="">
-            <div class="row ">
-                <div class="col-md-6">
-                    {{-- Add dummy image --}}
-                    {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
-                    <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
-                </div>
-                <div class="col-md-6" style="margin-top: 12%;">
-                    {{-- Add product name --}}
-                    <h3>{{ $product->name }}</h3>
-
-                    <p> 25 mm Lake Sand </p>
-                    {{-- Add product price --}}
-                    <h4>UGX {{ number_format($product->price) }}</h4>
-
-                    {{-- add rating 5 star --}}
-                    <div class="rating">
-                        <div class="rating">
-                            <i class="fa fa-star fa-2x">5.00 (1)</i>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <hr>
-                    {{-- add horizontal line  --}}
                 </div>
 
 
 
 
-                @csrf
-                <input type="hidden" name="product_id" value="{{ $product->id }}" />
-                <input type="hidden" name="product_name" value="{{ $product->name }}" />
-                <input type="hidden" name="product_price" value="{{ $product->price }}" />
-                <hr />
-                <div class="order-summary">
-                    <div class="order-col">
-                        <div><strong>Price Details</strong></div>
-                        <div><strong>TOTAL</strong></div>
-                    </div>
-                    <div class="order-products">
-                        <div class="order-col">
-                            <div>{{ $product->name }} x 1 Tonne</div>
 
-                            <div>UGX {{ number_format($product->price) }}</div>
-                        </div>
-                    </div>
-                    <div class="order-col">
-                        <div style="text-decoration:underline;">Madini Service Fee</div>
-                        <div><strong>UGX 12,000</strong></div>
-                    </div>
 
-                    <hr />
-                    <div class="order-col">
-                        <div><strong>TOTAL</strong></div>
-                        <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
-                        </div>
-                    </div>
+                <!-- /Left Column -->
+
+                <div class="col-md-1">
                 </div>
-        </form>
-        <!-- /Order Details -->
-    </div>
-    <!-- /Right Column -->
+                <!-- Right Column -->
+                <div class="col-md-5 right col-md-6 mobile-top-right right-column"
+                    style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
+                    <!-- Order Details -->
+                    <form method="POST" action="{{ route('placeOrder') }}" class="">
+                    @csrf
+                        <div class="row ">
+                            <div class="col-md-6">
+                                {{-- Add dummy image --}}
+                                {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
+                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " />
+                            </div>
+                            <div class="col-md-6" style="margin-top: 12%;">
+                                {{-- Add product name --}}
+                                <h3>{{ $product->name }}</h3>
 
-    <!-- /Right Column -->
-    </div>
-    <!-- /row -->
-    </div>
-    <!-- /container -->
+                                <p> 25 mm Lake Sand </p>
+                                {{-- Add product price --}}
+                                <h4>UGX {{ number_format($product->price) }}</h4>
+
+                                {{-- add rating 5 star --}}
+                                <div class="rating">
+                                    <div class="rating">
+                                        <i class="fa fa-star fa-2x">5.00 (1)</i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <hr>
+                                {{-- add horizontal line  --}}
+                            </div>
+
+
+
+
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}" />
+                            <input type="hidden" name="product_name" value="{{ $product->name }}" />
+                            <input type="hidden" name="product_price" value="{{ $product->price }}" />
+                            <hr />
+                            <div class="order-summary">
+                                <div class="order-col">
+                                    <div><strong>Price Details</strong></div>
+                                    <div><strong>TOTAL</strong></div>
+                                </div>
+                                <div class="order-products">
+                                    <div class="order-col">
+                                        <div>{{ $product->name }} x 1 Tonne</div>
+
+                                        <div>UGX {{ number_format($product->price) }}</div>
+                                    </div>
+                                </div>
+                                <div class="order-col">
+                                    <div style="text-decoration:underline;">Madini Service Fee</div>
+                                    <div><strong>UGX 12,000</strong></div>
+                                </div>
+
+                                <hr />
+                                <div class="order-col">
+                                    <div><strong>TOTAL</strong></div>
+                                    <div><strong class="order-total">UGX {{ number_format($product->price) }}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    <!-- /Order Details -->
+                </div>
+                <!-- /Right Column -->
+
+                <!-- /Right Column -->
+            </div>
+            <!-- /row -->
+        </div>
+        <!-- /container -->
     </div>
     <!-- /SECTION -->
 
@@ -349,7 +342,7 @@
 
 
 
-    @include('layouts.footer')
+    {{-- @include('layouts.footer') --}}
 
 </body>
 
@@ -400,12 +393,17 @@
         /* Custom CSS for mobile layout */
         .right-column {
             order: -1;
+            padding: 0px;
+            margin: 0px;
+            
             /* Move the right column to the top */
             width: 100%;
             /* Make the right column take full width in mobile view */
             margin-bottom: 20px;
             /* Add some space between the columns */
         }
+
+        .
     }
 
 

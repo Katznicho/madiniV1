@@ -70,20 +70,18 @@
 
     <!-- SECTION -->
 
-    @csrf
+
     <div class="section">
         <!-- container -->
         <div class="container">
             <!-- row -->
-            <div class="row">
-
-
+            <div class="row web">
 
                 <!-- Left Column -->
 
-                <div class="col-md-6">
+                <div class="col-md-6 order-md-2 order-sm-2 order-2">
                     <form method="POST" action="{{ route('placeOrder') }}" class="rounded-full ">
-
+                        @csrf
                         <!-- Product Details -->
                         <div class="product-details">
                             <div class="section-title">
@@ -114,7 +112,6 @@
                                     </a>
                                 </p>
 
-
                             </div>
                             {{-- add edit button right aligned --}}
                             <hr />
@@ -144,10 +141,8 @@
 
                         <!-- Enter ASM Coupon -->
 
-                        <!-- /Enter ASM Coupon -->
 
 
-                        <!-- Shiping Details -->
                         <div class="shiping-details">
 
                             <div class="input-checkbox">
@@ -177,7 +172,10 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- /Shiping Details -->
+
+
+                        <!-- /Enter ASM Coupon -->
+
 
                         <!-- Pay with -->
                         <div class="pay-with row" style="justify-content: space-between;  width: 100%;">
@@ -261,10 +259,11 @@
                 <div class="col-md-1">
                 </div>
                 <!-- Right Column -->
-                <div class="col-md-5 right col-md-6 mobile-top-right right-column"
+                <div class="col-md-5 right order-md-1 order-sm-1 order-1 mobile-top-right right-column"
                     style="border: 1px black solid; padding: 2%; border-radius: 2%; position: sticky; top: 10%; margin: 2%; ">
                     <!-- Order Details -->
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
+                        @csrf
                         <div class="row ">
                             <div class="col-md-6">
                                 {{-- Add dummy image --}}
@@ -371,7 +370,39 @@
 </script>
 
 
+
+
 <style>
+    /* Media query for screens smaller than 768px (typical mobile devices) */
+    @media (max-width: 767px) {
+
+        .web {
+            display: none;
+        }
+
+        /* Flex direction set to column reverses the order of elements */
+        .row {
+            flex-direction: column-reverse;
+            flex-wrap: wrap;
+            direction: reverse;
+        }
+
+        /* Ensure both columns take full width */
+        .col-md-6 {
+            width: 100%;
+        }
+
+        /* Adjust margins or padding as needed */
+        .right {
+            margin-top: 20px;
+        }
+    }
+
+
+
+
+
+
     /* Add custom CSS styles for curved borders */
     .order-details {
         background-color: #f9f9f9;
@@ -394,7 +425,7 @@
             order: -1;
             padding: 0px;
             margin: 0px;
-            
+
             /* Move the right column to the top */
             width: 100%;
             /* Make the right column take full width in mobile view */
