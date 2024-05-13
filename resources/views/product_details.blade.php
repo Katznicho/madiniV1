@@ -44,16 +44,14 @@
             <!-- row -->
             <div class="row">
                 <!-- Product main img -->
-                <div class="col-md-4 col-md-push-1">
-                    <div id="product-main-img" style="margin-top : 20% !important;">
-                        <!-- <div class="product-preview"> -->
-                        {{-- <img src="{{ asset('img/download.jpeg') }}" style="height: 15em;" alt=""> --}}
-                        <img src="{{ $product->image_url }}" alt="" style="height: 15em;">
+                <div class="col-md-5 col-md-push-1 prod" style="">
+                    <div id="product-main-img">
+
+                        <img src="{{ $product->image_url }}" alt="" height= "200" width="200">
+
                     </div>
-
-                     
-
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
+
                 </div>
                 <!-- /Product main img -->
 
@@ -67,31 +65,39 @@
                 <div class="col-md-5">
                     <div class="product-details">
                         <h3 class="title" style="text-decoration: underline;"></h3>
-                        <hr>
-                        <h2 class="product-name" style="font-size: 12px;">{{ $product->name }}</h2>
+                        {{-- <hr> --}}
+                        <h2 class="product-name" style="font-size: 12px; text-decoration: underline;">{{ $product->name }}</h2>
 
                         <div>
                             <!-- <h3 class="product-price">UGX 120,000</h3> -->
                             <span style="font-size: 10px;">25mm aggregate size lake sand</span>
-
-
                             <span class="product-available" style="font-size: 10px !important;">Strength</span>
-
-
                             <span class="product-available" style="font-size: 10px !important;">Aggregate Size</span>
 
                         </div>
                         <hr>
                         <!-- <p>25mm aggregate size lake sand</p> -->
+                        {{-- <p>dbjklnjablkds </p> --}}
 
                         <div class="add-to-cart buttons">
                             {{-- <span>{{ $product->description }}</span> --}}
+                            <p style="margin-right: 20px;"> <strong> Ideal for Plaster </strong> <br>
+                            <span > Locally sourced from Lwera, Masaka  </span> </p>
 
-                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+                            <button class="add-to-cart-btn"
+                                style=" background-color: white !important; color: black !important; border: 1px grey solid;"><i
+                                    class=" fa fa-shopping-cart"></i> Add to Cart</button>
 
-                            <div style="margin-right: 10px;"></div>
+                            <button class="add-to-cart-btn"
+                                style=" background-color: red !important; color: white !important;">
+                                <a href="{{ route('productCheckout', $product) }}"> Buy Now
+                            </button>
+
+
+                            {{-- <div style="margin-right: 10px;" style=" background-color: red !important;">
                             <a class="add-to-cart-btn" href="{{ route('productCheckout', $product) }}"><i
-                                    class="fa fa-shopping-cart"></i> Buy Now</a>
+                                    class="fa fa-shopping-cart" ></i> Buy Now</a>
+                                    </div> --}}
 
                             <!-- Back option -->
                             {{-- <a class="back-btn" href="{{ route('welcome') }}">Back</a> --}}
@@ -113,41 +119,41 @@
                                         </div>
                                     </div>
                                     @foreach ($similarItems as $similarItem)
-                                     <a href="{{ route('products.show', $similarItem->id) }}" class="product-img">
-                                      <div class="col-md-6 col-xs-6">
-                                        <div class="product s product1" style = "margin-right: 1rem !important;">
-                                            <div class="product-img">
-                                                {{-- <img src="./img/download.jpeg" alt=""> --}}
-                                                <img src="{{ $similarItem->image_url }}" alt=""
-                                                    style="height: 15em;">
+                                        <a href="{{ route('products.show', $similarItem->id) }}" class="product-img"  >
+                                            <div class="col-md-6 col-xs-6"  >
+                                                <div class="product s product1" style="width: 20em; height: 15em; border: 1px grey solid !important;">
+                                                    <div class="product-img" >
+                                                        {{-- <img src="./img/download.jpeg" alt=""> --}}
+                                                        <img src="{{ $similarItem->image_url }}" alt=""
+                                                            height="80" style="padding: 5%;">
 
-                                                <div class="product-label">
-                                                </div>
-                                            </div>
-                                            <div class="product-body">
-                                                <h3 class="product-name"><a href="#">{{ $similarItem->name }}</a></h3>
-                                                <div class="lower">
-                                                    {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
-
-
-                                                    <div class="add-to-cart-btn similar-cart">
-                                                        <span>Add</span>
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        <!-- <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                            class="micon"> -->
+                                                        <div class="product-label">
+                                                        </div>
                                                     </div>
-                                                    <h6 class="product-price" 1>UGX
-                                                        {{ number_format($product->price) }}</h6>
+                                                    <div class="product-body">
+                                                        <h3 class="product-name"><a
+                                                                href="#">{{ $similarItem->name }}</a></h3>
+                                                        <div class="lower">
+                                                            {{-- <img src="{{ asset('img/download.jpeg') }}" alt="" style="height: 15em;"> --}}
 
 
+                                                            <div class="add-to-cart-btn similar-cart">
+                                                                <span>Add</span>
+                                                                <i class="fa fa-shopping-cart"></i>
+                                                                <img src="{{ asset('img/cart_icon.jpg') }}" alt="" style="width: 30px;"
+                                                            class="micon">
+                                                            </div>
+                                                            <h6 class="product-price" 1>UGX
+                                                                {{ number_format($product->price) }}</h6>
+
+
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    </a>
-                                        
+                                        </a>
                                     @endforeach
-                                    
+
 
 
 
@@ -564,7 +570,18 @@
 
 </body>
 
+
 <style>
+    .prod {
+        border: 1px solid grey;
+        margin-top: 5%;
+        height: 25em;
+        width: 32em;
+    }
+
+
+
+
     .buttons {
         /* either they are positioned horizontally on same line */
         display: flex;
@@ -579,6 +596,14 @@
 
     /* on small screens display vertical */
     @media (max-width: 600px) {
+        .prod {
+            border: 1px solid grey;
+         
+            height: 100%;
+            width: 90%;
+            margin: 5% !important;
+        }
+
         .buttons {
             flex-direction: column;
             /* margin : 10%; */
@@ -614,6 +639,8 @@
 
         text-align: left !important;
         /* Vertically center content */
+
+
 
 
         padding: 5px 10px;
@@ -746,7 +773,7 @@
 
 
 
-   
+
     .m-search {
         display: block;
         /* Makes the input take full width */
@@ -784,9 +811,6 @@
         height: 14px;
         /* margin-right: 500px; */
     }
-
- 
-   
 </style>
 
 

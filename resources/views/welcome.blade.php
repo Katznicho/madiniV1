@@ -65,10 +65,10 @@
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">
-                                <div class="products-slick" data-nav="#slick-nav-1">
+                                <div class="products-slick" data-nav="#slick-nav-1" >
 
                                     @foreach ($products as $product)
-                                        <div class="product">
+                                        <div class="product" style="" >
                                             <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
                                                     {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
@@ -87,8 +87,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">UGX
-                                                            {{ number_format($product->price) }}
+                                                        <h6 class="product-price">UGX {{ number_format($product->price) }}
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -155,7 +154,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ $valueAddedProduct->price }}</h6>
+                                                        <h6 class="product-price">UGX {{ number_format($valueAddedProduct->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -221,7 +220,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ $safetyProduct->price }}</h6>
+                                                        <h6 class="product-price">UGX {{ number_format($safetyProduct->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -290,7 +289,7 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">{{ $tool->price }}</h6>
+                                                        <h6 class="product-price">UGX {{ number_format($tool->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -331,6 +330,8 @@
 </body>
 
 <style>
+
+
     /* Define styles for small screens */
     @media only screen and (max-width: 768px) {
         .cats li {
@@ -435,6 +436,8 @@
         cursor: pointer;
 
     }
+
+   
 
     .m-search-icon {
         fill: #ccc;

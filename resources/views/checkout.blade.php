@@ -260,9 +260,9 @@
                         <div class="row ">
                             <div class="col-md-4" style="margin-right: -7%;">
                                 {{-- Add dummy image --}}
-                                {{-- <img src="{{ $product->image_url }}" style="justify-content: center;" alt="{{ $product->name }} " /> --}}
-                                <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} "
-                                    width="80" height="80" />
+                                <img src="{{ $product->image_url }}"  alt="{{ $product->name }} "   width="80" height="80"  />
+                                {{-- <img src="{{ asset('img/download.jpeg') }}" alt="{{ $product->name }} " --}}
+                                    {{-- width="80" height="80" /> --}}
                             </div>
                             <div class="col-md-6" style="margin-top: 2%; ">
                                 {{-- Add product name --}}
@@ -279,7 +279,7 @@
                                 <br>
 
                                 {{-- <i class="fa fa-star ">5.00 (1)</i> --}}
-                                <img src="{{ asset('img/star.png') }}" width="12" height="12" /> 5.00 (1)
+                                <img src="{{ asset('img/star.png') }}" width="12" height="12" style="margin-bottom: 5px;" /> 5.00 (1)
 
                             </div>
 
