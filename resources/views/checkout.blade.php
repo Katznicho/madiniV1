@@ -437,7 +437,7 @@
                     <form method="POST" action="{{ route('placeOrder') }}" class="">
                         @csrf
                         <div class="row ">
-                            <div class="col-md-4" style="margin-right: -7%;">
+                            <div class="col-md-4" style="margin-right: 2%;">
                                 {{-- Add dummy image --}}
                                 <img src="{{ $product->image_url }}" alt="{{ $product->name }} " width="80"
                                     height="80" />
