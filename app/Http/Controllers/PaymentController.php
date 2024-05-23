@@ -128,8 +128,6 @@ class PaymentController extends Controller
 
                     return view("welcome");
                 }
-
-
                 // $this->sendMessage($)
 
             } else {

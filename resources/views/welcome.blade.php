@@ -65,16 +65,16 @@
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab1" class="tab-pane active">
-                                <div class="products-slick" data-nav="#slick-nav-1" >
+                                <div class="products-slick" data-nav="#slick-nav-1">
 
                                     @foreach ($products as $product)
-                                        <div class="product" style="" >
+                                        <div class="product">
                                             <a href="{{ route('products.show', $product->id) }}" class="product-img">
                                                 <div class="product-img">
                                                     {{-- <img src="{{ $product->image_url }}" alt="{{ $product->name }}"
                                                         style="height: 15em;"> --}}
                                                     <img src="{{ $product->image_url }}" alt=""
-                                                        style="height: 15em;">
+                                                        style="height: 12em; ">
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
@@ -87,7 +87,8 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">UGX {{ number_format($product->price) }}
+                                                        <h6 class="product-price">UGX
+                                                            {{ number_format($product->price) }}
                                                         </h6>
                                                     </div>
                                                 </div>
@@ -136,11 +137,11 @@
                             <div id="tab2" class="tab-pane fade in active">
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     @foreach ($valueAddedProducts as $valueAddedProduct)
-                                        <div class="product" style="width: 10px !important; ">
+                                        <div class="product" style="margin: 2% 4%;">
                                             <a href="{{ route('products.show', $valueAddedProduct->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $valueAddedProduct->image_url }}"
-                                                        alt="{{ $valueAddedProduct->name }}" style="height: 15em;">
+                                                        alt="{{ $valueAddedProduct->name }}" style="height: 12em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
@@ -151,10 +152,11 @@
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
                                                             <span>Add</span>
-                                                            <img src="./img/cart_icon.jpg" alt=""
+                                                            Add<img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">UGX {{ number_format($valueAddedProduct->price) }}</h6>
+                                                        <h6 class="product-price">UGX
+                                                            {{ number_format($valueAddedProduct->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -203,11 +205,11 @@
                                 <div class="products-slick" data-nav="#slick-nav-3">
 
                                     @foreach ($safetyProducts as $safetyProduct)
-                                        <div class="product" style="width: 10px !important; ">
+                                        <div class="product" style="margin: 2% 4%;">
                                             <a href="{{ route('products.show', $safetyProduct->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $safetyProduct->image_url }}"
-                                                        alt="{{ $safetyProduct->name }}" style="height: 15em;">
+                                                        alt="{{ $safetyProduct->name }}" style="height: 12em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
@@ -220,7 +222,8 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">UGX {{ number_format($safetyProduct->price) }}</h6>
+                                                        <h6 class="product-price">UGX
+                                                            {{ number_format($safetyProduct->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
@@ -272,16 +275,17 @@
 
 
                                     @foreach ($tools as $tool)
-                                        <div class="product" style="width: 10px !important; ">
+                                        <div class="product" style="margin: 2% 4%;">
                                             <a href="{{ route('products.show', $tool->id) }}">
                                                 <div class="product-img">
                                                     <img src="{{ $tool->image_url }}" alt="{{ $tool->name }}"
-                                                        style="height: 15em;">
+                                                        style="height: 12em;">
                                                     {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
                                                     <div class="product-label"></div>
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="{{ route('products.show', $tool->id) }}">{{ $tool->name }}</a>
+                                                    <h3 class="product-name"><a
+                                                            href="{{ route('products.show', $tool->id) }}">{{ $tool->name }}</a>
                                                     </h3>
                                                     <div class="lower">
                                                         <div class="add-to-cart-btn">
@@ -289,18 +293,13 @@
                                                             <img src="./img/cart_icon.jpg" alt=""
                                                                 style="width: 30px;" class="micon">
                                                         </div>
-                                                        <h6 class="product-price">UGX {{ number_format($tool->price) }}</h6>
+                                                        <h6 class="product-price">UGX
+                                                            {{ number_format($tool->price) }}</h6>
                                                     </div>
                                                 </div>
                                             </a>
                                         </div>
                                     @endforeach
-
-
-
-
-
-
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>
@@ -315,21 +314,22 @@
         <!-- /container -->
     </div>
     <!-- /SECTION -->
-
-
-    {{-- @include('layouts.footer') --}}
-    <!-- jQuery Plugins -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/slick.min.js') }}"></script>
-    <script src="{{ asset('js/nouislider.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-
-
+    @include('layouts.footer')
 </body>
+<!-- jQuery Plugins -->
+<script src="{{ asset('js/jquery.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/nouislider.min.js') }}"></script>
+<script src="{{ asset('js/jquery.zoom.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script>
 
 <style>
+    @media only screen and (min-width: 768px) {
+        .product {
+            margin: 2% 3% !important;
+        }
+    }
 
 
     /* Define styles for small screens */
@@ -340,16 +340,29 @@
             margin-right: 10px;
             /* Add some spacing between items */
             color: black;
+            font-size: 12px;
 
         }
 
+
+        .add-to-cart-btn {
+            display: inline !important; 
+        }
+
+
+        .products-slick {
+            /* margin:  15% !important; */
+        }
+
         .product {
-            width: 70%;
+
             /* Set product width to fill 70% of the screen */
-            margin: 0 auto;
+            /* margin: 0 auto !important; */
             /* Center products horizontally */
-            margin-bottom: 20px;
+            margin: 2% 2% !important;
             /* Add some bottom margin */
+            padding: 0% !important;
+
         }
 
         .products-slick {
@@ -389,7 +402,6 @@
         /* margin-top: -4px; */
     }
 
-    .product {}
 
     #responsive-nav {
         display: flex;
@@ -437,7 +449,7 @@
 
     }
 
-   
+
 
     .m-search-icon {
         fill: #ccc;
@@ -492,7 +504,7 @@
         /* Allow elements to sit side-by-side */
         align-items: center;
         /* Vertically center content */
-        padding: 0;
+
         /* margin: 100px !important; */
         /* margin-right: 10rem !important; */
         /* Add some padding */
@@ -501,11 +513,15 @@
         border-top: none !important;
         /* Remove border on top */
         border-left: none !important;
-        /* Remove border on left */
-        border-radius: 3px;
+
+
+
         /* Add rounded corners */
         cursor: pointer;
         /* Indicate clickable button */
+        justify-content: space-between;
+        /* Distribute elements evenly */
+        border-radius: 4%;
     }
 
     /* small screens keep margin 0 for product */
@@ -529,17 +545,6 @@
         /* Center text */
     }
 
-    .product-body {
-        justify-content: space-between;
-        /* Distribute elements evenly */
-        border-radius: 4%;
-
-    }
-
-
-    .product {
-        border-radius: 4%;
-    }
 
 
 

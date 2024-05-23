@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Transaction;
@@ -18,21 +16,14 @@ class PlaceOrderController extends Controller
     public function placeOrder(Request $request)
     {
         try {
-            // dd($request->all());
-            // code...
-            //dd("placing order");
-
             $user_id = 3;
-
             $user_id = User::find($user_id)->id;
             $user_name = User::find($user_id)->name;
             $user_email = User::find($user_id)->email;
-            $user_phone = User::find($user_id)->phone_number;
-
+            // $user_phone = User::find($user_id)->phone_number;
+            $user_phone = '393100200';
             $first_name = explode(' ', $user_name)[0];
             $last_name = explode(' ', $user_name)[1];
-
-
             $quantity = 1;
             $cooperative_id = 1;
             $delivery_address_id = 1;
@@ -50,8 +41,7 @@ class PlaceOrderController extends Controller
                 'delivery_cost' => $delivery_cost,
                 'total_cost' => $total_cost,
                 'quantity' => $quantity,
-                'status' => $status,
-                
+                'status' => $status,                
             ]);
             if ($order) {
                 // return redirect()->route('productCheckout', ['order_id' => $order->id]);
@@ -61,7 +51,6 @@ class PlaceOrderController extends Controller
                     'quantity' => $quantity,
                     'price' => $purchase_cost,
                 ]);
-
                 // create a transaction
                 $reference = str::uuid();
                 $transaction = Transaction::create([
@@ -75,14 +64,14 @@ class PlaceOrderController extends Controller
                     'cooperative_id' => $cooperative_id,
                     'payment_description' => 'Payment for order ' . $order->id,
                 ]);
-
                 // return redirect()->route('productCheckout', ['order_id' => $order->id]);
                 $res = Pesapal::orderProcess($reference, $total_cost, $user_phone, 'Payment for order ' . $order->id, route('finishPayment'), $first_name, $last_name, $user_email, $user_id, route('cancelPayment'));
-             
                 //  dd($res); 
                 if ($res->success) {
+                    // dd($res->message->redirect_url);
 
-                    return redirect($res->message->redirect_url);
+                    // return redirect($res->message->redirect_url);
+                    return view('pesapal', ['paymentUrl' => $res->message->redirect_url]);
                 } else {
                     // dd($res);
                     return redirect()->back()->with('error', 'Payment Failed please try again');

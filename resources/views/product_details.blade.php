@@ -6,37 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
     <title>Madini</title>
-
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
     <!-- Bootstrap -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-
     <!-- Slick -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/slick.css') }}" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/slick-theme.css') }}" />
-
     <!-- nouislider -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/nouislider.min.css') }}" />
-
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-
     <!-- Custom stylesheet -->
     <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}" />
-
-
-
 </head>
 
 <body>
-
     <!-- HEADER -->
     @include('layouts.header')
-
     <!-- SECTION -->
     <div class="section">
         <!-- container -->
@@ -46,18 +34,13 @@
                 <!-- Product main img -->
                 <div class="col-md-5 col-md-push-1 prod" style="">
                     <div id="product-main-img">
-
                         <img src="{{ $product->image_url }}" alt="" height= "200" width="200">
-
                     </div>
                     <h3 class="product-price" style="text-align: center;">UGX {{ number_format($product->price) }}</h3>
-
                 </div>
                 <!-- /Product main img -->
-
                 <!-- Product thumb imgs -->
                 <div class="col-md-2  col-md-pull-0">
-
                 </div>
                 <!-- /Product thumb imgs -->
 
@@ -66,52 +49,60 @@
                     <div class="product-details">
                         <h3 class="title" style="text-decoration: underline;"></h3>
                         {{-- <hr> --}}
-                        <h2 class="product-name" style="font-size: 12px; text-decoration: underline;">{{ $product->name }}</h2>
-
+                        <h2 class="product-name" style="font-size: 12px; text-decoration: underline;">
+                            {{ $product->name }}</h2>
                         <div>
                             <!-- <h3 class="product-price">UGX 120,000</h3> -->
                             <span style="font-size: 10px;">25mm aggregate size lake sand</span>
                             <span class="product-available" style="font-size: 10px !important;">Strength</span>
                             <span class="product-available" style="font-size: 10px !important;">Aggregate Size</span>
-
                         </div>
-                        <hr>
-                        <!-- <p>25mm aggregate size lake sand</p> -->
-                        {{-- <p>dbjklnjablkds </p> --}}
+                        <hr style="padding: 0 !important; margin: 3% !important;">
+
 
                         <div class="add-to-cart buttons">
                             {{-- <span>{{ $product->description }}</span> --}}
                             <p style="margin-right: 20px;"> <strong> Ideal for Plaster </strong> <br>
-                            <span > Locally sourced from Lwera, Masaka  </span> </p>
+                                <span style="font-size: 10px;"> Locally sourced from Lwera, Masaka </span>
+                            </p>
 
-                            <button class="add-to-cart-btn"
-                                style=" background-color: white !important; color: black !important; border: 1px grey solid;"><i
+
+                            <button class="add-to-cart-btn web "
+                                style="font-size: 12px; background-color: white !important; color: black !important; border: 1px grey solid;  "><i
                                     class=" fa fa-shopping-cart"></i> Add to Cart</button>
 
-                            <button class="add-to-cart-btn"
-                                style=" background-color: red !important; color: white !important;">
-                                <a href="{{ route('productCheckout', $product) }}"> Buy Now
-                            </button>
+                            <a href="{{ route('productCheckout', $product) }}" style="color:white;">
+                                <button class="add-to-cart-btn buy web "
+                                    style="font-size: 12px; background-color: #DE1D40 !important; color: white !important;  ">
+                                    Buy Now
+                                </button>
+                            </a>
+
+                            <div class = "buts" >
+                                <button class="add-to-cart-btn "
+                                style="font-size: 12px; background-color: white !important; color: black !important; border: 1px grey solid;  "><i
+                                    class=" fa fa-shopping-cart"></i> Add to Cart</button>
+
+                            <a href="{{ route('productCheckout', $product) }}" style="color:white;">
+                                <button class="add-to-cart-btn buy "
+                                    style="font-size: 12px; background-color: #DE1D40 !important; color: white !important;  ">
+                                    Buy Now
+                                </button>
+                            </a>
+                            </div>
 
 
-                            {{-- <div style="margin-right: 10px;" style=" background-color: red !important;">
-                            <a class="add-to-cart-btn" href="{{ route('productCheckout', $product) }}"><i
-                                    class="fa fa-shopping-cart" ></i> Buy Now</a>
-                                    </div> --}}
-
-                            <!-- Back option -->
-                            {{-- <a class="back-btn" href="{{ route('welcome') }}">Back</a> --}}
                         </div>
 
                         <ul class="product-links">
-                            <li>Category:</li>
+                            <li style="color: black;">Category:</li>
                             <li><a href="#">Construction</a></li>
                             <li><a href="#">Sand</a></li>
                         </ul>
 
                         <ul class="product-links">
                             <li>
-                                <div class="row">
+                                <div class="row similar">
 
                                     <div class="col-md-12">
                                         <div class="section-title text-left ">
@@ -119,13 +110,14 @@
                                         </div>
                                     </div>
                                     @foreach ($similarItems as $similarItem)
-                                        <a href="{{ route('products.show', $similarItem->id) }}" class="product-img"  >
-                                            <div class="col-md-6 col-xs-6"  >
-                                                <div class="product s product1" style="width: 20em; height: 15em; border: 1px grey solid !important;">
-                                                    <div class="product-img" >
+                                        <a href="{{ route('products.show', $similarItem->id) }}" class="product-img">
+                                            <div class="col-md-6 col-xs-6">
+                                                <div class="product s product1"
+                                                    style="width: 20em; height: 20em; border: 1px grey solid !important;">
+                                                    <div class="product-img">
                                                         {{-- <img src="./img/download.jpeg" alt=""> --}}
                                                         <img src="{{ $similarItem->image_url }}" alt=""
-                                                            height="80" style="padding: 5%;">
+                                                            height="130" style="padding: 5%;">
 
                                                         <div class="product-label">
                                                         </div>
@@ -140,8 +132,8 @@
                                                             <div class="add-to-cart-btn similar-cart">
                                                                 <span>Add</span>
                                                                 <i class="fa fa-shopping-cart"></i>
-                                                                <img src="{{ asset('img/cart_icon.jpg') }}" alt="" style="width: 30px;"
-                                                            class="micon">
+                                                                <img src="{{ asset('img/cart_icon.jpg') }}"
+                                                                    alt="" style="width: 30px;" class="micon">
                                                             </div>
                                                             <h6 class="product-price" 1>UGX
                                                                 {{ number_format($product->price) }}</h6>
@@ -153,11 +145,12 @@
                                             </div>
                                         </a>
                                     @endforeach
+                                </div>
 
 
 
 
-                                    <!-- /row -->
+                                <!-- /row -->
                             </li>
                         </ul>
 
@@ -433,117 +426,34 @@
                         <div class="products-tabs">
                             <!-- tab -->
                             <div id="tab2" class="tab-pane fade in active">
+
                                 <div class="products-slick" data-nav="#slick-nav-2">
-                                    <div class="product product1">
-                                        <div class="product-img">
-                                            <img src="{{ asset('img/download.jpeg') }}" alt=""
-                                                style="height: 15em;">
-
-                                            <div class="product-label">
-                                            </div>
+                                    @foreach ($valueAddedProducts as $valueAddedProduct)
+                                        <div class="product" style="margin: 2% 4%;">
+                                            <a href="{{ route('products.show', $valueAddedProduct->id) }}">
+                                                <div class="product-img">
+                                                    <img src="{{ $valueAddedProduct->image_url }}"
+                                                        alt="{{ $valueAddedProduct->name }}" style="height: 12em;">
+                                                    {{-- <img src="./img/download.jpeg" alt="" style="height: 15em;"> --}}
+                                                    <div class="product-label"></div>
+                                                </div>
+                                                <div class="product-body">
+                                                    <h3 class="product-name"><a
+                                                            href="{{ route('products.show', $valueAddedProduct->id) }}">{{ $valueAddedProduct->name }}</a>
+                                                    </h3>
+                                                    <div class="lower">
+                                                        {{-- <div class="add-to-cart-btn">
+                                                            <span>Add</span>
+                                                            <img src="./img/cart_icon.jpg" alt=""
+                                                                style="width: 30px;" class="micon">
+                                                        </div> --}}
+                                                        <h6 class="product-price">UGX
+                                                            {{ number_format($valueAddedProduct->price) }}</h6>
+                                                    </div>
+                                                </div>
+                                            </a>
                                         </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{{ asset('img/axe.png') }}" alt=""
-                                                style="height: 15em;">
-
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{{ asset('img/Safety hat.png') }}" alt=""
-                                                style="height: 15em;">
-
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{{ asset('img/Lwera Sand.png') }}" alt=""
-                                                style="height: 15em;">
-
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="product">
-                                        <div class="product-img">
-                                            <img src="{{ asset('img/lake sand.png') }}" alt=""
-                                                style="height: 15em;">
-
-                                            <div class="product-label">
-                                            </div>
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="#">Lake Sand</a></h3>
-                                            <div class="lower">
-
-                                                {{-- <div class="add-to-cart-btn" >
-                                                    <span>Add</span>
-                                                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                                                    <img src="./img/cart_icon.jpg" alt="" style="width: 30px;"
-                                                        class="micon">
-                                                </div> --}}
-                                                <h6 class="product-price" 1>UGX 120,000</h6>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
                                 <div id="slick-nav-2" class="products-slick-nav"></div>
                             </div>
@@ -580,6 +490,13 @@
     }
 
 
+    .buy {
+        width: 100% !important;
+    }
+
+
+
+
 
 
     .buttons {
@@ -594,14 +511,44 @@
         display: none !important;
     }
 
+    .buts {
+     display: none;
+    }
+
     /* on small screens display vertical */
     @media (max-width: 600px) {
+        .similar {
+            display: none;
+        }
         .prod {
-            border: 1px solid grey;
-         
+            /* border: 1px solid grey; */
+
             height: 100%;
             width: 90%;
             margin: 5% !important;
+            border: none !important;
+        }
+
+        .add-to-cart-btn {
+            width: 50% !important;
+            margin: 1%;
+        }
+
+        .buy {
+            width: 50% !important;
+        }
+
+
+
+        .product {
+
+            /* Set product width to fill 70% of the screen */
+            /* margin: 0 auto !important; */
+            /* Center products horizontally */
+            margin: 2% 2% !important;
+            /* Add some bottom margin */
+            padding: 0% !important;
+
         }
 
         .buttons {
@@ -632,29 +579,7 @@
 
 
 
-    .add-to-cart-btn {
-        display: flex;
-        /* Allow elements to sit side-by-side */
-        align-items: left !important;
 
-        text-align: left !important;
-        /* Vertically center content */
-
-
-
-
-        padding: 5px 10px;
-        /* Add some padding */
-        border: 2px solid #ddd;
-        /* Add a border on right and bottom */
-
-        border-radius: 3px;
-        /* Add rounded corners */
-        cursor: pointer;
-        /* Indicate clickable button */
-        width: 20rem !important;
-        height: 5rem !important;
-    }
 
     .product {
 
@@ -690,10 +615,18 @@
     }
 
     @media only screen and (max-width: 600px) {
+        .add-to-cart {
+            display: inline;
+            position: relative
+                /* background: #DE1D40; */
+        }
+
+
+
         .sproduct {
             margin-right: 10rem !important;
             /* Add some padding */
-            border: 3px solid #ddd;
+            /* border: 3px solid #ddd; */
             /* Add a border on right and bottom */
             border-top: none !important;
             /* Remove border on top */
@@ -717,8 +650,30 @@
 
     /* small screens keep margin 0 for product */
     @media only screen and (max-width: 600px) {
+
+        .web {
+            display: none;
+        }
+
+        .buy {
+            width: 120% !important;
+        }
+
+        .buts {
+            display: flex;
+            /* position: absolute; */
+        }
         .product {
             margin-right: 0 !important;
+            border: none !important;
+        }
+
+        .product-img-main {
+            border: 0px !important;
+        }
+
+        .m-search-icon {
+            display: flex;
         }
     }
 
@@ -738,25 +693,11 @@
 
 
 
-    .add-to-cart-btn {
-        display: flex;
-        /* Allow elements to sit side-by-side */
-        align-items: center;
-        /* Vertically center content */
-        padding: 5px 10px;
-        margin-right: 5px;
-        height: 6rem;
-        width: 10rem;
-        /* Add some padding */
-        border: 2px solid #ddd;
-        /* Add a border on right and bottom */
 
-        border-radius: 3px;
-        /* Add rounded corners */
-        cursor: pointer;
-        /* Indicate clickable button */
-        /* width: 50%; */
-    }
+
+    /* .buy {
+        width: 110% !important;
+    } */
 
     .product-price {
         /* align items and position them on the same line */
@@ -810,6 +751,11 @@
         width: 14px;
         height: 14px;
         /* margin-right: 500px; */
+    }
+
+    .add-to-cart-btn {
+        width: 30%;
+        margin: 1%;
     }
 </style>
 

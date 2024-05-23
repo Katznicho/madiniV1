@@ -1,3 +1,21 @@
+<!-- resources/views/payment.blade.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Madini Group Payments</title>
+    <style>
+        /* Optional: Add some styles for the iframe container */
+        .iframe-container {
+            width: 88%;
+            height: 25em; /* Adjust the height as needed */
+            border: 0px solid grey; /* Remove border for seamless integration */
+            padding: 1%;
+            margin: 2%;
+        }
+    </style>
+</head>
 <header class="header mobile head" style="display: flex;">
     <div class="header-search mobile-search">
         <form class="mobile-search">
@@ -27,7 +45,7 @@
     <div class="info-container header-links mlinks"
         style="justify-content: space-between !important;  padding: 15px 20px !important; border: 0 !important;">
         <!-- <i class="fa fa-map-marker"></i> -->
-        <img src="{{ asset('img/delivery_icon.jpg') }}" alt="" style="width: 2rem; " class="micon">
+        <img src="{{ asset('img/delivery_icon.jpg') }}" alt="" style="width: 1rem; " class="micon">
         <!-- <p>Delivery</p> -->
         <div class="header-links pull-left">
 
@@ -40,7 +58,7 @@
         <img src="{{ asset('img/ASM_icon.jpg') }}" alt="" style="width: 3rem;" class="micon">
         <div class="pull-right">
             <p style="font-weight: 200; padding-left: 10px;">ASM Impact</p>
-            <span style="font-weight: bold; padding-left: 10px;">1,218 artisanals</span>
+            <span style="font-weight: bold; padding-left: 10px;">1,218 ASM impacted</span>
         </div>
     </div>
     <div class="user-info web">
@@ -50,116 +68,37 @@
     </div>    
 </header>
 
-<!-- NAVIGATION -->
-<nav id="navigation">
-    <!-- container -->
-    <div class="container">
-        <!-- responsive-nav -->
-        <div id="responsive-nav">
-            <!-- NAV -->
-            <ul class="main-nav nav  navbar-nav" style="text-align: center">
-                 {{-- <a href="{{ route('welcome') }}"> --}}
-                 <li class="active">
-                    <!-- <i class="fa fa-home fa-2x"></i> -->
-                    <img src="{{ asset('img/sand_icon.jpg') }}" alt="" style="width: 3.7rem;" class="micon">
-                    <a href="{{ route('welcome') }}" style="margin-top: 0px;">Construction</a>
-                </li>
-                {{-- </a> --}}
-                <li>
-                    <!-- <i class="fa fa-industry fa-2x"></i> -->
-                    <img src="{{ asset('img/industry_icon.jpg') }}" alt="" style="width: 4.5rem;" class="micon">
-                    <a href="#" style="font-weight: lighter;">Industry</a>
-                </li>
-                <li>
-                    <!-- <i class="fa fa-diamond fa-2x"></i> -->
-                    <img src="{{ asset('img/precious_icon.jpg') }}" alt="" style="width: 2.8rem;" class="micon">
-                    <a href="#" style="font-weight: lighter;">Precious</a>
-                </li>
 
-                <li>
-                    <div class="header-search">
-                        <form>
-                            <input class="m-search" type="text" placeholder="Search here" style="">
-                            <button type="submit" class="m-search-btn">
-                                <i class="fa fa-search m-search-icon"></i>
-                            </button>
-                        </form>
-                    </div>
 
-                </li>
 
-            </ul>
-            <ul>
-                <li>
-                    <!-- Cart -->
-                    <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                            <!-- <i class="fa  fa-shopping-cart fa-2x"></i> -->
-                            <img src="{{ asset('img/cart_icon.jpg') }}" alt="" style="width: 50px;" class="micon">
-                            <!-- <span>Your Cart</span> -->
-                            <!-- <div class="qty">3</div> -->
-                        </a>
-                        <div class="cart-dropdown">
-                            <div class="cart-list">
-                                <div class="product-widget">
-                                    <div class="product-img">
-                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-name"><a href="#">sand</a></h3>
-                                        <h4 class="product-price"><span class="qty">1x</span>UGX 120,000</h4>
-                                    </div>
-                                    <button class="delete"><i class="fa fa-close"></i></button>
-                                </div>
 
-                                <div class="product-widget">
-                                    <div class="product-img">
-                                        <img src="{{ asset('img/download.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-name"><a href="#">sand</a></h3>
-                                        <h4 class="product-price"><span class="qty">3x</span>UGX 120,000</h4>
-                                    </div>
-                                    <button class="delete"><i class="fa fa-close"></i></button>
-                                </div>
-                            </div>
-                            <div class="cart-summary">
-                                <small>3 Item(s) selected</small>
-                                <h5>SUBTOTAL: UGX 2940.00</h5>
-                            </div>
-                            <div class="cart-btns">
-                                <a href="#">View Cart</a>
-                                <a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /Cart -->
-                </li>
-                <ul>
-                    <!-- /NAV -->
-        </div>
 
-        <!-- Menu Toogle -->
-        <!-- <div class="menu-toggle" >
-            <a href="#"  >
-                <i class="fa fa-bars" style="color: black !important;"></i>
-                <span>Menu</span>
-            </a>
-        </div> -->
-        <!-- /Menu Toogle -->
+<body>
+    
+    <div id="payment-iframe-container">
+        <!-- The iframe will be injected here -->
+        <iframe src="{{ $paymentUrl }}" class="iframe-container"></iframe>
     </div>
-</nav>
+</body>
 
-
-
-
-
-
+@include('layouts.footer')
+</html>
 
 
 <style>
+    /* .logo {
+        width: 39% !important;
+    } */
     .mhr {
         display: none;
+    }
+
+   .iframe-container input {
+        background-color: red;
+    }
+
+    .tabs-content {
+        background-color: red;
     }
 
     .mobile {
@@ -315,10 +254,6 @@
             border: 0 !important;
         }
 
-        .mlinks {
-            font-size: 12px;
-        }
-
         #navigation {
             display: none;
             border: 0 !important;
@@ -327,10 +262,6 @@
         .mitems {
             justify-content: justify !important;
 
-        }
-
-        .mobile-nav {
-            font-size: 12px;
         }
 
 
